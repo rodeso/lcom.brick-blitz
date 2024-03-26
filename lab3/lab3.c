@@ -34,11 +34,48 @@ int main(int argc, char *argv[]) {
 int(kbd_test_scan)() {
   /* To be completed by the students */
   printf("%s is not yet implemented!\n", __func__);
-  sys_irqsetpolicy(IRQ1_VECTOR,IRQ_REENABLE|IRQ_EXCLUSIVE);
-
-
-
   
+
+
+    uint8_t irq_set;
+
+    if (keyboard_subscribe_int(&irq_set) != 0) {return 1;}
+
+
+  //este é o loop do timer test int, que falta editar para funcionar aqui
+    while (time > 0) {
+    
+    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+      printf("driver_receive failed: %d\n", r);
+      continue;
+    }
+    if (is_ipc_notify(ipc_status)) {
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE: {
+          if (msg.m_notify.interrupts & irq_set) {
+            timer_int_handler();
+            if (globalCounter % 60 == 0) {
+              timer_print_elapsed_time();
+              time--;
+            }
+          }
+        break;
+      }
+      default:
+        break;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
   /*if (breakcode == 0x81)
     return 0;
     */
