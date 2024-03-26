@@ -1,4 +1,4 @@
-# LCOM Project
+# T18G4 - LCOM Project
 
 LCOM Project for group T-18_4
 Group members:
