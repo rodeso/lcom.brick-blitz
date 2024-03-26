@@ -60,6 +60,7 @@ int(kbd_test_scan)() {
             if (!big_scancode) {
               kbd_print_scancode(isMake, size, scancodes);
               size = 1;
+              
             }
             else
               size = 2;

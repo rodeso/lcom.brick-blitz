@@ -10,7 +10,7 @@ bool isMake;
 int size;
 
 int (read_status_register)(uint8_t* status) {
-  if (util_sys_inb(INPUT_BUFFER_KEYBOARD, status)) {return 1;}
+  if (util_sys_inb(INPUT_BUFFER_KEYBOARD, status)) {return 1;} //reading the KBC state
   return 0;
 }
 int (read_scancode)(uint8_t port,uint8_t* result) {
@@ -19,7 +19,7 @@ int (read_scancode)(uint8_t port,uint8_t* result) {
       uint8_t status;
       if (read_status_register(&status)){return 1;}
 
-      if (status & OUTPUT_BUFFER_FULL){
+      if (status & OUTPUT_BUFFER_FULL){ //if the output buffer is full, deliver the result
 
         if (!(((status & TIMEOUT_ERROR) || (status & PARITY_ERROR))) ){ //if there are no errors
 
@@ -29,7 +29,7 @@ int (read_scancode)(uint8_t port,uint8_t* result) {
 
         else return 1;
       }
-      trying++;
+      trying++; //if not full, keep reading
 
       
     }
@@ -40,28 +40,18 @@ void (kbc_ih)() {
 
     uint8_t status;
 
-    if (!big_scancode) {size=1;}
+    if (!big_scancode) {size=1;} //(re)establishing if the scancode has 1 or more bytes
 
-    read_scancode(OUTPUT_BUFFER_KEYBOARD, &scancodes[scancode_curr_byte]);
+    read_scancode(OUTPUT_BUFFER_KEYBOARD, &scancodes[scancode_curr_byte]); //reading process
 
-    if (scancodes[scancode_curr_byte]==0xE0) {
+    if (scancodes[scancode_curr_byte]==0xE0) { //if the scancode is long
         scancode_curr_byte=1;
         big_scancode=true;
-    } else if (!big_scancode) {
-        if ((scancodes[scancode_curr_byte] & BIT(7))) isMake = false;
-        else isMake = true;
+    } else if (!big_scancode) { //if scancode is 1 byte, as usual
+        if ((scancodes[scancode_curr_byte] & BIT(7))) isMake = false; // detect if scancode is breakcode
+        else isMake = true; //or makecode
         scancode_curr_byte = 0;
     }
-
-
-
-
-
-
-
-
-
-
 
 }
 
