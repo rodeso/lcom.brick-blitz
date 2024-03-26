@@ -1,9 +1,18 @@
 #include <lcom/lcf.h>
 
 #include <lcom/lab3.h>
-#include <.minix-src/include/i386/interrupt.h>
+#include "timer.c"
+#include "keyboard.h"
 #include <stdbool.h>
 #include <stdint.h>
+
+extern uint8_t scancodes[2];
+extern int scancode_curr_byte;
+
+extern bool isMake;
+extern bool big_scancode;
+
+
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -32,59 +41,41 @@ int main(int argc, char *argv[]) {
 
 
 int(kbd_test_scan)() {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
-  
-
-
-    uint8_t irq_set;
-
-    if (keyboard_subscribe_int(&irq_set) != 0) {return 1;}
-
-
-  //este é o loop do timer test int, que falta editar para funcionar aqui
-    while (time > 0) {
-    
-    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
-      printf("driver_receive failed: %d\n", r);
+  int size = 1;
+  uint8_t keyboard_mask;
+  int ipc_status;
+  message msg;
+  if (keyboard_subscribe_int(&keyboard_mask))
+    return 1;
+  while (scancodes[scancode_curr_byte] != ESC_SCANCODE) {
+    if (driver_receive(ANY, &msg, &ipc_status) != 0) {
+      printf("Error");
       continue;
     }
     if (is_ipc_notify(ipc_status)) {
       switch (_ENDPOINT_P(msg.m_source)) {
-        case HARDWARE: {
-          if (msg.m_notify.interrupts & irq_set) {
-            timer_int_handler();
-            if (globalCounter % 60 == 0) {
-              timer_print_elapsed_time();
-              time--;
+        case HARDWARE:
+          if (msg.m_notify.interrupts & keyboard_mask) {
+            kbc_ih();
+            if (!big_scancode) {
+              kbd_print_scancode(isMake, size, scancodes);
+              size = 1;
             }
+            else
+              size = 2;
           }
-        break;
-      }
-      default:
-        break;
+          break;
+        default:
+          break;
       }
     }
+    else {
+    }
   }
+  if (keyboard_unsubscribe_int())
+    return 1;
 
-
-
-
-
-
-
-
-
-
-  /*if (breakcode == 0x81)
-    return 0;
-    */
-
-
-
-
-  sys_irqrmpolicy();
-  return 1;
+  return 0;
 }
 
 int(kbd_test_poll)() {

@@ -1,16 +1,58 @@
 #include <lcom/lcf.h>
 #include <lab3.h>
-#include <lab2.h>
 #include <keyboard.h>
 
 int hook_id=0;
+uint8_t scancodes[2];
+int scancode_curr_byte=0;
+bool big_scancode = false;
+bool isMake;
+int size;
 
+int (read_status_register)(uint8_t* status) {
+  if (util_sys_inb(INPUT_BUFFER_KEYBOARD, status)) {return 1;}
+  return 0;
+}
+int (read_scancode)(uint8_t port,uint8_t* result) {
+  int trying=0;
+  while (trying < 20) {
+      uint8_t status;
+      if (read_status_register(&status)){return 1;}
+
+      if (status & OUTPUT_BUFFER_FULL){
+
+        if (!(((status & TIMEOUT_ERROR) || (status & PARITY_ERROR))) ){ //if there are no errors
+
+          if (util_sys_inb(port,result)) return 1; //read and return
+          return 0;
+        }
+
+        else return 1;
+      }
+      trying++;
+
+      
+    }
+    return 1;
+}
 
 void (kbc_ih)() {
-    
+
     uint8_t status;
-    int buf = util_sys_inb(OUT_BUF, &status);
-    if (buf=1) {return 1;}
+
+    if (!big_scancode) {size=1;}
+
+    read_scancode(OUTPUT_BUFFER_KEYBOARD, &scancodes[scancode_curr_byte]);
+
+    if (scancodes[scancode_curr_byte]==0xE0) {
+        scancode_curr_byte=1;
+        big_scancode=true;
+    } else if (!big_scancode) {
+        if ((scancodes[scancode_curr_byte] & BIT(7))) isMake = false;
+        else isMake = true;
+        scancode_curr_byte = 0;
+    }
+
 
 
 
