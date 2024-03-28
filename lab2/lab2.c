@@ -59,9 +59,11 @@ int(timer_test_int)(uint8_t time) {
   int ipc_status, r; 
   message msg;
 
-  uint8_t irq_set;
+  uint32_t irq_set = 0;
+  uint8_t bit_no = 0;
 
-  if (timer_subscribe_int(&irq_set) != 0) {return 1;}
+  if (timer_subscribe_int(&bit_no) != 0) {return 1;}
+  irq_set = BIT(bit_no);
 
   while (time > 0) {
     

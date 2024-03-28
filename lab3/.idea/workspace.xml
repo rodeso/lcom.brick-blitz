@@ -10,25 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22893ab6-3b70-47e9-b5aa-cdf8f8a335ce" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.clang-format" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/lab3.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/i8254.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/interrupt.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyboard.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/timer.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.c" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LCom2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interrupt.c" beforeDir="false" afterPath="$PROJECT_DIR$/interrupt.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interrupt.o" beforeDir="false" afterPath="$PROJECT_DIR$/interrupt.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3" beforeDir="false" afterPath="$PROJECT_DIR$/lab3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3.c" beforeDir="false" afterPath="$PROJECT_DIR$/lab3.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3.o" beforeDir="false" afterPath="$PROJECT_DIR$/lab3.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trace.txt" beforeDir="false" afterPath="$PROJECT_DIR$/trace.txt" afterDir="false" />
     </list>
-    <list id="3ec66b15-56b6-4013-b52f-13a396e41220" name="Changes by rodri" comment="" />
+    <list id="3ec66b15-56b6-4013-b52f-13a396e41220" name="Changes by rodri" comment="">
+      <change beforePath="$PROJECT_DIR$/interrupt.c" beforeDir="false" afterPath="$PROJECT_DIR$/interrupt.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3.c" beforeDir="false" afterPath="$PROJECT_DIR$/lab3.c" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +30,41 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/lab3.c">
+      <ranges>
+        <range start1="84" end1="84" start2="84" end2="85" changelist="22893ab6-3b70-47e9-b5aa-cdf8f8a335ce" />
+        <range start1="85" end1="87" start2="86" end2="88" changelist="3ec66b15-56b6-4013-b52f-13a396e41220" />
+        <range start1="96" end1="103" start2="97" end2="97" changelist="22893ab6-3b70-47e9-b5aa-cdf8f8a335ce" />
+        <range start1="105" end1="109" start2="99" end2="135" changelist="3ec66b15-56b6-4013-b52f-13a396e41220" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/interrupt.c">
+      <ranges>
+        <range start1="12" end1="13" start2="12" end2="13" changelist="22893ab6-3b70-47e9-b5aa-cdf8f8a335ce" />
+        <range start1="17" end1="18" start2="17" end2="18" changelist="22893ab6-3b70-47e9-b5aa-cdf8f8a335ce" />
+        <range start1="83" end1="84" start2="83" end2="83" changelist="22893ab6-3b70-47e9-b5aa-cdf8f8a335ce" />
+        <range start1="90" end1="91" start2="89" end2="94" changelist="3ec66b15-56b6-4013-b52f-13a396e41220" />
+        <range start1="93" end1="94" start2="96" end2="97" changelist="3ec66b15-56b6-4013-b52f-13a396e41220" />
+        <range start1="98" end1="99" start2="101" end2="102" changelist="22893ab6-3b70-47e9-b5aa-cdf8f8a335ce" />
+        <range start1="105" end1="106" start2="108" end2="109" changelist="3ec66b15-56b6-4013-b52f-13a396e41220" />
+        <range start1="116" end1="117" start2="119" end2="120" changelist="3ec66b15-56b6-4013-b52f-13a396e41220" />
+        <range start1="135" end1="135" start2="138" end2="139" changelist="3ec66b15-56b6-4013-b52f-13a396e41220" />
+      </ranges>
+    </file>
+  </component>
+  <component name="MakefileLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2023" />
+    <option name="minorVersion" value="3.4" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -51,15 +80,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.advertisement.text.overridden": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/afonso/MINIX-LCOM/shared/lab3",
+    "last_opened_file_path": "/home/afonso/MINIX-LCOM/shared/lab2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,7 +109,8 @@
       <updated>1711455990184</updated>
       <workItem from="1711455991210" duration="8620000" />
       <workItem from="1711471974414" duration="9000" />
-      <workItem from="1711620338651" duration="894000" />
+      <workItem from="1711621233568" duration="10490000" />
+      <workItem from="1711632087182" duration="8478000" />
     </task>
     <servers />
   </component>

@@ -10,12 +10,12 @@ int size;
 
 
 int (read_status_register)(uint8_t* status) {
-  printf("%s is running!\n", __func__);
+  //printf("%s is running!\n", __func__);
   if (util_sys_inb(INPUT_BUFFER_KEYBOARD, status)) {return 1;} //reading the KBC state
   return 0;
 }
 int (read_scancode)(uint8_t port,uint8_t* result) {
-  printf("%s is running!\n", __func__);
+  //printf("%s is running!\n", __func__);
   int trying=0;
   while (trying < 20) {
       uint8_t status;
@@ -81,29 +81,28 @@ int (keyboard_unsubscribe_int)() {
 }
 
 int (util_sys_inb)(int port, uint8_t *value) {
-  /* To be implemented by the students */
 
-  uint32_t temporary_value=0x0000;
+  if (value == NULL) return 1;
+
+  uint32_t temporary_value=0;
   int res;
 
   res = sys_inb(port,&temporary_value);
+  if (res == 1) return 1;
+  *value = (uint8_t)temporary_value;
 
-  if (res==0) {value=(uint8_t*)temporary_value;}
-
-
-  printf("%s is running!\n", __func__);
   return res;
 }
 
 
-int (enable_interrupts())() {
+int (enable_interrupts)() {
 
   //warn you are going to read 0x20 -> read byte -> escrever que vais ler
   if (write_command(INPUT_BUFFER_KEYBOARD,READ_COMMAND)) return 1;
 
   //a seguir lês e guardas no command byte
   uint8_t command_byte;
-  if (read_scancode(OUTPUT_BUFFER_KEYBOARD,command_byte)) return 1;
+  if (read_scancode(OUTPUT_BUFFER_KEYBOARD,&command_byte)) return 1;
 
   //ativas o bit 0 XXXXXXXX -> XXXXXXX1 -> INT 1: enable interrupt on OBF, from keyboard (slide 15, https://web.fe.up.pt/~pfs/aulas/lcom2324/at/4kbd.pdf)
   command_byte = command_byte | BIT(0);
@@ -114,7 +113,7 @@ int (enable_interrupts())() {
 
   if (write_command(OUTPUT_BUFFER_KEYBOARD, command_byte)) return 1; //escrever (0x60 is a port now!)
 
-
+  return  0;
 }
 
 int (write_command)(uint8_t port, uint8_t the_command) {

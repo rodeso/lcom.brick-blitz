@@ -43,13 +43,14 @@ int main(int argc, char *argv[]) {
 
 int(kbd_test_scan)() {
   int size = 1;
+  int r;
   uint8_t keyboard_mask;
   int ipc_status;
   message msg;
   if (keyboard_subscribe_int(&keyboard_mask))
     return 1;
   while (scancodes[scancode_curr_byte] != ESC_SCANCODE) {
-    if (driver_receive(ANY, &msg, &ipc_status) != 0) {
+    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("Error");
       continue;
     }
@@ -82,9 +83,10 @@ int(kbd_test_scan)() {
 
 int(kbd_test_poll)() {
     printf("%s is running!\n", __func__);
+    uint8_t scancode;
     while (scancodes[0]!=ESC_SCANCODE) {
-        if (read_scancode(OUTPUT_BUFFER_KEYBOARD,scancodes[0])) {
-            kbd_print_scancode((!(scancodes[0] & BREAK_CODE), scancodes[0] == 0xE0 ? 2 : 1, scancodes[0]));
+        if (read_scancode(OUTPUT_BUFFER_KEYBOARD, &scancode) == 0) {
+          kbd_print_scancode(!(scancode & BREAK_CODE), scancode == 0xE0 ? 2 : 1, &scancode);
         }
     }
 
@@ -95,18 +97,43 @@ int(kbd_test_poll)() {
 
 
 
-
-
-
-
-  return 1;
-}
-
 int(kbd_test_timed_scan)(uint8_t n) {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  int size = 1;
+  uint8_t keyboard_mask;
+  int ipc_status;
+  message msg;
+  if (keyboard_subscribe_int(&keyboard_mask))
+    return 1;
+  while (scancodes[scancode_curr_byte] != ESC_SCANCODE) {
+    if (driver_receive(ANY, &msg, &ipc_status) != 0) {
+      printf("Error");
+      continue;
+    }
+    if (is_ipc_notify(ipc_status)) {
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE:
+          if (msg.m_notify.interrupts & keyboard_mask) {
+            kbc_ih();
+            if (!big_scancode) {
+              kbd_print_scancode(isMake, size, scancodes);
+              size = 1;
 
-  return 1;
+            }
+            else
+              size = 2;
+          }
+          break;
+        default:
+          break;
+      }
+    }
+    else {
+    }
+  }
+  if (keyboard_unsubscribe_int())
+    return 1;
+
+  return 0;
 }
 
 
