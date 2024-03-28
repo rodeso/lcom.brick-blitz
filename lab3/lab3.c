@@ -1,8 +1,8 @@
 #include <lcom/lcf.h>
 
+#include "interrupt.h"
+
 #include <lcom/lab3.h>
-#include "timer.c"
-#include "keyboard.h"
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -11,6 +11,7 @@ extern int scancode_curr_byte;
 
 extern bool isMake;
 extern bool big_scancode;
+
 
 
 
@@ -80,8 +81,23 @@ int(kbd_test_scan)() {
 }
 
 int(kbd_test_poll)() {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+    printf("%s is running!\n", __func__);
+    while (scancodes[0]!=ESC_SCANCODE) {
+        if (read_scancode(OUTPUT_BUFFER_KEYBOARD,scancodes[0])) {
+            kbd_print_scancode((!(scancodes[0] & BREAK_CODE), scancodes[0] == 0xE0 ? 2 : 1, scancodes[0]));
+        }
+    }
+
+    if (enable_interrupts()) return 1;
+
+  return 0;
+}
+
+
+
+
+
+
 
   return 1;
 }
@@ -92,3 +108,5 @@ int(kbd_test_timed_scan)(uint8_t n) {
 
   return 1;
 }
+
+

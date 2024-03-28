@@ -1,6 +1,5 @@
+#include <interrupt.h>
 #include <lcom/lcf.h>
-#include <lab3.h>
-#include <keyboard.h>
 
 int hook_id=0;
 uint8_t scancodes[2];
@@ -9,11 +8,14 @@ bool big_scancode = false;
 bool isMake;
 int size;
 
+
 int (read_status_register)(uint8_t* status) {
+  printf("%s is running!\n", __func__);
   if (util_sys_inb(INPUT_BUFFER_KEYBOARD, status)) {return 1;} //reading the KBC state
   return 0;
 }
 int (read_scancode)(uint8_t port,uint8_t* result) {
+  printf("%s is running!\n", __func__);
   int trying=0;
   while (trying < 20) {
       uint8_t status;
@@ -22,23 +24,20 @@ int (read_scancode)(uint8_t port,uint8_t* result) {
       if (status & OUTPUT_BUFFER_FULL){ //if the output buffer is full, deliver the result
 
         if (!(((status & TIMEOUT_ERROR) || (status & PARITY_ERROR))) ){ //if there are no errors
-
           if (util_sys_inb(port,result)) return 1; //read and return
           return 0;
         }
-
         else return 1;
       }
       trying++; //if not full, keep reading
-
-      
     }
     return 1;
 }
 
-void (kbc_ih)() {
 
-    uint8_t status;
+
+void (kbc_ih)() {
+    printf("%s is running!\n", __func__);
 
     if (!big_scancode) {size=1;} //(re)establishing if the scancode has 1 or more bytes
 
@@ -79,4 +78,58 @@ int (keyboard_unsubscribe_int)() {
     if (pol==1) {return 1;}
 
     return 0;
+}
+
+int (util_sys_inb)(int port, uint8_t *value) {
+  /* To be implemented by the students */
+
+  uint32_t temporary_value=0x0000;
+  int res;
+
+  res = sys_inb(port,&temporary_value);
+
+  if (res==0) {value=(uint8_t*)temporary_value;}
+
+
+  printf("%s is running!\n", __func__);
+  return res;
+}
+
+
+int (enable_interrupts())() {
+
+  //warn you are going to read 0x20 -> read byte -> escrever que vais ler
+  if (write_command(INPUT_BUFFER_KEYBOARD,READ_COMMAND)) return 1;
+
+  //a seguir lês e guardas no command byte
+  uint8_t command_byte;
+  if (read_scancode(OUTPUT_BUFFER_KEYBOARD,command_byte)) return 1;
+
+  //ativas o bit 0 XXXXXXXX -> XXXXXXX1 -> INT 1: enable interrupt on OBF, from keyboard (slide 15, https://web.fe.up.pt/~pfs/aulas/lcom2324/at/4kbd.pdf)
+  command_byte = command_byte | BIT(0);
+
+  //warn you are going to write 0x60 -> write byte -> escrever que vais escrever
+  if (write_command(INPUT_BUFFER_KEYBOARD,WRITE_COMMAND)) return 1; // 0x60 but is a command
+
+
+  if (write_command(OUTPUT_BUFFER_KEYBOARD, command_byte)) return 1; //escrever (0x60 is a port now!)
+
+
+}
+
+int (write_command)(uint8_t port, uint8_t the_command) {
+    int trying=0;
+    while (trying < 20) {
+
+        uint8_t status;
+        if (read_status_register(&status)) return 1;
+
+        if (!(status & BIT(1))){
+          if (sys_outb(port,the_command)) return 1;
+          return 0;
+        }
+
+        trying++;
+    }
+    return 1;
 }
