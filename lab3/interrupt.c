@@ -29,7 +29,7 @@ int (read_scancode)(uint8_t port,uint8_t* result) {
         }
         else return 1;
       }
-      trying++; //if not full, keep reading
+      trying++; //keep trying to read
     }
     return 1;
 }
@@ -83,21 +83,21 @@ int (keyboard_unsubscribe_int)() {
 
 int (enable_interrupts)() {
 
-  //warn you are going to read 0x20 -> read byte -> escrever que vais ler
+  //warn you are going to read 0x20 -> read byte -> escrever a avisar que vais ler
   if (write_command(INPUT_BUFFER_KEYBOARD,READ_COMMAND)) return 1;
 
-  //a seguir lês e guardas no command byte
+  //a seguir lês e guardas o command byte
   uint8_t command_byte;
   if (read_scancode(OUTPUT_BUFFER_KEYBOARD,&command_byte)) return 1;
 
-  //ativas o bit 0 XXXXXXXX -> XXXXXXX1 -> INT 1: enable interrupt on OBF, from keyboard (slide 15, https://web.fe.up.pt/~pfs/aulas/lcom2324/at/4kbd.pdf)
+  //ativas o bit 0 XXXXXXXX -> XXXXXXX1 -> INT 1: enable interrupts on OBF, from keyboard (slide 15, https://web.fe.up.pt/~pfs/aulas/lcom2324/at/4kbd.pdf)
   command_byte = command_byte | BIT(0);
 
   //warn you are going to write 0x60 -> write byte -> escrever que vais escrever
   if (write_command(INPUT_BUFFER_KEYBOARD,WRITE_COMMAND)) return 1; // 0x60 but is a command
 
 
-  if (write_command(OUTPUT_BUFFER_KEYBOARD, command_byte)) return 1; //escrever (0x60 is a port now!)
+  if (write_command(OUTPUT_BUFFER_KEYBOARD, command_byte)) return 1; //escrever (0x60 is a port here)
 
   return  0;
 }

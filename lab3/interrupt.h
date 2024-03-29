@@ -14,8 +14,8 @@
 
 #define KEYBOARD_IRQ_LINE    1
 #define READ_KEYBOARD_STATUS 0x64
-#define INPUT_BUFFER_KEYBOARD 0x64
-#define OUTPUT_BUFFER_KEYBOARD 0x60
+#define INPUT_BUFFER_KEYBOARD 0x64 //receives status and for sending KBC commands
+#define OUTPUT_BUFFER_KEYBOARD 0x60 //receives scancodes and for sending commands to keyboard
 #define ESC_SCANCODE       0x81
 #define BREAK_CODE       BIT(7)
 #define TWO_BYTES       0xE0

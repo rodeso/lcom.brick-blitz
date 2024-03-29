@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {
 
 
 
-int(kbd_test_scan)() {
+int(kbd_test_scan)() {  //reading the scancodes via KBD interrupts. ESC ends the reading.
   int size = 1;
   int ipc_status,r;
   message msg;
@@ -51,11 +51,11 @@ int(kbd_test_scan)() {
   uint8_t bit_no=0;
 
 
-  if (keyboard_subscribe_int(&bit_no)!=0) {return 1;}
+  if (keyboard_subscribe_int(&bit_no)!=0) {return 1;} //subscribes/activates the interrupts
   keyboard_mask=BIT(bit_no);
 
 
-  while (scancodes[scancode_curr_byte] != ESC_SCANCODE) {
+  while (scancodes[scancode_curr_byte] != ESC_SCANCODE) {  //while the scancode isnt the ESC one
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("Error");
       continue;
@@ -79,29 +79,29 @@ int(kbd_test_scan)() {
       }
     }
   }
-  if (keyboard_unsubscribe_int())
+  if (keyboard_unsubscribe_int()) //unsubscribes the interrupts
     return 1;
 
   return 0;
 }
 
-int(kbd_test_poll)() {
+int(kbd_test_poll)() { //reading the scancodes via polling. ESC ends the reading.
     printf("%s is running!\n", __func__);
     uint8_t scancode;
-    while (scancodes[0]!=ESC_SCANCODE) {
+    while (scancodes[0]!=ESC_SCANCODE) {  //while the scancode isnt the ESC one
         if (read_scancode(OUTPUT_BUFFER_KEYBOARD, &scancode) == 0) {
           kbd_print_scancode(!(scancode & BREAK_CODE), scancode == 0xE0 ? 2 : 1, &scancode);
         }
     }
 
-    if (enable_interrupts()) return 1;
+    if (enable_interrupts()) return 1; //after scancode reading process, reactivate the interrupts to avoid keyboard problems
 
   return 0;
 }
 
 
 
-int(kbd_test_timed_scan)(uint8_t n) {
+int(kbd_test_timed_scan)(uint8_t n) { //reading the scancodes via KBD interrupts. ESC ends the reading or if the given n time passes without receiving scancodes
   int size = 1;
   int ipc_status,r;
   message msg;
@@ -114,7 +114,7 @@ int(kbd_test_timed_scan)(uint8_t n) {
   uint8_t bit_no2=0;
 
 
-  if (timer_subscribe_int(&bit_no1)!=0) {return 1;}
+  if (timer_subscribe_int(&bit_no1)!=0) {return 1;}   //enable interrupts for the timer and for the keyboard
   timer_mask=BIT(bit_no1);
   if (keyboard_subscribe_int(&bit_no2)!=0) {return 1;}
   keyboard_mask=BIT(bit_no2);
@@ -153,8 +153,9 @@ int(kbd_test_timed_scan)(uint8_t n) {
       }
     }
   }
-  if (keyboard_unsubscribe_int())
-    return 1;
+  if (timer_unsubscribe_int()) {return 1;}
+  if (keyboard_unsubscribe_int()) {return 1;}
+  
 
   return 0;
 }

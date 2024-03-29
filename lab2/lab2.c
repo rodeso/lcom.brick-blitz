@@ -35,10 +35,10 @@ int(timer_test_read_config)(uint8_t timer, enum timer_status_field field) {
 
   uint8_t st=0x00; 
 
-  int cnf=timer_get_conf(timer,&st);
+  int cnf=timer_get_conf(timer,&st);  //creation of readback command for status byte request
   if (cnf==1) {return 1;}
 
-  int dis = timer_display_conf(timer,st,field);
+  int dis = timer_display_conf(timer,st,field);  //displaying of the specified field of the status
   if (dis==1) {return 1;}
 
   return 0;
@@ -48,7 +48,7 @@ int(timer_test_time_base)(uint8_t timer, uint32_t freq) {
   
   printf("%s is running!\n", __func__);
   
-  int res= timer_set_frequency(timer,freq);
+  int res= timer_set_frequency(timer,freq); //specific change/reconfiguration of the given timer
 
   return res;
 }
@@ -62,7 +62,7 @@ int(timer_test_int)(uint8_t time) {
   uint32_t irq_set = 0;
   uint8_t bit_no = 0;
 
-  if (timer_subscribe_int(&bit_no) != 0) {return 1;}
+  if (timer_subscribe_int(&bit_no) != 0) {return 1;} //subscribes/activates interrupts for the timer
   irq_set = BIT(bit_no);
 
   while (time > 0) {
@@ -75,8 +75,8 @@ int(timer_test_int)(uint8_t time) {
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: {
           if (msg.m_notify.interrupts & irq_set) {
-            timer_int_handler();
-            if (globalCounter % 60 == 0) {
+            timer_int_handler();  //increments global counter
+            if (globalCounter % 60 == 0) {  //when global counter equals to a minute passed, decrement the time remaining
               timer_print_elapsed_time();
               time--;
             }
@@ -89,7 +89,7 @@ int(timer_test_int)(uint8_t time) {
     }
   }
 
-  if (timer_unsubscribe_int() != 0) {return 1;}
+  if (timer_unsubscribe_int() != 0) {return 1;} //unsubscribes interrupts for the timer
   return 0; 
 }
 
