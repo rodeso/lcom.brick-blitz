@@ -5,12 +5,3767 @@
     "keyboard_subscribe_int is running!"
   @interrupt.c:66, keyboard_subscribe_int
     sys_irqsetpolicy(IRQ1_VECTOR, IRQ_REENABLE|IRQ_EXCLUSIVE, &hook_id)
-  > sys_irqsetpolicy(1, 3, addr: 0x822d9a8 [1])
-  < sys_irqsetpolicy(1, 3, addr: 0x822d9a8 [10]) -> (ret: 0)
-  @lab3.c:53, kbd_test_scan
+  > sys_irqsetpolicy(1, 3, addr: 0x822d9b8 [1])
+  < sys_irqsetpolicy(1, 3, addr: 0x822d9b8 [10]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
     driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff754)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
-  @lab3.c:53, kbd_test_scan
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x9c = 0b10011100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x9c"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x9c]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
     driver_receive(ANY, &msg, &ipc_status)
-  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff754)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x24 = 0b00100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x24"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x24]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa4 = 0b10100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa4"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa4]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x26 = 0b00100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x26"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x26]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x25 = 0b00100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x25"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x25]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa5 = 0b10100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa5"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa5]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa6 = 0b10100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa6"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa6]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x24 = 0b00100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x24"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x24]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa4 = 0b10100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa4"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa4]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x26 = 0b00100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x26"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x26]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa6 = 0b10100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa6"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa6]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x24 = 0b00100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x24"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x24]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x26 = 0b00100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x26"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x26]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa4 = 0b10100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa4"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa4]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa6 = 0b10100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa6"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa6]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x11 = 0b00010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x11"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x11]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x26 = 0b00100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x26"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x26]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x25 = 0b00100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x25"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x25]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x91 = 0b10010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x91"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x91]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa5 = 0b10100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa5"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa5]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa6 = 0b10100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa6"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa6]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x24 = 0b00100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x24"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x24]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x26 = 0b00100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x26"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x26]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x11 = 0b00010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x11"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x11]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa4 = 0b10100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa4"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa4]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x24 = 0b00100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x24"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x24]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa6 = 0b10100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa6"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa6]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x91 = 0b10010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x91"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x91]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa4 = 0b10100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa4"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa4]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x25 = 0b00100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x25"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x25]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x11 = 0b00010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x11"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x11]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x24 = 0b00100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x24"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x24]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa5 = 0b10100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa5"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa5]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa4 = 0b10100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa4"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa4]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x25 = 0b00100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x25"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x25]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x26 = 0b00100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x26"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x26]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa6 = 0b10100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa6"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa6]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa5 = 0b10100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa5"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa5]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x24 = 0b00100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x24"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x24]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x91 = 0b10010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x91"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x91]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x25 = 0b00100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x25"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x25]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa4 = 0b10100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa4"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa4]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa5 = 0b10100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa5"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa5]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x24 = 0b00100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x24"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x24]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x25 = 0b00100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x25"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x25]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa4 = 0b10100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa4"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa4]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x11 = 0b00010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x11"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x11]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa5 = 0b10100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa5"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa5]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x24 = 0b00100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x24"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x24]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x91 = 0b10010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x91"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x91]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa4 = 0b10100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa4"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa4]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x11 = 0b00010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x11"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x11]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x91 = 0b10010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x91"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x91]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x24 = 0b00100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x24"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x24]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x26 = 0b00100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x26"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x26]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x25 = 0b00100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x25"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x25]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x11 = 0b00010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x11"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x11]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa4 = 0b10100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa4"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa4]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa5 = 0b10100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa5"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa5]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa6 = 0b10100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa6"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa6]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x91 = 0b10010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x91"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x91]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x24 = 0b00100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x24"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x24]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x25 = 0b00100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x25"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x25]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x26 = 0b00100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x26"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x26]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa4 = 0b10100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa4"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa4]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x11 = 0b00010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x11"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x11]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa5 = 0b10100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa5"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa5]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa6 = 0b10100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa6"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa6]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x91 = 0b10010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x91"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x91]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x24 = 0b00100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x24"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x24]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x25 = 0b00100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x25"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x25]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa4 = 0b10100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa4"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa4]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa5 = 0b10100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa5"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa5]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x11 = 0b00010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x11"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x11]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x91 = 0b10010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x91"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x91]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x24 = 0b00100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x24"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x24]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x25 = 0b00100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x25"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x25]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x26 = 0b00100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x26"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x26]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa4 = 0b10100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa4"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa4]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x11 = 0b00010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x11"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x11]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa6 = 0b10100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa6"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa6]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa5 = 0b10100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa5"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa5]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x24 = 0b00100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x24"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x24]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x20 = 0b00100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x20"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x20]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x91 = 0b10010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x91"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x91]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x25 = 0b00100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x25"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x25]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x26 = 0b00100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x26"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x26]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa4 = 0b10100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa4"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa4]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa0 = 0b10100000])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa0"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa0]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x11 = 0b00010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x11"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x11]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa5 = 0b10100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa5"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa5]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x24 = 0b00100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x24"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x24]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa6 = 0b10100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa6"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa6]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x91 = 0b10010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x91"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x91]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x25 = 0b00100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x25"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x25]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x26 = 0b00100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x26"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x26]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa4 = 0b10100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa4"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa4]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x24 = 0b00100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x24"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x24]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x12 = 0b00010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x12"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x12]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x11 = 0b00010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x11"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x11]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa5 = 0b10100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa5"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa5]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x91 = 0b10010001])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x91"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x91]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa4 = 0b10100100])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa4"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa4]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x92 = 0b10010010])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0x92"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0x92]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa6 = 0b10100110])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa6"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa6]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x25 = 0b00100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x25"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x25]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0x23 = 0b00100011])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Makecode: 0x23"
+  < kbd_print_scancode(true, 1, addr: 0x8249765 [0x23]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa3 = 0b10100011])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa3"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa3]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab3.c:66, kbd_test_scan
+    kbc_ih()
+    @interrupt.c:40, kbc_ih
+      printf("%s is running!\n", __func__)
+      "kbc_ih is running!"
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x64, addr: 0xeffff61c)
+    < sys_inb(0x64, addr: 0xeffff61c [0x1d = 0b00011101])
+    @interrupt.c:90, util_sys_inb
+      sys_inb(port, &temporary_value)
+    > sys_inb(0x60, addr: 0xeffff620)
+    < sys_inb(0x60, addr: 0xeffff620 [0xa5 = 0b10100101])
+  @lab3.c:68, kbd_test_scan
+    kbd_print_scancode(isMake, size, scancodes)
+    "Breakcode: 0xa5"
+  < kbd_print_scancode(false, 1, addr: 0x8249765 [0xa5]) -> (ret: 0)
+  @lab3.c:58, kbd_test_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff710, addr: 0xeffff758)

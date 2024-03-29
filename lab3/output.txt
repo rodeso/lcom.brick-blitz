@@ -1,1 +1,359 @@
 keyboard_subscribe_int is running!
+kbc_ih is running!
+Breakcode: 0x9c
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Makecode: 0x24
+kbc_ih is running!
+Breakcode: 0xa4
+kbc_ih is running!
+Makecode: 0x26
+kbc_ih is running!
+Makecode: 0x25
+kbc_ih is running!
+Breakcode: 0xa5
+kbc_ih is running!
+Breakcode: 0xa6
+kbc_ih is running!
+Makecode: 0x24
+kbc_ih is running!
+Breakcode: 0xa4
+kbc_ih is running!
+Makecode: 0x26
+kbc_ih is running!
+Breakcode: 0xa6
+kbc_ih is running!
+Makecode: 0x24
+kbc_ih is running!
+Makecode: 0x26
+kbc_ih is running!
+Breakcode: 0xa4
+kbc_ih is running!
+Breakcode: 0xa6
+kbc_ih is running!
+Makecode: 0x11
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Makecode: 0x26
+kbc_ih is running!
+Makecode: 0x25
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Breakcode: 0x91
+kbc_ih is running!
+Breakcode: 0xa5
+kbc_ih is running!
+Breakcode: 0xa6
+kbc_ih is running!
+Makecode: 0x24
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Makecode: 0x26
+kbc_ih is running!
+Makecode: 0x11
+kbc_ih is running!
+Breakcode: 0xa4
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Makecode: 0x24
+kbc_ih is running!
+Breakcode: 0xa6
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Breakcode: 0x91
+kbc_ih is running!
+Breakcode: 0xa4
+kbc_ih is running!
+Makecode: 0x25
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Makecode: 0x11
+kbc_ih is running!
+Makecode: 0x24
+kbc_ih is running!
+Breakcode: 0xa5
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Breakcode: 0xa4
+kbc_ih is running!
+Makecode: 0x25
+kbc_ih is running!
+Makecode: 0x26
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Breakcode: 0xa6
+kbc_ih is running!
+Breakcode: 0xa5
+kbc_ih is running!
+Makecode: 0x24
+kbc_ih is running!
+Breakcode: 0x91
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Makecode: 0x25
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Breakcode: 0xa4
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Breakcode: 0xa5
+kbc_ih is running!
+Makecode: 0x24
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Makecode: 0x25
+kbc_ih is running!
+Breakcode: 0xa4
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Makecode: 0x11
+kbc_ih is running!
+Breakcode: 0xa5
+kbc_ih is running!
+Makecode: 0x24
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Breakcode: 0x91
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Breakcode: 0xa4
+kbc_ih is running!
+Makecode: 0x11
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Breakcode: 0x91
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Makecode: 0x24
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Makecode: 0x26
+kbc_ih is running!
+Makecode: 0x25
+kbc_ih is running!
+Makecode: 0x11
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Breakcode: 0xa4
+kbc_ih is running!
+Breakcode: 0xa5
+kbc_ih is running!
+Breakcode: 0xa6
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Breakcode: 0x91
+kbc_ih is running!
+Makecode: 0x24
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Makecode: 0x25
+kbc_ih is running!
+Makecode: 0x26
+kbc_ih is running!
+Breakcode: 0xa4
+kbc_ih is running!
+Makecode: 0x11
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Breakcode: 0xa5
+kbc_ih is running!
+Breakcode: 0xa6
+kbc_ih is running!
+Breakcode: 0x91
+kbc_ih is running!
+Makecode: 0x24
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Makecode: 0x25
+kbc_ih is running!
+Breakcode: 0xa4
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Breakcode: 0xa5
+kbc_ih is running!
+Makecode: 0x11
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Breakcode: 0x91
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Makecode: 0x24
+kbc_ih is running!
+Makecode: 0x25
+kbc_ih is running!
+Makecode: 0x26
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Breakcode: 0xa4
+kbc_ih is running!
+Makecode: 0x11
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Breakcode: 0xa6
+kbc_ih is running!
+Breakcode: 0xa5
+kbc_ih is running!
+Makecode: 0x24
+kbc_ih is running!
+Makecode: 0x20
+kbc_ih is running!
+Breakcode: 0x91
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Makecode: 0x25
+kbc_ih is running!
+Makecode: 0x26
+kbc_ih is running!
+Breakcode: 0xa4
+kbc_ih is running!
+Breakcode: 0xa0
+kbc_ih is running!
+Makecode: 0x11
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Breakcode: 0xa5
+kbc_ih is running!
+Makecode: 0x24
+kbc_ih is running!
+Breakcode: 0xa6
+kbc_ih is running!
+Breakcode: 0x91
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Makecode: 0x25
+kbc_ih is running!
+Makecode: 0x26
+kbc_ih is running!
+Breakcode: 0xa4
+kbc_ih is running!
+Makecode: 0x24
+kbc_ih is running!
+Makecode: 0x12
+kbc_ih is running!
+Makecode: 0x11
+kbc_ih is running!
+Breakcode: 0xa5
+kbc_ih is running!
+Breakcode: 0x91
+kbc_ih is running!
+Breakcode: 0xa4
+kbc_ih is running!
+Breakcode: 0x92
+kbc_ih is running!
+Breakcode: 0xa6
+kbc_ih is running!
+Makecode: 0x25
+kbc_ih is running!
+Makecode: 0x23
+kbc_ih is running!
+Breakcode: 0xa3
+kbc_ih is running!
+Breakcode: 0xa5

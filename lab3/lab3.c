@@ -43,12 +43,17 @@ int main(int argc, char *argv[]) {
 
 int(kbd_test_scan)() {
   int size = 1;
-  int r;
-  uint8_t keyboard_mask;
-  int ipc_status;
+  int ipc_status,r;
   message msg;
-  if (keyboard_subscribe_int(&keyboard_mask))
-    return 1;
+
+  uint32_t keyboard_mask=0;
+  uint8_t bit_no=0;
+
+
+  if (keyboard_subscribe_int(&bit_no)!=0) {return 1;}
+  keyboard_mask=BIT(bit_no);
+
+
   while (scancodes[scancode_curr_byte] != ESC_SCANCODE) {
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("Error");
@@ -99,13 +104,19 @@ int(kbd_test_poll)() {
 
 int(kbd_test_timed_scan)(uint8_t n) {
   int size = 1;
-  uint8_t keyboard_mask;
-  int ipc_status;
+  int ipc_status,r;
   message msg;
-  if (keyboard_subscribe_int(&keyboard_mask))
-    return 1;
+
+  uint32_t keyboard_mask=0;
+  uint8_t bit_no=0;
+
+
+  if (keyboard_subscribe_int(&bit_no)!=0) {return 1;}
+  keyboard_mask=BIT(bit_no);
+
+
   while (scancodes[scancode_curr_byte] != ESC_SCANCODE) {
-    if (driver_receive(ANY, &msg, &ipc_status) != 0) {
+    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("Error");
       continue;
     }
@@ -117,7 +128,7 @@ int(kbd_test_timed_scan)(uint8_t n) {
             if (!big_scancode) {
               kbd_print_scancode(isMake, size, scancodes);
               size = 1;
-
+              
             }
             else
               size = 2;
