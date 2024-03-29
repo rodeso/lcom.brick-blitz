@@ -11,6 +11,7 @@ extern int scancode_curr_byte;
 
 extern bool isMake;
 extern bool big_scancode;
+extern int globalCounter;
 
 
 
@@ -77,8 +78,6 @@ int(kbd_test_scan)() {
           break;
       }
     }
-    else {
-    }
   }
   if (keyboard_unsubscribe_int())
     return 1;
@@ -107,15 +106,21 @@ int(kbd_test_timed_scan)(uint8_t n) {
   int ipc_status,r;
   message msg;
 
+  int time_passed=0;
+
+  uint32_t timer_mask=0;
+  uint8_t bit_no1=0;
   uint32_t keyboard_mask=0;
-  uint8_t bit_no=0;
+  uint8_t bit_no2=0;
 
 
-  if (keyboard_subscribe_int(&bit_no)!=0) {return 1;}
-  keyboard_mask=BIT(bit_no);
+  if (timer_subscribe_int(&bit_no1)!=0) {return 1;}
+  timer_mask=BIT(bit_no1);
+  if (keyboard_subscribe_int(&bit_no2)!=0) {return 1;}
+  keyboard_mask=BIT(bit_no2);
 
 
-  while (scancodes[scancode_curr_byte] != ESC_SCANCODE) {
+  while (scancodes[scancode_curr_byte] != ESC_SCANCODE && time_passed < n) {
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("Error");
       continue;
@@ -123,6 +128,14 @@ int(kbd_test_timed_scan)(uint8_t n) {
     if (is_ipc_notify(ipc_status)) {
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE:
+
+          if (msg.m_notify.interrupts & timer_mask) {
+            timer_int_handler();
+            if (globalCounter % 60==0) {
+                time_passed++;
+            }
+          }
+
           if (msg.m_notify.interrupts & keyboard_mask) {
             kbc_ih();
             if (!big_scancode) {
@@ -133,12 +146,11 @@ int(kbd_test_timed_scan)(uint8_t n) {
             else
               size = 2;
           }
+
           break;
         default:
           break;
       }
-    }
-    else {
     }
   }
   if (keyboard_unsubscribe_int())

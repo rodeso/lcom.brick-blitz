@@ -1,7 +1,7 @@
 #include <interrupt.h>
 #include <lcom/lcf.h>
 
-int hook_id=0;
+int hook_id2=0;
 uint8_t scancodes[2];
 int scancode_curr_byte=0;
 bool big_scancode = false;
@@ -60,10 +60,10 @@ int (keyboard_subscribe_int)(uint8_t *bit_no) {
 
     if(bit_no==NULL) {return 1;}
     
-    hook_id=KEYBOARD_IRQ;
-    *bit_no=hook_id;
+    hook_id2=KEYBOARD_IRQ;
+    *bit_no=hook_id2;
 
-    int pol = sys_irqsetpolicy(IRQ1_VECTOR,IRQ_REENABLE|IRQ_EXCLUSIVE,&hook_id);
+    int pol = sys_irqsetpolicy(IRQ1_VECTOR,IRQ_REENABLE|IRQ_EXCLUSIVE,&hook_id2);
     if (pol==1) {return 1;}
 
     return 0;
@@ -74,24 +74,10 @@ int (keyboard_unsubscribe_int)() {
 
     printf("%s is running!\n", __func__);
 
-    int pol = sys_irqrmpolicy(&hook_id);
+    int pol = sys_irqrmpolicy(&hook_id2);
     if (pol==1) {return 1;}
 
     return 0;
-}
-
-int (util_sys_inb)(int port, uint8_t *value) {
-
-  if (value == NULL) return 1;
-
-  uint32_t temporary_value=0;
-  int res;
-
-  res = sys_inb(port,&temporary_value);
-  if (res == 1) return 1;
-  *value = (uint8_t)temporary_value;
-
-  return res;
 }
 
 

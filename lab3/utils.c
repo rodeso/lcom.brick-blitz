@@ -27,16 +27,15 @@ int(util_get_MSB)(uint16_t val, uint8_t *msb) {
 }
 
 int (util_sys_inb)(int port, uint8_t *value) {
-  /* To be implemented by the students */
 
-  uint32_t temporary_value=0x0000;
+  if (value == NULL) return 1;
+
+  uint32_t temporary_value=0;
   int res;
 
   res = sys_inb(port,&temporary_value);
+  if (res == 1) return 1;
+  *value = (uint8_t)temporary_value;
 
-  if (res==0) {value=(uint8_t*)temporary_value;}
-
-
-  printf("%s is running!\n", __func__);
   return res;
 }

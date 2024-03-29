@@ -6,7 +6,7 @@
 #include "i8254.h"
 
 int globalCounter = 0;
-int hook_id=0;
+int hook_id1=0;
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   
@@ -61,10 +61,10 @@ int (timer_subscribe_int)(uint8_t *bit_no) {
 
   if(bit_no==NULL) {return 1;}
 
-  hook_id= TIMER0_IRQ;
-  *bit_no=hook_id;
+  hook_id1= TIMER0_IRQ;
+  *bit_no=hook_id1;
 
-  int pol= sys_irqsetpolicy(TIMER0_IRQ,IRQ_REENABLE,&hook_id);
+  int pol= sys_irqsetpolicy(TIMER0_IRQ,IRQ_REENABLE,&hook_id1);
   if (pol==1) {return 1;}
 
   return 0;
@@ -74,7 +74,7 @@ int (timer_unsubscribe_int)() {
 
   printf("%s is running!\n", __func__);
 
-  int pol = sys_irqrmpolicy(&hook_id);
+  int pol = sys_irqrmpolicy(&hook_id1);
   if (pol==1) {return 1;}
 
   return 0;
