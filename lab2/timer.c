@@ -16,7 +16,8 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 
 
   uint8_t cw;
-  int rea = timer_get_conf(timer,&cw); //gets and reads the timers control world
+  int 
+  rea = timer_get_conf(timer,&cw); //gets and reads the timers control world
   if (rea==1) {return 1;}
 
   cw = (cw & 0xF) | TIMER_LSB_MSB; //Maintains the 4 LSBs and cleans the rest, and then inputs the operating mode
