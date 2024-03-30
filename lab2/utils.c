@@ -19,8 +19,7 @@ int(util_get_MSB)(uint16_t val, uint8_t *msb) {
 
   if (msb==NULL) {return 1;}
 
-  uint16_t filter = (val & 0xFF00);
-  *msb = (uint8_t)filter;
+  *msb = val >> 8;
 
   printf("%s is running!\n", __func__);
   return 0;
