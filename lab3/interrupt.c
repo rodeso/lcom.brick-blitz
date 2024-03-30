@@ -43,6 +43,7 @@ void (kbc_ih)() {
 
     read_scancode(OUTPUT_BUFFER_KEYBOARD, &scancodes[scancode_curr_byte]); //reading process
 
+    big_scancode=false;
     if (scancodes[scancode_curr_byte]==0xE0) { //if the scancode is long
         scancode_curr_byte=1;
         big_scancode=true;
