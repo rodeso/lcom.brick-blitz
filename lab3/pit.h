@@ -1,9 +1,9 @@
-#ifndef _LCOM_I8254_H_
-#define _LCOM_I8254_H_
+#ifndef _LCOM_PIT_H_
+#define _LCOM_PIT_H_
 
 #include <lcom/lcf.h>
 
-/** @defgroup i8254 i8254
+/** @defgroup i8254 i8254 Programmable Interval Timer
  * @{
  *
  * Constants for programming the i8254 Timer. Needs to be completed.
@@ -54,4 +54,4 @@
 
 /**@}*/
 
-#endif /* _LCOM_I8254_H */
+#endif 

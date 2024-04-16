@@ -1,5 +1,5 @@
-#ifndef _LCOM_INTERRUPT_H_
-#define _LCOM_INTERRUPT_H_
+#ifndef _LCOM_KBC_H_
+#define _LCOM_KBC_H_
 #pragma once
 
 #include <minix/sysutil.h>

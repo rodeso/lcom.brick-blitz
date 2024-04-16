@@ -1,4 +1,4 @@
-#include <interrupt.h>
+#include "kbc.h"
 #include <lcom/lcf.h>
 
 int hook_id2=0;
