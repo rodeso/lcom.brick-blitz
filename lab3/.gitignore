@@ -1,0 +1,8 @@
+#Object files
+*.o
+lab3
+
+#Useless files
+.gdbinit
+trace.txt
+output.txt
