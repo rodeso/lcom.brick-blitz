@@ -1,5 +1,6 @@
 #include "vbe.h"
 #include "pit.h"
+#include "kbc.h"
 
 
 static char *video_mem;		/* Process (virtual) address to which VRAM is mapped */
@@ -131,15 +132,16 @@ int (vbe_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf
   message msg;
   uint32_t irq_set = 0;
   uint8_t bit_no = 0;
-
+  bool flag = true;
 
   if (timer_subscribe_int(&bit_no) != 0) {return 1;} //subscribes/activates interrupts for the timer
   irq_set = BIT(bit_no);
 
-  //if(vbe_draw_xpm(xpm, xi, yi) != 0) {return 1;}
+  if(vbe_draw_xpm(xpm, xi, yi) != 0) {return 1;}
 
   if(isFPS) {
-      while (x <= xf && y <= yf) {
+
+      while (flag) {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
           printf("driver_receive failed: %d\n", r);
           continue;
@@ -148,11 +150,14 @@ int (vbe_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf
           switch (_ENDPOINT_P(msg.m_source)) {
             case HARDWARE: {
               if (msg.m_notify.interrupts & irq_set) {
-                Counter++;            
+                Counter++;
+            
                 if (Counter % (60/fr_rate) == 0) { //fps is frames per minute so 60/fr is fps, every fps do action
-                  x=x+speed;
-                  y=y+speed;
-                  if(vbe_draw_xpm(xpm, x, y) != 0) {return 1;}
+                  if (x != xf) {x+=speed;}
+                  if (y != yf) {y+=speed;}
+                  if (x == xf && y == yf) {flag = FALSE;}
+                  if (flag){if(vbe_draw_xpm(xpm, x, y) != 0) {return 1;}}
+                  
                 }
               }
             break;
@@ -166,7 +171,7 @@ int (vbe_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf
   } else {
       speed = 0 - speed;
       int counter=0;
-      while (x <= xf && y <= yf) {
+      while (flag) {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
           printf("driver_receive failed: %d\n", r);
           continue;
@@ -176,13 +181,14 @@ int (vbe_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf
             case HARDWARE: {
               if (msg.m_notify.interrupts & irq_set) {
                   Counter++;
+
                 if (Counter % (60/fr_rate) == 0) {  //fps is frames per second so 60/fr to get fps, every fps do action
                   counter++;
                   if (counter == speed) {
-                    x=x+1;
-                    y=y+1;
-                    counter=0;
-                    if(vbe_draw_xpm(xpm, x, y) != 0) {return 1;}
+                    if (x != xf) {x++;}
+                    if (y != yf) {y++;}
+                    if (x == xf && y == yf) {flag = FALSE;}
+                    if (flag){counter=0;if(vbe_draw_xpm(xpm, x, y) != 0) {return 1;}}
                   }
                 }
               }
