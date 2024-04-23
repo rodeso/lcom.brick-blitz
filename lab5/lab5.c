@@ -59,7 +59,6 @@ int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y, uint16_t width,
 
   if(vbe_draw_rectangle(x, y, width, height, color) != 0) {return 1;}
 
-
   if (kbc_ESC_exit() != 0) return 1;
   if (vg_exit() != 0) return 1;
 
@@ -90,13 +89,29 @@ int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
   return 0;
 }
 
-int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf,
-                     int16_t speed, uint8_t fr_rate) {
-  /* To be completed */
-  printf("%s(%8p, %u, %u, %u, %u, %d, %u): under construction\n",
-         __func__, xpm, xi, yi, xf, yf, speed, fr_rate);
+int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf,int16_t speed, uint8_t fr_rate) {
 
-  return 1;
+              
+  uint16_t mode = 0x105;
+
+
+  if(vbe_set_display_mode(mode) != 0) {return 1;}
+
+  if(vbe_mapping_videoRAM_to_address_space(mode) != 0) {return 1;}
+
+
+  //if speed>0 a distance, x=x+speed until x==xf ..same for y
+  //if speed<0 a cada speed, frame, x=x+1 until x==xf ..same for y
+  
+
+  if (vbe_move(xpm, xi, yi, xf, yf, speed, fr_rate) !=0 ) {return 1;}
+
+
+  if (kbc_ESC_exit() != 0) return 1;
+  if (vg_exit() != 0) return 1;
+
+  return 0;
+
 }
 
 int(video_test_controller)() {

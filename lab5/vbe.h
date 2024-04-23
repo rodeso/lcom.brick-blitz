@@ -12,7 +12,6 @@
 
 vbe_mode_info_t vmi_p;
   
-//int (vbe_display_vbe_contr_info)(struct vg_vbe_contr_info *info_p);
 
 
 
@@ -27,3 +26,5 @@ int (vbe_draw_line)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
 int (vbe_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color);
 
 int (vbe_draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y);
+
+int (vbe_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf,int16_t speed, uint8_t fr_rate);
