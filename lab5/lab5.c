@@ -82,9 +82,12 @@ int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
 
   if(vbe_mapping_videoRAM_to_address_space(mode) != 0) {return 1;}
 
+  if(vbe_draw_xpm(xpm,x,y) != 0) {return 1;}
   
+  if (kbc_ESC_exit() != 0) return 1;
+  if (vg_exit() != 0) return 1;
 
-  return 1;
+  return 0;
 }
 
 int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf,

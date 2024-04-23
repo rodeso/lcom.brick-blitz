@@ -82,7 +82,7 @@ int (vbe_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
 
 
 
-int (vbe_draw_hline)(uint16_t x,uint16_t y,uint16_t len, uint32_t color) {
+int (vbe_draw_line)(uint16_t x,uint16_t y,uint16_t len, uint32_t color) {
   for (int i = 0; i<len;i++) {
     if(vbe_draw_pixel(x+i,y, color)) return 1;
   }
@@ -93,7 +93,23 @@ int (vbe_draw_hline)(uint16_t x,uint16_t y,uint16_t len, uint32_t color) {
 
 int (vbe_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
   for (int i = 0; i<height; i++) {
-    if(vbe_draw_hline(x,y+i,width, color)) return 1;
+    if(vbe_draw_line(x,y+i,width, color)) return 1;
+  }
+  return 0;
+}
+
+
+int (print_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
+
+  xpm_image_t img;
+
+  uint8_t *c = xpm_load(xpm, XPM_INDEXED, &img);
+
+  for (int h = 0 ; h < img.height ; h++) {
+    for (int w = 0 ; w < img.width ; w++) {
+      if (vbe_draw_pixel(x + w, y + h, *c) != 0) return 1;
+      c++; 
+    }
   }
   return 0;
 }
