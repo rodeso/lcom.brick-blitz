@@ -1,5 +1,6 @@
 #include "vbe.h"
 
+
 static char *video_mem;		/* Process (virtual) address to which VRAM is mapped */
 
 
@@ -57,8 +58,7 @@ int (vbe_mapping_videoRAM_to_address_space)(uint16_t mode) {
       panic("sys_privctl (ADD_MEM) failed: %d\n", r);
   }
 
-  if(video_mem == vm_map_phys(SELF, (void *)mr.mr_base, vram_size)) {return 1;};
-
+  video_mem = vm_map_phys(SELF, (void *)mr.mr_base, vram_size);
   if(video_mem == MAP_FAILED) {
       panic("couldn't map video memory");
   }

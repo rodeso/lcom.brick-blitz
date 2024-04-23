@@ -122,21 +122,25 @@ int (write_command)(uint8_t port, uint8_t the_command) {
 }
 
 int (kbc_ESC_exit)() {
-  int ipc_status;
+  int ipc_status,r=0;
   message msg;
-  uint8_t bit_no=0x10, scancode=0x00;
+  uint8_t scancode=0x00;
 
+  uint32_t keyboard_mask=0;
+  uint8_t bit_no=0;
 
   if(keyboard_subscribe_int(&bit_no) != 0) return 1;
+  keyboard_mask=BIT(bit_no);
+
   while (scancode != ESC_SCANCODE){
-    if (driver_receive(ANY, &msg, &ipc_status) != 0) { 
+    if ((r=driver_receive(ANY, &msg, &ipc_status)) != 0) { 
       printf("driver_receive failed");
       continue;
     }
     if (is_ipc_notify(ipc_status)) {
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: 
-          if (msg.m_notify.interrupts & bit_no) 
+          if (msg.m_notify.interrupts & keyboard_mask) 
             read_scancode(OUTPUT_BUFFER_KEYBOARD, &scancode);
           break;
         default:
