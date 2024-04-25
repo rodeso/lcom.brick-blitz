@@ -74,11 +74,8 @@ int(kbd_test_scan)() {  //reading the scancodes via KBD interrupts. ESC ends the
               size = 2;
           }
           break;
-        default:
-          break;
-      }
-    }
-  }
+        default:    printf("%s is running!\n", __func__);
+
   if (keyboard_unsubscribe_int()) //unsubscribes the interrupts
     return 1;
 

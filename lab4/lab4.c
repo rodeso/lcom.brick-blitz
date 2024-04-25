@@ -4,6 +4,13 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#include "ps2.h"
+#include "pit.h"
+
+extern uint8_t byte_index;
+extern struct packet mouse_packet;
+
+
 // Any header files included below this line should have been created by you
 
 int main(int argc, char *argv[]) {
@@ -32,9 +39,47 @@ int main(int argc, char *argv[]) {
 
 
 int (mouse_test_packet)(uint32_t cnt) {
-    /* To be completed */
-    printf("%s(%u): under construction\n", __func__, cnt);
+  int ipc_status,r;
+  message msg;
+
+  uint32_t mouse_mask=0;
+  uint8_t bit_no=0;
+
+  if (mouse_subscribe_int(&bit_no)!=0) {return 1;} //subscribes/activates the interrupts
+  mouse_mask=BIT(bit_no);
+
+  
+  if(mouse_write_data(0XF4)!=0) {return 1;}; //Enable stream mode Data Reporting
+
+  while (cnt){
+    if ((r=driver_receive(ANY, &msg, &ipc_status)) != 0) { 
+      printf("driver_receive failed");
+      continue;
+    }
+    if (is_ipc_notify(ipc_status)) {
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE: 
+          if (msg.m_notify.interrupts & mouse_mask) 
+            mouse_ih();
+            mouse_sync_bytes();
+            if (byte_index==3) {
+              mouse_bytes_to_packet();
+              mouse_print_packet(&mouse_packet);
+              byte_index=0;
+              cnt--;
+            }
+          break;
+        default:
+          break; 
+      }
+    }
+  }
+
+  if(mouse_write_data(0XF5)!=0) {return 1;}; //Disable stream mode Data Reporting
+
+  if (mouse_unsubscribe_int()!=0){return 1;}
     return 1;
+
 }
 
 int (mouse_test_async)(uint8_t idle_time) {
@@ -43,14 +88,9 @@ int (mouse_test_async)(uint8_t idle_time) {
     return 1;
 }
 
-int (mouse_test_gesture)() {
-    /* To be completed */
+/*int (mouse_test_gesture)() {
     printf("%s: under construction\n", __func__);
     return 1;
-}
+}*/
 
-int (mouse_test_remote)(uint16_t period, uint8_t cnt) {
-    /* This year you need not implement this. */
-    printf("%s(%u, %u): under construction\n", __func__, period, cnt);
-    return 1;
-}
+
