@@ -38,29 +38,29 @@ int (read_KBC_outbuf)(uint8_t port, uint8_t *output, uint8_t mouse){
     int keep_trying = 0;
     while (keep_trying < 20){
 
-    //read status
-    uint8_t status;
-    if (read_status_register(&status)) return 1;
+        //read status
+        uint8_t status;
+        if (read_status_register(&status)) return 1;
 
-    //if buffer  full
-    if (status & OUTPUT_BUFFER_FULL){
+        //if buffer  full
+        if (status & OUTPUT_BUFFER_FULL){
 
-      //if there are no errors
-      if (!(((status & TIMEOUT_ERROR) || (status & PARITY_ERROR))) ){
+          //if there are no errors
+          if (!(((status & TIMEOUT_ERROR) || (status & PARITY_ERROR))) ){
 
-        if (mouse && !(status & BIT(5))) return 1;
-        if (!mouse && (status & BIT(5))) return 1;
+            if (mouse && !(status & BIT(5))) return 1;
+            if (!mouse && (status & BIT(5))) return 1;
 
-        //read and return
-        if (util_sys_inb(port,output)) return 1;
-        return 0;
-      } 
+            //read and return
+            if (util_sys_inb(port,output)) return 1;
+            return 0;
+          } 
 
-      else return 1;
+          else return 1;
+        }
+        tickdelay(micros_to_ticks(20000));
+        keep_trying++;
     }
-    tickdelay(micros_to_ticks(20000));
-    keep_trying++;
-  }
 
   return 1;
 }
@@ -121,6 +121,42 @@ int (write_command)(uint8_t port, uint8_t the_command) {
         trying++;
     }
     return 1;
+}
+
+int(util_get_LSB)(uint16_t val, uint8_t *lsb) {
+  /* To be implemented by the students */
+
+  if (lsb==NULL) {return 1;}
+
+  uint16_t filter = (val & 0xFF);
+  *lsb = (uint8_t)filter;
+  
+  printf("%s is running!\n", __func__);
+  return 0;
+}
+
+int(util_get_MSB)(uint16_t val, uint8_t *msb) {
+  /* To be implemented by the students */
+
+  if (msb==NULL) {return 1;}
+
+  *msb = val >> 8;
+
+  printf("%s is running!\n", __func__);
+  return 0;
+}
+int (util_sys_inb)(int port, uint8_t *value) {
+
+  if (value == NULL) return 1;
+
+  uint32_t temporary_value=0;
+  int res;
+
+  res = sys_inb(port,&temporary_value);
+  if (res == 1) return 1;
+  *value = (uint8_t)temporary_value;
+
+  return res;
 }
 
 

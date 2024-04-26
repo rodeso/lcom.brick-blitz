@@ -3,7 +3,7 @@
 #include "kbc.h"
 
 
-int hook_id=0;
+int hook_id3=0;
 uint8_t response=0;
 uint8_t bytes[3];
 uint8_t byte_index=0;
@@ -59,10 +59,10 @@ int (mouse_subscribe_int)(uint8_t *bit_no) {
 
     if(bit_no==NULL) {return 1;}
     
-    hook_id=KEYBOARD_IRQ;
-    *bit_no=hook_id;
+    hook_id3=KEYBOARD_IRQ;
+    *bit_no=hook_id3;
 
-    int pol = sys_irqsetpolicy(IRQ_LINE_MOUSE,IRQ_REENABLE|IRQ_EXCLUSIVE,&hook_id);
+    int pol = sys_irqsetpolicy(IRQ_LINE_MOUSE,IRQ_REENABLE|IRQ_EXCLUSIVE,&hook_id3);
     if (pol==1) {return 1;}
 
     return 0;
@@ -70,7 +70,7 @@ int (mouse_subscribe_int)(uint8_t *bit_no) {
 
 int (mouse_unsubscribe_int)() {
 
-    int pol = sys_irqrmpolicy(&hook_id);
+    int pol = sys_irqrmpolicy(&hook_id3);
     if (pol==1) {return 1;}
 
     return 0;
