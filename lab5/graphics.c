@@ -116,6 +116,20 @@ int (vbe_draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
 }
 
 
+int (vbe_delete_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
+
+  xpm_image_t img;
+
+  xpm_load(xpm, XPM_INDEXED, &img);
+
+  for (int h = 0 ; h < img.height ; h++) {
+    for (int w = 0 ; w < img.width ; w++) {
+      if (vbe_draw_pixel(x + w, y + h, 0x0) != 0) return 1; 
+    }
+  }
+  return 0;
+}
+
 
 int (vbe_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf, int16_t speed, uint8_t fr_rate) {
 
@@ -156,7 +170,10 @@ int (vbe_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf
                   if (x != xf) {x+=speed;}
                   if (y != yf) {y+=speed;}
                   if (x == xf && y == yf) {flag = FALSE;}
-                  if (flag){if(vbe_draw_xpm(xpm, x, y) != 0) {return 1;}}
+                  if (flag){
+                    if(vbe_delete_xpm(xpm, x-speed, y-speed) != 0) {return 1;}
+                    if(vbe_draw_xpm(xpm, x, y) != 0) {return 1;}
+                  }
                 }
               }
             break;
@@ -186,7 +203,11 @@ int (vbe_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf
                     if (x != xf) {x++;}
                     if (y != yf) {y++;}
                     if (x == xf && y == yf) {flag = FALSE;}
-                    if (flag){counter=0;if(vbe_draw_xpm(xpm, x, y) != 0) {return 1;}}
+                    if (flag){
+                      counter=0;
+                      if(vbe_delete_xpm(xpm, x-1, y-1) != 0) {return 1;}
+                      if(vbe_draw_xpm(xpm, x, y) != 0) {return 1;}
+                    }
                   }
                 }
               }
