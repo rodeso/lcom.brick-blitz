@@ -11,11 +11,11 @@ int(vbe_set_display_mode)(uint16_t mode) {
   memset(&r86, 0, sizeof(r86));
 
   r86.intno=0x10;
-  r86.ah=0x4F; //Invoking VBE function...
-  r86.al=0x02;  //0x02 - Set VBE Mode
-  r86.bx=mode;  //Selection of the mode
+  r86.ah=0x4F; //Distinguishing it from the standard VGA BIOS functions.
+  r86.al=0x02;  //VBE function being called: 0x02 - Set VBE Mode
+  r86.bx=mode;  //Selection of the Mode
 
-  r86.bx = r86.bx | BIT(14);
+  r86.bx = r86.bx | BIT(14); //Bit 14 of BX register should be set, to set the linear frame buffer model, which facilitates access to video RAM (VRAM)
 
   if(sys_int86(&r86)) {return 1;}
   
@@ -46,7 +46,7 @@ int (vbe_mapping_videoRAM_to_address_space)(uint16_t mode) {
   int r;
   
   
-  if(vbe_get_mode_info(mode,&vmi_p)!=0) {return 1;}
+  if(vbe_get_mode_info(mode,&vmi_p)!=0) {return 1;} //takes as arguments the mode and a real-mode address of a buffer (vmi_p) that will be filled with the parameters of the specified mode.
 
   vram_base=vmi_p.PhysBasePtr;
   vram_size=vmi_p.XResolution*vmi_p.YResolution*((vmi_p.BitsPerPixel+7)/8);
@@ -54,11 +54,11 @@ int (vbe_mapping_videoRAM_to_address_space)(uint16_t mode) {
   mr.mr_base = vram_base;
   mr.mr_limit = mr.mr_base + vram_size; 
 
-  if( OK != (r = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr))) {
+  if( OK != (r = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr))) { 
       panic("sys_privctl (ADD_MEM) failed: %d\n", r);
-  }
+  } //granting a process the permission to map the given address range (mr).
 
-  video_mem = vm_map_phys(SELF, (void *)mr.mr_base, vram_size);
+  video_mem = vm_map_phys(SELF, (void *)mr.mr_base, vram_size); //mapping VRAM to its address space
   if(video_mem == MAP_FAILED) {
       panic("couldn't map video memory");
   }
@@ -72,15 +72,12 @@ int (vbe_mapping_videoRAM_to_address_space)(uint16_t mode) {
 int (vbe_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
   if (x > vmi_p.XResolution || y > vmi_p.YResolution) return 1;
 
+  unsigned int index = ((vmi_p.XResolution *y)+x) * ((vmi_p.BitsPerPixel +7)/8); //calculates the memory index where the pixel's color will be stored in the video memory buffer (video_mem)
 
-
-  unsigned int index = ((vmi_p.XResolution *y)+x) *((vmi_p.BitsPerPixel +7)/8);
-  if (memcpy(&video_mem[index],&color, ((vmi_p.BitsPerPixel +7)/8))==NULL) return 1;
+  if (memcpy(&video_mem[index],&color, ((vmi_p.BitsPerPixel +7)/8))==NULL) return 1; //puts color into index location. The number of bytes to copy is calculated based on the color depth of the screen (BitsPerPixel).
 
   return 0;
 }
-
-
 
 int (vbe_draw_line)(uint16_t x,uint16_t y,uint16_t len, uint32_t color) {
   for (int i = 0; i<len;i++) {
@@ -88,8 +85,6 @@ int (vbe_draw_line)(uint16_t x,uint16_t y,uint16_t len, uint32_t color) {
   }
   return 0;
 }
-
-
 
 int (vbe_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
   for (int i = 0; i<height; i++) {
@@ -102,18 +97,19 @@ int (vbe_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height
 
 int (vbe_draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
 
-  xpm_image_t img;
+  xpm_image_t img; //to store image details given by the xpm
 
-  uint8_t *c = xpm_load(xpm, XPM_INDEXED, &img);
+  uint8_t *c = xpm_load(xpm, XPM_INDEXED, &img); //converts xpm to pixmap. Puts image info in the given variable (img), and outputs pointer to first colour of first pixel (*c)
 
   for (int h = 0 ; h < img.height ; h++) {
     for (int w = 0 ; w < img.width ; w++) {
-      if (vbe_draw_pixel(x + w, y + h, *c) != 0) return 1;
-      c++; 
+      if (vbe_draw_pixel(x + w, y + h, *c) != 0) return 1; //draws the pixel with its colour received in c
+      c++; //goes to colour of next pixel
     }
   }
   return 0;
 }
+
 
 
 int (vbe_delete_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
@@ -129,6 +125,7 @@ int (vbe_delete_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
   }
   return 0;
 }
+
 
 
 int (vbe_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf, int16_t speed, uint8_t fr_rate) {
@@ -221,11 +218,6 @@ int (vbe_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf
 
   }
 
-  
-
   if (timer_unsubscribe_int() != 0) {return 1;} //unsubscribes interrupts for the timer
   return 0; 
-
-
-
 }

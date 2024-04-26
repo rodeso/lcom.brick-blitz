@@ -53,9 +53,9 @@ int(video_test_init)(uint16_t mode, uint8_t delay) {
 
 int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
 
-  if(vbe_set_display_mode(mode) != 0) {return 1;}
-
   if(vbe_mapping_videoRAM_to_address_space(mode) != 0) {return 1;}
+
+  if(vbe_set_display_mode(mode) != 0) {return 1;}
 
   if(vbe_draw_rectangle(x, y, width, height, color) != 0) {return 1;}
 
