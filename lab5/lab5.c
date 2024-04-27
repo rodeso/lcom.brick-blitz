@@ -67,9 +67,15 @@ int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y, uint16_t width,
 }
 
 int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step) {
-  /* To be completed */
-  printf("%s(0x%03x, %u, 0x%08x, %d): under construction\n", __func__,
-         mode, no_rectangles, first, step);
+
+  if(vbe_set_display_mode(mode) != 0) {return 1;}
+
+  if(vbe_mapping_videoRAM_to_address_space(mode) != 0) {return 1;}
+
+  if(vbe_draw_pattern(mode, no_rectangles, first, step)!=0) {return 1;}
+
+  if (kbc_ESC_exit() != 0) return 1;
+  if (vg_exit() != 0) return 1;
 
   return 1;
 }

@@ -95,6 +95,46 @@ int (vbe_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height
 
 
 
+int vbe_draw_pattern(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step) {
+    unsigned int indexx, r, g, b = 0;
+    uint16_t rectangles_width = 0;
+    uint16_t rectangles_height = 0;
+
+    if (vmi_p.XResolution % no_rectangles == 0) {
+        rectangles_width = vmi_p.XResolution / no_rectangles;
+    } else {
+        rectangles_width = (vmi_p.XResolution / no_rectangles) - 1;
+    }
+
+    if (vmi_p.YResolution % no_rectangles == 0) {
+        rectangles_height = vmi_p.YResolution / no_rectangles;
+    } else {
+        rectangles_height = (vmi_p.YResolution / no_rectangles) - 1 ;
+    }
+
+    for (int y=0; y+rectangles_height<=vmi_p.YResolution; y+=rectangles_height) {
+        for (int x=0; x+rectangles_width<=vmi_p.XResolution; x+=rectangles_width) {
+            if (mode == 0x105) {
+                indexx = (first + (y * no_rectangles + x) * step) % (1 << vmi_p.BitsPerPixel);
+                if (vbe_draw_rectangle(x, y, rectangles_width, rectangles_height, indexx) != 0) {
+                    return 1;
+                }
+            } else {
+                r = (first + x * step) % (1 << vmi_p.RedMaskSize);
+                g = (first + y * step) % (1 << vmi_p.GreenMaskSize);
+                b = (first + (x + y) * step) % (1 << vmi_p.BlueMaskSize);
+                if (vbe_draw_rectangle(x, y, rectangles_width, rectangles_height, r + g + b) != 0) {
+                    return 1;
+                }
+            }
+        }
+    }
+
+    return 0;
+}
+
+
+
 int (vbe_draw_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
 
   xpm_image_t img; //to store image details given by the xpm
