@@ -96,7 +96,7 @@ int (vbe_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height
 
 
 int vbe_draw_pattern(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step) {
-    uint32_t indexx, r, g, b, r_of_first, g_of_first, b_of_first = 0;
+    uint32_t indexx, color_to_go, r, g, b, r_of_first, g_of_first, b_of_first = 0;
     uint16_t rectangles_width = 0;
     uint16_t rectangles_height = 0;
 
@@ -120,16 +120,16 @@ int vbe_draw_pattern(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8
                     return 1;
                 }
             } else {
-                r_of_first=(first >> vmi_p.RedFieldPosition) & ((1 << vmi_p.RedMaskSize)-1);
-                g_of_first=(first >> vmi_p.GreenFieldPosition) & ((1 << vmi_p.GreenMaskSize)-1);
-                b_of_first=(first >> vmi_p.BlueFieldPosition) & ((1 << vmi_p.BlueMaskSize)-1);
+                r_of_first= (first >> vmi_p.RedFieldPosition) & ((1<<vmi_p.RedMaskSize)-1);
+                g_of_first= (first >> vmi_p.GreenFieldPosition) & ((1<<vmi_p.GreenMaskSize)-1);
+                b_of_first= (first >> vmi_p.BlueFieldPosition) & ((1<<vmi_p.BlueMaskSize)-1);
                 
-                r = (r_of_first + x * step) % (1 << vmi_p.RedMaskSize);
-                g = (g_of_first + y * step) % (1 << vmi_p.GreenMaskSize);
-                b = (b_of_first + (x + y) * step) % (1 << vmi_p.BlueMaskSize);
-                if (vbe_draw_rectangle(x, y, rectangles_width, rectangles_height, r + g + b) != 0) {
-                    return 1;
-                }
+                r=(r_of_first + x * step) % (1 << vmi_p.RedMaskSize);
+                g=(g_of_first + y * step) % (1 << vmi_p.GreenMaskSize);
+                b=(b_of_first + (x + y) * step) % (1 << vmi_p.BlueMaskSize);
+                color_to_go = (r<<vmi_p.RedFieldPosition) | (g<<vmi_p.GreenFieldPosition) | (b<<vmi_p.BlueFieldPosition);
+
+                if(vbe_draw_rectangle(x,y,rectangles_width,rectangles_height,color_to_go)!=0) {return 1;}
             }
         }
     }
