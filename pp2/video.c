@@ -26,7 +26,7 @@ uint8_t *video_map_phys(uint32_t ph_addr, size_t len);
 
 int draw_pixel(uint16_t x, uint16_t y, uint32_t color) {
 	if (x >= hres || y >= vres) return 1;
-	memcpy(video_mem + (y * hres + x) * bits_per_pixel / 8, &color, bits_per_pixel / 8);
+	memcpy(video_mem + (y * hres + x) * bits_per_pixel / 8, (void *) color, bits_per_pixel / 8);
 	return 0;
 }
 

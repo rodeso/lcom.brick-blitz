@@ -4,7 +4,6 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "game/game.h"
-#include "game/game.h"
 #include "dvcs/timer/pit.h"
 #include "dvcs/keyboard/kbc.h"
 
@@ -16,11 +15,11 @@ int main(int argc, char *argv[]) {
 
   // enables to log function invocations that are being "wrapped" by LCF
   // [comment this out if you don't want/need it]
-  lcf_trace_calls("/home/lcom/labs/lab5/trace.txt");
+  lcf_trace_calls("/home/lcom/labs/proj/trace.txt");
 
   // enables to save the output of printf function calls on a file
   // [comment this out if you don't want/need it]
-  lcf_log_output("/home/lcom/labs/lab5/output.txt");
+  lcf_log_output("/home/lcom/labs/proj/output.txt");
 
   // handles control over to LCF
   // [LCF handles command line arguments and invokes the right function]
@@ -35,5 +34,10 @@ int main(int argc, char *argv[]) {
 }
 
 int (proj_engine)(int argc, char *argv[]){
-    run();
+    if (prepare_video()) return 1;
+    if (prepare_keyboard()) return 1;
+    if (prepare_objects()) return 1;
+    if (run()) return 1;
+    if (disable_video()) return 1;
+    if (disable_keyboard()) return 1;
 }
