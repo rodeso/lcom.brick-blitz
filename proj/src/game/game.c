@@ -1,4 +1,5 @@
 #include "game.h"
+
 uint8_t bit_no = 0;
 Paddle paddle;
 Brick bricks[32];
@@ -39,13 +40,13 @@ int (disable_keyboard)() {
 
 int (pressed_left)() {
     uint8_t scancode;
-    if (keyboard_read_scancode(&scancode)) return 1;
+    if (read_scancode(OUTPUT_BUFFER_KEYBOARD,&scancode)) return 1;
     if (scancode == 0x1E) return 1;
     return 0;
 }
 int (pressed_right) () {
     uint8_t scancode;
-    if (keyboard_read_scancode(&scancode)) return 1;
+    if (read_scancode(OUTPUT_BUFFER_KEYBOARD,&scancode)) return 1;
     if (scancode == 0x20) return 1;
     return 0;
 }
@@ -58,11 +59,11 @@ int prepare_objects() {
     for (int i = 0; i < 32; i++) {
         initBrick(&bricks[i], 0, 0, 10, 10); // This correctly initializes each brick in the array
     }
-}
-    initBall(&ball, 0, 0, 10, 10);
+
+    initBall(&ball, 0, 0, false);
     return 0;
 }
-}
+
 
 
 //----------------run--------------------------------------------------------------------------------------------------------------------

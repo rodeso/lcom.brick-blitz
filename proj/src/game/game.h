@@ -7,8 +7,8 @@
 #include "../objs/paddle/paddle.h"
 #include "../objs/brick/brick.h"
 
-#include "../../dvcs/graphics/vbe.h"
-#include "../../dvcs/keyboard/kbc.h"
+#include "../dvcs/graphics/vbe.h"
+#include "../dvcs/keyboard/kbc.h"
 
 int run();
 int prepare_video();

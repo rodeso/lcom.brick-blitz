@@ -4,6 +4,8 @@
 typedef struct {
     int x; // X-coordinate of the paddle
     int y; // Y-coordinate of the paddle
+    int width;
+    int height;
 } Paddle;
 
 // Function to initialize the paddle

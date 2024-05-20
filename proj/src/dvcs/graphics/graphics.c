@@ -1,6 +1,6 @@
 #include "vbe.h"
-#include "pit.h"
-#include "kbc.h"
+#include "../timer/pit.h"
+#include "../keyboard/kbc.h"
 
 
 static char *video_mem;		/* Process (virtual) address to which VRAM is mapped */

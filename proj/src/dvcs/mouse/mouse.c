@@ -1,6 +1,6 @@
 #include <lcom/lcf.h>
 #include "ps2.h" 
-#include "kbc.h"
+#include "../keyboard/kbc.h"
 
 
 int hook_id3=0;
@@ -28,7 +28,7 @@ int (mouse_write_data)(uint8_t command){
 
 
 void (mouse_ih)() {
-    read_KBC_outbuf(OUTPUT_BUFFER,&response,1);
+    //read_KBC_outbuf(OUTPUT_BUFFER,&response,1);
 }
 
 void (mouse_sync_bytes)(){

@@ -40,4 +40,6 @@ int (proj_engine)(int argc, char *argv[]){
     if (run()) return 1;
     if (disable_video()) return 1;
     if (disable_keyboard()) return 1;
+
+    return 0;
 }
