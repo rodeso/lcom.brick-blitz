@@ -3,12 +3,11 @@
 #include <stdint.h>
 
 #include <lcom/lcf.h>
-#include "../objs/ball/ball.h"
-#include "../objs/paddle/paddle.h"
-#include "../objs/brick/brick.h"
+#include "objects.h"
 
-#include "../dvcs/graphics/vbe.h"
-#include "../dvcs/keyboard/kbc.h"
+#include "vbe.h"
+#include "kbc.h"
+#include "pit.h"
 
 int run();
 int prepare_video();

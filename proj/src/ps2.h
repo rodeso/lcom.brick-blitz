@@ -9,6 +9,8 @@
 #include <lcom/lab4.h>
 #include <stdint.h>
 #include <stdio.h>
+#include "kbc.h"
+
 
 #define IRQ_LINE_MOUSE 12
 #define INPUT_BUFFER 0x64 //sending KBC commands and arguments

@@ -1,6 +1,5 @@
 #include <lcom/lcf.h>
 #include "ps2.h" 
-#include "../keyboard/kbc.h"
 
 
 int hook_id3=0;
