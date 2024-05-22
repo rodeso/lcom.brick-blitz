@@ -110,13 +110,7 @@ int prepare_objects() {
 
 
 int (run)() {
-    int flag = 1;
-    while(flag) {
-
-        //if (pressed_left()) movePaddleLeft(&paddle, 1);
-        //if (pressed_right()) movePaddleRight(&paddle, 1);
-        pressed_ESC(&flag);
-    }
+    drawPaddle(&paddle);
 
 
 

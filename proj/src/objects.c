@@ -37,6 +37,6 @@ void movePaddleRight(Paddle* paddle, int distance) {
 
 // Function to draw the paddle
 void drawPaddle(const Paddle* paddle) {
-    printf("Paddle: x=%d, y=%d, width=%d, height=%d\n", paddle->x, paddle->y, paddle->width, paddle->height);
+    create_sprite((char**) paddle_xpm);
 }
 

@@ -5,6 +5,12 @@
 #include <stdio.h>
 #include "game.h"
 
+extern vbe_mode_info_t vmi_p;
+extern uint8_t bit_no;
+extern Paddle paddle;
+extern Brick bricks[32];
+extern Ball ball;
+
 // Any header files included below this line should have been created by you
 
 int main(int argc, char *argv[]) {
