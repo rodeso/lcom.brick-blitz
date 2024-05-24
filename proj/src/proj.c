@@ -3,9 +3,8 @@
 
 #include <stdint.h>
 #include <stdio.h>
-#include "game.h"
+#include "game/game.h"
 
-extern vbe_mode_info_t vmi_p;
 extern uint8_t bit_no;
 extern Paddle paddle;
 extern Brick bricks[32];
@@ -39,9 +38,15 @@ int main(int argc, char *argv[]) {
 
 int (proj_main_loop)(int argc, char *argv[]){
     if (prepare_video()) return 1;
+    printf("video prepared\n");
     if (prepare_objects()) return 1;
+    printf("objects prepared\n");
+    if(draw_frame()) return 1;
+    printf("frame drawn\n");
     if (run()) return 1;
+    printf("game ran\n");
     if (disable_video()) return 1;
+    printf("video disabled\n");
 
     return 0;
 }

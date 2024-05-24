@@ -1,9 +1,7 @@
 #include "vbe.h"
-#include "pit.h"
-#include "kbc.h"
 
 
-static char *video_mem;		/* Process (virtual) address to which VRAM is mapped */
+char *video_mem;		/* Process (virtual) address to which VRAM is mapped */
 
 int(vbe_set_display_mode)(uint16_t mode) {
 
@@ -70,12 +68,15 @@ int (vbe_mapping_videoRAM_to_address_space)(uint16_t mode) {
 
 
 int (vbe_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
+    printf("draw_pixel started\n");
+
   if (x > vmi_p.XResolution || y > vmi_p.YResolution) return 1;
 
   unsigned int index = ((vmi_p.XResolution *y)+x) * ((vmi_p.BitsPerPixel +7)/8); //calculates the memory index where the pixel's color will be stored in the video memory buffer (video_mem)
 
   if (memcpy(&video_mem[index],&color, ((vmi_p.BitsPerPixel +7)/8))==NULL) return 1; //puts color into index location. The number of bytes to copy is calculated based on the color depth of the screen (BitsPerPixel).
 
+  printf("draw_pixel ended\n");
   return 0;
 }
 

@@ -26,7 +26,7 @@
 #define INPUT_BUFFER_FULL  BIT(1)
 #define READ_COMMAND   0x20
 #define WRITE_COMMAND   0x60
-#define DELAY_US        20000
+#define DELAY        20000
 
 //exige apenas o aspeto do hardware (Palavras do Stor)
 

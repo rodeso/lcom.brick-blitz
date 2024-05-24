@@ -1,5 +1,5 @@
 /* XPM */
-static char * background_xpm[] = {
+static char *background_xpm[] = {
 "800 600 56 1",
 " 	c #1A1A1A",
 ".	c #1B1B1B",

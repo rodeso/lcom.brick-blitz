@@ -1,5 +1,5 @@
 /* XPM */
-static char *brick[] = {
+static char *brick_xpm[] = {
 /* width height num_colors chars_per_pixel */
 "64 128 3 1",
 /* colors */

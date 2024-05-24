@@ -1,10 +1,17 @@
-#include "game.h"
+#include "game/game.h"
 
 uint8_t bit_no = 0;
+Background background;
+Background background2;
 Paddle paddle;
 Brick bricks[32];
 Ball ball;
-
+extern vbe_mode_info_t vmi_p;
+Sprite *background_sprite;
+Sprite *background2_sprite;
+extern Sprite *ball_sprite;
+extern Sprite *brick_sprite;
+extern Sprite *paddle_sprite;
 //----------------video--------------------------------------------------------------------------------------------------------------------
 
 
@@ -95,23 +102,35 @@ int (pressed_ESC)(int *flag) {
 //----------------objects--------------------------------------------------------------------------------------------------------------------
 
 
-int prepare_objects() {
-    initPaddle(&paddle, 0, 0, 10, 10);
+int (prepare_objects)() {
+    printf("prepare_objects started\n");
+    background_sprite = create_sprite((xpm_map_t)background_xpm);
+    background2_sprite = create_sprite((xpm_map_t)background2_xpm);
+    initBackground(&background, 0, 0, background_sprite);
+    initBackground(&background2,0,0,background2_sprite);
+    printf("Background2 initialized\n");
+    initPaddle(&paddle, 0, 0, 10, 10, paddle_sprite);
     for (int i = 0; i < 32; i++) {
-        initBrick(&bricks[i], 0, 0, 10, 10, 0); // This correctly initializes each brick in the array
+        initBrick(&bricks[i], 0, 0, 10, 10, 0, brick_sprite); // This correctly initializes each brick in the array
     }
 
-    initBall(&ball, 0, 0, false);
+    initBall(&ball, 0, 0, false, ball_sprite);
+    printf("prepare_objects ended\n");
     return 0;
 }
 
 
 //----------------run--------------------------------------------------------------------------------------------------------------------
-
+int (draw_frame)() {
+    printf("draw_frame started\n");
+    if(drawBackground(&background)) {return 1;}
+    printf("draw_frame ended\n");
+    return 0;
+}
 
 int (run)() {
-    drawPaddle(&paddle);
-
+    
+    sleep(5);
 
 
     return 0;

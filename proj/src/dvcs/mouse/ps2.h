@@ -9,7 +9,7 @@
 #include <lcom/lab4.h>
 #include <stdint.h>
 #include <stdio.h>
-#include "kbc.h"
+#include "../keyboard/kbc.h"
 
 
 #define IRQ_LINE_MOUSE 12
