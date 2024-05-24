@@ -14,6 +14,7 @@ Sprite *background2_sprite;
 extern Sprite *ball_sprite;
 Sprite *brick_sprite;
 Sprite *paddle_sprite;
+bool gotHit = false;
 //----------------video--------------------------------------------------------------------------------------------------------------------
 
 
@@ -74,7 +75,7 @@ int (prepare_objects)() {
 
     initBackground(&background, 0, 0, background_sprite);
     initBackground(&background2,0,0,background2_sprite);
-    initPaddle(&paddle, 395, 500, paddle_sprite);
+    initPaddle(&paddle, (background_sprite->width/2)-(paddle_sprite->width/2), 530, paddle_sprite);
     for (int i = 0; i < 72; i++) {
       initBrick(&bricks[i], 16+((i%12)*64), (int)(i/12)*32, brick_sprite);
     }
@@ -89,10 +90,13 @@ int (draw_frame)() {
     if(drawBackground(&background)) {return 1;}
     if(drawPaddle(&paddle)) {return 1;}
     for (int i=0; i<72; i++) {
-      if(drawBrick(&bricks[i])){return 1;}
+      if (!bricks[i].destroyed) {
+        if(drawBrick(&bricks[i])){return 1;}
+      }
     }
     return 0;
 }
+
 
 int (run)() {
     int ipc_status,r=0;
