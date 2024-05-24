@@ -32,10 +32,8 @@ typedef struct {
 
 
 void initBackground(Background* background, int x, int y, Sprite *sprite);
-void initBall(Ball* ball, int x, int y, int contact, Sprite *sprite);
+void initBall(Ball* ball, int x, int y, Sprite *sprite);
 void initBrick(Brick* brick, int x, int y, Sprite *sprite);
 void initPaddle(Paddle* paddle, int x, int y, Sprite *sprite);
-void movePaddleLeft(Paddle* paddle, int distance);
-void movePaddleRight(Paddle* paddle, int distance);
 
 #endif

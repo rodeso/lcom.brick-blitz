@@ -5,7 +5,6 @@
 #include "xpm/ball.xpm"
 #include "xpm/brick.xpm"
 #include "xpm/paddle.xpm"
-#include "xpm/background2.xpm"
 
 #include "sprite.h"
 

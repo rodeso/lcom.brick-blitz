@@ -1,10 +1,10 @@
 /* XPM */
 static char *ball_xpm[] = {
 /* width height num_colors chars_per_pixel */
-"16 16 2 1",
+"15 16 2 1",
 /* colors */
-"X c #000000",
-". c #FFFFFF",
+"X c #85FF00",
+". c #505050",
 /* pixels */
 "...............",
 ".....XXXXX.....",
@@ -17,8 +17,8 @@ static char *ball_xpm[] = {
 "XXXXXXXXXXXXXXX",
 "XXXXXXXXXXXXXXX",
 "XXXXXXXXXXXXXXX",
-"XXXXXXXXXXXXXXX",
-"XXXXXXXXXXXXXXX",
+".XXXXXXXXXXXXX.",
+".XXXXXXXXXXXXX.",
 "..XXXXXXXXXXX..",
 "...XXXXXXXXX...",
 ".....XXXXX.....",

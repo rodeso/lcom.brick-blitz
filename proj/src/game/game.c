@@ -11,7 +11,7 @@ Ball ball;
 extern vbe_mode_info_t vmi_p;
 Sprite *background_sprite;
 Sprite *background2_sprite;
-extern Sprite *ball_sprite;
+Sprite *ball_sprite;
 Sprite *brick_sprite;
 Sprite *paddle_sprite;
 bool gotHit = false;
@@ -68,7 +68,7 @@ int (disable_timer)() {
 int (prepare_objects)() {
 
     background_sprite = create_sprite((xpm_map_t)background_xpm);
-    background2_sprite = create_sprite((xpm_map_t)background2_xpm);
+    ball_sprite = create_sprite((xpm_map_t)ball_xpm);
     paddle_sprite = create_sprite((xpm_map_t)paddle_xpm);
     brick_sprite = create_sprite((xpm_map_t)brick_xpm);
 
@@ -79,6 +79,7 @@ int (prepare_objects)() {
     for (int i = 0; i < 72; i++) {
       initBrick(&bricks[i], 16+((i%12)*64), (int)(i/12)*32, brick_sprite);
     }
+    initBall(&ball, (background_sprite->width/2)-(ball_sprite->width/2), 530-ball_sprite->height, ball_sprite);
 
 
     return 0;
@@ -94,6 +95,7 @@ int (draw_frame)() {
         if(drawBrick(&bricks[i])){return 1;}
       }
     }
+    if(drawBall(&ball)) {return 1;}
     return 0;
 }
 

@@ -1,11 +1,6 @@
 #include "manager.h"
 
 
-Sprite *ball_sprite;
-
-
-
-
 int drawSprite(Sprite *sprite, int xPos, int yPos) {
     uint32_t current_color;
     for (int i = 0 ; i < sprite->height; i++) {

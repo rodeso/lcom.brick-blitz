@@ -13,6 +13,6 @@ int drawPaddle(Paddle *paddle);
 
 int drawBrick(Brick *brick);
 
-
+int drawBall(Ball *ball);
 
 #endif

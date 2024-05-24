@@ -16,4 +16,7 @@ int drawBrick(Brick *brick) {
     return 0;
 }
 
-
+int drawBall(Ball *ball) {
+    if(drawSprite(ball->sprite, ball->x, ball->y)!=0) {return 1;}
+    return 0;
+}

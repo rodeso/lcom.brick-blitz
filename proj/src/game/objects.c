@@ -8,10 +8,10 @@ void initBackground(Background* background, int x, int y, Sprite *background_spr
     background->sprite = background_sprite;
 }
 // Function to initialize a ball
-void initBall(Ball* ball, int x, int y, int contact, Sprite *ball_sprite) {
+void initBall(Ball* ball, int x, int y, Sprite *ball_sprite) {
     ball->x = x;
     ball->y = y;
-    ball->contact = contact;
+    ball->contact = false;
     ball->sprite = ball_sprite;
 
 }
@@ -29,15 +29,6 @@ void initPaddle(Paddle* paddle, int x, int y, Sprite *paddle_sprite) {
     paddle->sprite = paddle_sprite;
 }
 
-// Function to move the paddle left
-void movePaddleLeft(Paddle* paddle, int distance) {
-    paddle->x -= distance;
-}
-
-// Function to move the paddle right
-void movePaddleRight(Paddle* paddle, int distance) {
-    paddle->x += distance;
-}
 
 
 
