@@ -1,5 +1,6 @@
 #include "game/game.h"
 
+extern GameState gameState;
 uint8_t bit_no = 0;
 Background background;
 Background background2;
@@ -12,6 +13,7 @@ Sprite *background2_sprite;
 extern Sprite *ball_sprite;
 extern Sprite *brick_sprite;
 extern Sprite *paddle_sprite;
+
 //----------------video--------------------------------------------------------------------------------------------------------------------
 
 
@@ -124,9 +126,26 @@ int (draw_frame)() {
 }
 
 int (run)() {
+    int ipc_status,r=0;
+    message msg;
+
+    while (gameState!=EXIT) {
     
-    sleep(5);
+    if ((r=driver_receive(ANY, &msg, &ipc_status)) != 0) {
+      printf("Error");
+      continue;
+    }
 
-
-    return 0;
+    if (is_ipc_notify(ipc_status)) {
+        switch(_ENDPOINT_P(msg.m_source)) {
+            case HARDWARE: 
+            if (msg.m_notify.interrupts & BIT(1)){
+                (kbc_ih)();
+                handle_keyboard();
+                
+            } 
+        }
+    }
+  }
+  return 0;
 }

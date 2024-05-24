@@ -37,6 +37,8 @@ int main(int argc, char *argv[]) {
 }
 
 int (proj_main_loop)(int argc, char *argv[]){
+    if (prepare_keyboard()) return 1;
+    printf("keyboard prepared\n");
     if (prepare_video()) return 1;
     printf("video prepared\n");
     if (prepare_objects()) return 1;
@@ -45,6 +47,8 @@ int (proj_main_loop)(int argc, char *argv[]){
     printf("frame drawn\n");
     if (run()) return 1;
     printf("game ran\n");
+    if (disable_keyboard()) return 1;
+    printf("keyboard disabled\n");
     if (disable_video()) return 1;
     printf("video disabled\n");
 
