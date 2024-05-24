@@ -1,19 +1,19 @@
 #include "game/game.h"
 
 extern GameState gameState;
-uint8_t bit_no = 0;
+uint8_t bit_no_keyboard = 0;
+uint8_t bit_no_timer = 0;
 Background background;
 Background background2;
 Paddle paddle;
-Brick bricks[32];
+Brick bricks[72];
 Ball ball;
 extern vbe_mode_info_t vmi_p;
 Sprite *background_sprite;
 Sprite *background2_sprite;
 extern Sprite *ball_sprite;
-extern Sprite *brick_sprite;
-extern Sprite *paddle_sprite;
-
+Sprite *brick_sprite;
+Sprite *paddle_sprite;
 //----------------video--------------------------------------------------------------------------------------------------------------------
 
 
@@ -38,7 +38,7 @@ int (disable_video)() {
 
 
 int (prepare_keyboard)() {
-    if(keyboard_subscribe_int(&bit_no)!=0) {return 1;}
+    if(keyboard_subscribe_int(&bit_no_keyboard)!=0) {return 1;}
     return 0;
 }
 
@@ -47,74 +47,39 @@ int (disable_keyboard)() {
     return 0;
 }
 
-int (pressed_left)() {
-    uint8_t scancode;
-    if (read_scancode(OUTPUT_BUFFER_KEYBOARD,&scancode)) return 1;
-    if (scancode == 0x1E) return 1;
-    return 0;
-}
 
-int (pressed_right) () {
-    uint8_t scancode;
-    if (read_scancode(OUTPUT_BUFFER_KEYBOARD,&scancode)) return 1;
-    if (scancode == 0x20) return 1;
+//----------------timer--------------------------------------------------------------------------------------------------------------------
+
+
+/*int (prepare_timer)() {
+    if(timer_subscribe_int(&bit_no_timer)!=0) {return 1;}
     return 0;
 }
-/*
-int (pressed_ESC) () {
-    uint8_t scancode;
-    if (read_scancode(OUTPUT_BUFFER_KEYBOARD,&scancode)!=0) return 1;
-    if (scancode == 0x81 ) return 1;
+int (disable_timer)() {
+    if(timer_unsubscribe_int()) return 1;
     return 0;
 }*/
-
-int (pressed_ESC)(int *flag) {
-  int ipc_status,r=0;
-  message msg;
-  uint8_t scancode=0x00;
-
-  uint32_t keyboard_mask=0;
-  uint8_t bit_no=0;
-
-  if(keyboard_subscribe_int(&bit_no) != 0) return 1;
-  keyboard_mask=BIT(bit_no);
-
-  while (scancode != 0x81){
-    if ((r=driver_receive(ANY, &msg, &ipc_status)) != 0) { 
-      printf("driver_receive failed");
-      continue;
-    }
-    if (is_ipc_notify(ipc_status)) {
-      switch (_ENDPOINT_P(msg.m_source)) {
-        case HARDWARE: 
-          if (msg.m_notify.interrupts & keyboard_mask) 
-            read_scancode(OUTPUT_BUFFER_KEYBOARD, &scancode);
-          break;
-        default:
-          break; 
-      }
-    }
-  }
-  flag = 0;
-  if (keyboard_unsubscribe_int() != 0) return 1;
-  return 0;
-}
 
 
 //----------------objects--------------------------------------------------------------------------------------------------------------------
 
 
 int (prepare_objects)() {
+
     background_sprite = create_sprite((xpm_map_t)background_xpm);
     background2_sprite = create_sprite((xpm_map_t)background2_xpm);
+    paddle_sprite = create_sprite((xpm_map_t)paddle_xpm);
+    brick_sprite = create_sprite((xpm_map_t)brick_xpm);
+
+
     initBackground(&background, 0, 0, background_sprite);
     initBackground(&background2,0,0,background2_sprite);
-    initPaddle(&paddle, 0, 0, 10, 10, paddle_sprite);
-    for (int i = 0; i < 32; i++) {
-        initBrick(&bricks[i], 0, 0, 10, 10, 0, brick_sprite); // This correctly initializes each brick in the array
+    initPaddle(&paddle, 395, 500, paddle_sprite);
+    for (int i = 0; i < 72; i++) {
+      initBrick(&bricks[i], 16+((i%12)*64), (int)(i/12)*32, brick_sprite);
     }
 
-    initBall(&ball, 0, 0, false, ball_sprite);
+
     return 0;
 }
 
@@ -122,6 +87,10 @@ int (prepare_objects)() {
 //----------------run--------------------------------------------------------------------------------------------------------------------
 int (draw_frame)() {
     if(drawBackground(&background)) {return 1;}
+    if(drawPaddle(&paddle)) {return 1;}
+    for (int i=0; i<72; i++) {
+      if(drawBrick(&bricks[i])){return 1;}
+    }
     return 0;
 }
 
@@ -137,15 +106,15 @@ int (run)() {
     }
 
     if (is_ipc_notify(ipc_status)) {
-        switch(_ENDPOINT_P(msg.m_source)) {
-            case HARDWARE: 
-            if (msg.m_notify.interrupts & BIT(1)){
-                (kbc_ih)();
-                handle_keyboard();
-                
-            } 
+      switch(_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE: 
+          if (msg.m_notify.interrupts & BIT(1)){
+            (kbc_ih)();
+            handle_keyboard();
+            draw_frame();
+          } 
         }
+      }
     }
-  }
   return 0;
 }

@@ -1,18 +1,18 @@
 #include "handler.h"
 
 extern uint8_t scancodes[2];
+extern Paddle paddle;
 GameState gameState = MENU;
 
 void handle_keyboard() {
   switch(scancodes[0]) {
-    case 0x1E:
-      printf("Left arrow key pressed\n");
+    case 30:
+      paddle.x -= 10;
       break;
-    case 0x20:
-      printf("Right arrow key pressed\n");
+    case 32:
+      paddle.x += 10;
       break;
-    case 0x01:
-      printf("ESC key pressed\n");
+    case 1:
       gameState=EXIT;
     default:
       break;

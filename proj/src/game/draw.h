@@ -9,6 +9,10 @@
 
 int drawBackground(Background *background);
 
-void drawBall(Ball *ball);
+int drawPaddle(Paddle *paddle);
+
+int drawBrick(Brick *brick);
+
+
 
 #endif
