@@ -103,28 +103,23 @@ int (pressed_ESC)(int *flag) {
 
 
 int (prepare_objects)() {
-    printf("prepare_objects started\n");
     background_sprite = create_sprite((xpm_map_t)background_xpm);
     background2_sprite = create_sprite((xpm_map_t)background2_xpm);
     initBackground(&background, 0, 0, background_sprite);
     initBackground(&background2,0,0,background2_sprite);
-    printf("Background2 initialized\n");
     initPaddle(&paddle, 0, 0, 10, 10, paddle_sprite);
     for (int i = 0; i < 32; i++) {
         initBrick(&bricks[i], 0, 0, 10, 10, 0, brick_sprite); // This correctly initializes each brick in the array
     }
 
     initBall(&ball, 0, 0, false, ball_sprite);
-    printf("prepare_objects ended\n");
     return 0;
 }
 
 
 //----------------run--------------------------------------------------------------------------------------------------------------------
 int (draw_frame)() {
-    printf("draw_frame started\n");
     if(drawBackground(&background)) {return 1;}
-    printf("draw_frame ended\n");
     return 0;
 }
 

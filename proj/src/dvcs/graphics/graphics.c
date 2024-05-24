@@ -68,7 +68,6 @@ int (vbe_mapping_videoRAM_to_address_space)(uint16_t mode) {
 
 
 int (vbe_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
-    printf("draw_pixel started\n");
 
   if (x > vmi_p.XResolution || y > vmi_p.YResolution) return 1;
 
@@ -76,7 +75,6 @@ int (vbe_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
 
   if (memcpy(&video_mem[index],&color, ((vmi_p.BitsPerPixel +7)/8))==NULL) return 1; //puts color into index location. The number of bytes to copy is calculated based on the color depth of the screen (BitsPerPixel).
 
-  printf("draw_pixel ended\n");
   return 0;
 }
 

@@ -2,7 +2,6 @@
 
 
 Sprite *create_sprite(xpm_map_t pic){
-  printf("create_sprite started\n");
 
   Sprite *sp = (Sprite *) malloc (sizeof(Sprite));
   if( sp == NULL ) return NULL;
@@ -15,12 +14,6 @@ Sprite *create_sprite(xpm_map_t pic){
   }
   sp->width = img.width;
   sp->height = img.height;
-  printf("img.width=%d", img.width);
-  printf("img.height=%d", img.height);
-  printf("sp->width=%d", sp->width);
-  printf("sp->height=%d", sp->height);
-
-  printf("create_sprite ended\n");
 
   return sp;
 }
