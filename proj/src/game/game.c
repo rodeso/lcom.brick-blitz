@@ -10,6 +10,7 @@ Background won;
 Paddle paddle;
 Brick bricks[72];
 Ball ball;
+Ball extra_ball;
 Projectile projectile;
 extern vbe_mode_info_t vmi_p;
 extern uint8_t scancodes[2];
@@ -23,8 +24,10 @@ Sprite *paddle_sprite;
 int lives = 3;
 int destroyed = 0;
 int powerup = 0;
-int destroyedForPowerup = 0;
+bool projectile_power = false;
+bool ball_power = false;
 bool projectileLaunched = false;
+bool ballLaunched = false;
 //----------------video--------------------------------------------------------------------------------------------------------------------
 
 
@@ -81,7 +84,9 @@ void handle_keyboard() {
       break;
     case 57: //Spacebar
     if (gameState == GAME) {
+      if (!projectileLaunched) {
       if(projectileLaunch()) {break;}
+      }
     }
       break;
     case 28: //Enter
@@ -145,6 +150,8 @@ int (prepare_objects)() {
     lives = 3;
     destroyed = 0;
     powerup = 0;
+    projectile_power = false;
+    ball_power = false;
 
     return 0;
 }
@@ -171,11 +178,7 @@ int (draw_frame)() {
       }
     }
     if(drawBall(&ball)) {return 1;}
-    if (powerup > 0) {
-      if (projectileLaunched) {
-        if(drawProjectile(&projectile)) {return 1;}
-      }
-    }
+    
   }
   else if (gameState == MENU) {
     if(drawBackground(&menu)) {return 1;}
@@ -268,12 +271,118 @@ int move_ball() {
               ball.dy = -ball.dy;
               bricks[i].destroyed = true;
               destroyed++;
-              destroyedForPowerup++;
+              srand(time(0));  // Use current time as seed for random generator
+              int random_number = rand() % 10;
+              if (random_number == 0) {
+                projectile_power = true;
+              }
+              if (random_number == 1) {
+                ball_power = true;
+              }
             }
           }
         }
         ball.x += ball.dx;
         ball.y += ball.dy;
+        
+
+    }
+    return 0;
+}
+
+int move_extraball() {
+    extra_ball.oldx = extra_ball.x;
+    extra_ball.oldy = extra_ball.y;
+
+    if (extra_ball.base) {
+      extra_ball.x = paddle.x + (paddle.sprite->width/2) - (extra_ball.sprite->width/2);
+      extra_ball.y = paddle.y - extra_ball.sprite->height;
+      extra_ball.dy = -BIT(2);
+      extra_ball.base = false;
+    } else {
+        if (extra_ball.x + extra_ball.sprite->width >= vmi_p.XResolution - BIT(3) || extra_ball.x <= BIT(3)) {
+          extra_ball.dx = -extra_ball.dx;
+        }
+        if (extra_ball.y <= BIT(3)) {
+          extra_ball.dy = -extra_ball.dy;
+        }
+        
+        if (extra_ball.y + extra_ball.sprite->height >= vmi_p.YResolution - 10) {
+          ballLaunched = false;
+        }
+        if (extra_ball.y + extra_ball.sprite->height >= paddle.y+1 && extra_ball.x + extra_ball.sprite->width >= paddle.x && extra_ball.x <= paddle.x + paddle.sprite->width) {
+          if (extra_ball.x + extra_ball.sprite->width/2 < paddle.x + 1 * paddle.sprite->width/16) {
+            extra_ball.dx = -8;
+            extra_ball.dy = -1;
+          } else if (extra_ball.x + extra_ball.sprite->width/2 < paddle.x + 2 * paddle.sprite->width/16) {
+            extra_ball.dx = -7;
+            extra_ball.dy = -2;
+          } else if (extra_ball.x + extra_ball.sprite->width/2 < paddle.x + 3 * paddle.sprite->width/16) {
+            extra_ball.dx = -6;
+            extra_ball.dy = -3;
+          } else if (extra_ball.x + extra_ball.sprite->width/2 < paddle.x + 4 * paddle.sprite->width/16) {
+            extra_ball.dx = -5;
+            extra_ball.dy = -4;
+          } else if (extra_ball.x + extra_ball.sprite->width/2 < paddle.x + 5 * paddle.sprite->width/16) {
+            extra_ball.dx = -4;
+            extra_ball.dy = -5;
+          } else if (extra_ball.x + extra_ball.sprite->width/2 < paddle.x + 6 * paddle.sprite->width/16) {
+            extra_ball.dx = -3;
+            extra_ball.dy = -6;
+          } else if (extra_ball.x + extra_ball.sprite->width/2 < paddle.x + 7 * paddle.sprite->width/16) {
+            extra_ball.dx = -2;
+            extra_ball.dy = -7;
+          } else if (extra_ball.x + extra_ball.sprite->width/2 < paddle.x + 8 * paddle.sprite->width/16) {
+            extra_ball.dx = -1;
+            extra_ball.dy = -8;
+          } else if (extra_ball.x + extra_ball.sprite->width/2 < paddle.x + 9 * paddle.sprite->width/16) {
+            extra_ball.dx = 1;
+            extra_ball.dy = -8;
+          } else if (extra_ball.x + extra_ball.sprite->width/2 < paddle.x + 10 * paddle.sprite->width/16) {
+            extra_ball.dx = 2;
+            extra_ball.dy = -7;
+          } else if (extra_ball.x + extra_ball.sprite->width/2 < paddle.x + 11 * paddle.sprite->width/16) {
+            extra_ball.dx = 3;
+            extra_ball.dy = -6;
+          } else if (extra_ball.x + extra_ball.sprite->width/2 < paddle.x + 12 * paddle.sprite->width/16) {
+            extra_ball.dx = 4;
+            extra_ball.dy = -5;
+          } else if (extra_ball.x + extra_ball.sprite->width/2 < paddle.x + 13 * paddle.sprite->width/16) {
+            extra_ball.dx = 5;
+            extra_ball.dy = -4;
+          } else if (extra_ball.x + extra_ball.sprite->width/2 < paddle.x + 14 * paddle.sprite->width/16) {
+            extra_ball.dx = 6;
+            extra_ball.dy = -3;
+          } else if (extra_ball.x + extra_ball.sprite->width/2 < paddle.x + 15 * paddle.sprite->width/16) {
+            extra_ball.dx = 7;
+            extra_ball.dy = -2;
+          } else if (extra_ball.x + extra_ball.sprite->width/2 < paddle.x + 16 * paddle.sprite->width/16) {
+            extra_ball.dx = 8;
+            extra_ball.dy = -1;
+          }
+          
+        }
+
+
+        for (int i = 0; i < 72; i++) {
+          if (!bricks[i].destroyed) {
+            if (extra_ball.y <= bricks[i].y + brick_sprite->height && extra_ball.y + extra_ball.sprite->height >= bricks[i].y && extra_ball.x + extra_ball.sprite->width >= bricks[i].x && extra_ball.x <= bricks[i].x + brick_sprite->width) {
+              extra_ball.dy = -extra_ball.dy;
+              bricks[i].destroyed = true;
+              destroyed++;
+              srand(time(0));  // Use current time as seed for random generator
+              int random_number = rand() % 2;
+              if (random_number == 0) {
+                projectile_power = true;
+              }
+              if (random_number == 1 && ballLaunched == false) {
+                ball_power = true;
+              }
+            }
+          }
+        }
+        extra_ball.x += extra_ball.dx;
+        extra_ball.y += extra_ball.dy;
         
 
     }
@@ -328,6 +437,11 @@ int (run)() {
                 draw_frame();
                 if (projectileLaunched) {
                   move_projectile();
+                  if(drawProjectile(&projectile)) {return 1;}
+                }
+                if (ballLaunched) {
+                  move_extraball();
+                  if(drawBall(&extra_ball)) {return 1;}
                 }
               }
             } else {
@@ -349,9 +463,14 @@ int (run)() {
         gameState = WON;
         destroyed = 0;
       }
-      if (destroyedForPowerup == 12) { //edit here to change how many bricks are needed to get a powerup
+      if (projectile_power) { //edit here to change how many bricks are needed to get a powerup
         powerup = 3; //edit here to change how many powerups are given
-        destroyedForPowerup = 0;
+        projectile_power = false;
+      }
+      if (ball_power) {
+        initBall(&extra_ball, (background_sprite->width/2)-(ball_sprite->width/2), 530-ball_sprite->height, ball_sprite);
+        ballLaunched = true;
+        ball_power = false;
       }
     }
   return 0;
