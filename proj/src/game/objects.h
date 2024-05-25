@@ -2,7 +2,7 @@
 #define _LCOM_OBJECTS_H_
 
 #include <stdio.h>
-#include "sprite/manager.h"
+#include "sprite/sprite.h"
 
 typedef struct {
     int x;      // x-coordinate of the background
@@ -34,10 +34,17 @@ typedef struct {
     Sprite *sprite;
 } Paddle;
 
+typedef struct {
+    int x; // X-coordinate of the powerup
+    int y; // Y-coordinate of the powerup
+    Sprite *sprite;
+} Projectile;
+
 
 void initBackground(Background* background, int x, int y, Sprite *sprite);
 void initBall(Ball* ball, int x, int y, Sprite *sprite);
 void initBrick(Brick* brick, int x, int y, Sprite *sprite);
 void initPaddle(Paddle* paddle, int x, int y, Sprite *sprite);
+void initProjectile(Projectile* projectile, Paddle paddle, Sprite *sprite);
 
 #endif

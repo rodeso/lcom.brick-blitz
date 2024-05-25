@@ -16,7 +16,7 @@ typedef enum {
     LOST,
     WON,
     EXIT
-} GameState;
+} State;
 
 int run();
 int draw_frame();
@@ -30,3 +30,5 @@ int prepare_timer();
 int disable_timer();
 int prepare_screens();
 int prepare_objects();
+int projectileLaunch();
+int move_projectile();

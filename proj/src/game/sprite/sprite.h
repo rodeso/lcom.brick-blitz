@@ -3,6 +3,14 @@
 
 #include <lcom/lcf.h>
 #include "dvcs/graphics/vbe.h"
+#include "xpm/background.xpm"
+#include "xpm/menu.xpm"
+#include "xpm/lost.xpm"
+#include "xpm/won.xpm"
+#include "xpm/ball.xpm"
+#include "xpm/brick.xpm"
+#include "xpm/paddle.xpm"
+
 
 typedef struct {
     uint16_t height;
@@ -12,4 +20,6 @@ typedef struct {
 
 Sprite *create_sprite(xpm_map_t pic);
 void destroy_sprite(Sprite *sp);
+int drawSprite(Sprite *sprite, int x, int y);
+
 #endif

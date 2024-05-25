@@ -20,3 +20,8 @@ int drawBall(Ball *ball) {
     if(drawSprite(ball->sprite, ball->x, ball->y)!=0) {return 1;}
     return 0;
 }
+
+int drawProjectile(Projectile *projectile) {
+    if(drawSprite(projectile->sprite, projectile->x, projectile->y)!=0) {return 1;}
+    return 0;
+}

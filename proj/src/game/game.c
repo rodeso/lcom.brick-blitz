@@ -1,6 +1,6 @@
 #include "game/game.h"
 
-GameState gameState = MENU;
+State gameState = MENU;
 uint8_t bit_no_keyboard = 0;
 uint8_t bit_no_timer = 0;
 Background background;
@@ -10,6 +10,7 @@ Background won;
 Paddle paddle;
 Brick bricks[72];
 Ball ball;
+Projectile projectile;
 extern vbe_mode_info_t vmi_p;
 extern uint8_t scancodes[2];
 Sprite *background_sprite;
@@ -21,6 +22,9 @@ Sprite *brick_sprite;
 Sprite *paddle_sprite;
 int lives = 3;
 int destroyed = 0;
+int powerup = 0;
+int destroyedForPowerup = 0;
+bool projectileLaunched = false;
 //----------------video--------------------------------------------------------------------------------------------------------------------
 
 
@@ -76,6 +80,9 @@ void handle_keyboard() {
     }
       break;
     case 57: //Spacebar
+    if (gameState == GAME) {
+      if(projectileLaunch()) {break;}
+    }
       break;
     case 28: //Enter
     if (gameState == MENU) {
@@ -135,8 +142,21 @@ int (prepare_objects)() {
     }
     initBall(&ball, (background_sprite->width/2)-(ball_sprite->width/2), 530-ball_sprite->height, ball_sprite);
 
+    lives = 3;
+    destroyed = 0;
+    powerup = 0;
 
     return 0;
+}
+
+int projectileLaunch() {
+  if (powerup > 0) {
+    powerup--;
+    initProjectile(&projectile, paddle, ball_sprite); 
+    projectileLaunched = true;  
+    return 0;
+  }
+  return 1;
 }
 
 
@@ -151,6 +171,11 @@ int (draw_frame)() {
       }
     }
     if(drawBall(&ball)) {return 1;}
+    if (powerup > 0) {
+      if (projectileLaunched) {
+        if(drawProjectile(&projectile)) {return 1;}
+      }
+    }
   }
   else if (gameState == MENU) {
     if(drawBackground(&menu)) {return 1;}
@@ -243,6 +268,7 @@ int move_ball() {
               ball.dy = -ball.dy;
               bricks[i].destroyed = true;
               destroyed++;
+              destroyedForPowerup++;
             }
           }
         }
@@ -254,10 +280,34 @@ int move_ball() {
     return 0;
 }
 
+int move_projectile() {
+  if (projectile.y <= 0) {
+    projectileLaunched = false;
+  }
+  for (int i = 0; i < 72; i++) {
+    if (!bricks[i].destroyed) {
+      if (projectile.y <= bricks[i].y + brick_sprite->height && projectile.y + projectile.sprite->height >= bricks[i].y && projectile.x + projectile.sprite->width >= bricks[i].x && projectile.x <= bricks[i].x + brick_sprite->width) {
+        bricks[i].destroyed = true;
+        bricks[i+1].destroyed = true;
+        bricks[i-1].destroyed = true;
+        bricks[i-12].destroyed = true;
+        bricks[i-12-1].destroyed = true;
+        bricks[i-12+1].destroyed = true;
+        destroyed++;
+        projectileLaunched = false;
+        return 0;
+      }
+    }
+  }
+  projectile.y -= 5;
+  return 0;
+}
+
 
 int (run)() {
     int ipc_status,r=0;
     int frames = 0;
+    int fps = 15;
     message msg;
 
     while (gameState!=EXIT) {
@@ -273,9 +323,12 @@ int (run)() {
           if (msg.m_notify.interrupts & BIT(bit_no_timer)) {
             if (gameState == GAME) {
               frames++;
-              if (frames % 5 == 0) { //60/5 = 12 fps
+              if (frames % (60/fps) == 0) { //60/5 = 12 fps
                 move_ball();
                 draw_frame();
+                if (projectileLaunched) {
+                  move_projectile();
+                }
               }
             } else {
               draw_frame();
@@ -295,6 +348,10 @@ int (run)() {
       if (destroyed == 72) {
         gameState = WON;
         destroyed = 0;
+      }
+      if (destroyedForPowerup == 12) { //edit here to change how many bricks are needed to get a powerup
+        powerup = 3; //edit here to change how many powerups are given
+        destroyedForPowerup = 0;
       }
     }
   return 0;

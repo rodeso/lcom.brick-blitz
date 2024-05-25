@@ -37,8 +37,6 @@ int (read_scancode)(uint8_t port,uint8_t* result) {
 
 
 void (kbc_ih)() {
-    printf("%s is running!\n", __func__);
-
     if (!big_scancode) {size=1;} //(re)establishing if the scancode has 1 or more bytes
 
     read_scancode(OUTPUT_BUFFER_KEYBOARD, &scancodes[scancode_curr_byte]); //reading process

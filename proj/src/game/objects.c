@@ -33,7 +33,11 @@ void initPaddle(Paddle* paddle, int x, int y, Sprite *paddle_sprite) {
     paddle->sprite = paddle_sprite;
 }
 
-
+void initProjectile(Projectile* projectile, Paddle paddle, Sprite *projectile_sprite) {
+    projectile->x = paddle.x + paddle.sprite->width/2;
+    projectile->y = paddle.y;
+    projectile->sprite = projectile_sprite;
+}
 
 
 
