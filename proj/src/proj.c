@@ -40,6 +40,7 @@ int (proj_main_loop)(int argc, char *argv[]){
     if (prepare_keyboard()) return 1;
     if(prepare_timer()) return 1;
     if (prepare_video()) return 1;
+    if (prepare_screens()) return 1;
     if (prepare_objects()) return 1;
     if(draw_frame()) return 1;
     if (run()) return 1;

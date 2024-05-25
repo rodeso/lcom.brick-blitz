@@ -17,7 +17,6 @@ typedef struct {
     int oldy;   // y-coordinate of the ball in the previous frame
     int dx;     // x-speed of the ball
     int dy;     // y-speed of the ball
-    int contact; // flag to indicate if the brick is destroyed
     int base;   // flag to indicate if the brick is the base
     Sprite *sprite;
 } Ball;

@@ -11,7 +11,6 @@ void initBackground(Background* background, int x, int y, Sprite *background_spr
 void initBall(Ball* ball, int x, int y, Sprite *ball_sprite) {
     ball->x = x;
     ball->y = y;
-    ball->contact = false;
     ball->base = true;
     ball->dx = 4;
     ball->dy = -4;

@@ -10,7 +10,7 @@ PROG=proj
 .PATH: ${.CURDIR}/game/sprite/
 
 # source code files to be compiled
-SRCS = proj.c manager.c game.c graphics.c keyboard.c mouse.c timer.c objects.c utils.c sprite.c draw.c handler.c
+SRCS = proj.c manager.c game.c graphics.c keyboard.c mouse.c timer.c objects.c utils.c sprite.c draw.c
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set
