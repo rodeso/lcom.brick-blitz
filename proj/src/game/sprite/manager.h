@@ -2,6 +2,9 @@
 #define _LCOM_SPRITES_H_
 
 #include "xpm/background.xpm"
+#include "xpm/menu.xpm"
+#include "xpm/lost.xpm"
+#include "xpm/won.xpm"
 #include "xpm/ball.xpm"
 #include "xpm/brick.xpm"
 #include "xpm/paddle.xpm"

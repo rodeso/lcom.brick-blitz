@@ -12,6 +12,11 @@ void initBall(Ball* ball, int x, int y, Sprite *ball_sprite) {
     ball->x = x;
     ball->y = y;
     ball->contact = false;
+    ball->base = true;
+    ball->dx = 4;
+    ball->dy = -4;
+    ball->oldx = 0;
+    ball->oldy = 0;
     ball->sprite = ball_sprite;
 
 }

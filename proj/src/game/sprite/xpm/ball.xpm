@@ -3,7 +3,7 @@ static char *ball_xpm[] = {
 /* width height num_colors chars_per_pixel */
 "15 16 2 1",
 /* colors */
-"X c #85FF00",
+"X c #24FF00",
 ". c #505050",
 /* pixels */
 "...............",

@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "vbe.h": "c"
+        "vbe.h": "c",
+        "*.xpm": "c"
     }
 }

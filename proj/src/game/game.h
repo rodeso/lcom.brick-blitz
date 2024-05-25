@@ -15,6 +15,7 @@
 
 int run();
 int draw_frame();
+int move_ball();
 int prepare_video();
 int disable_video();
 int prepare_keyboard();
