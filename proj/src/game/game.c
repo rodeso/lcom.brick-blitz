@@ -21,6 +21,8 @@ Sprite *won_sprite;
 Sprite *ball_sprite;
 Sprite *brick_sprite;
 Sprite *paddle_sprite;
+Sprite *extra_ball_sprite;
+Sprite *projectile_sprite;
 int lives = 3;
 int destroyed = 0;
 int powerup = 0;
@@ -138,6 +140,8 @@ int (prepare_objects)() {
     ball_sprite = create_sprite((xpm_map_t)ball_xpm);
     paddle_sprite = create_sprite((xpm_map_t)paddle_xpm);
     brick_sprite = create_sprite((xpm_map_t)brick_xpm);
+    extra_ball_sprite = create_sprite((xpm_map_t)ball2_xpm);
+    projectile_sprite = create_sprite((xpm_map_t)missile_xpm);
 
 
     initBackground(&background, 0, 0, background_sprite);
@@ -159,7 +163,7 @@ int (prepare_objects)() {
 int projectileLaunch() {
   if (powerup > 0) {
     powerup--;
-    initProjectile(&projectile, paddle, ball_sprite); 
+    initProjectile(&projectile, paddle, projectile_sprite); 
     projectileLaunched = true;  
     return 0;
   }
@@ -207,7 +211,7 @@ int move_ball() {
           ball.dy = -ball.dy;
         }
         
-        if (ball.y + ball.sprite->height >= vmi_p.YResolution - 10) {
+        if (ball.y + ball.sprite->height >= vmi_p.YResolution - BIT(4)) {
           ball.base = true;
           lives--;
         }
@@ -468,7 +472,7 @@ int (run)() {
         projectile_power = false;
       }
       if (ball_power) {
-        initBall(&extra_ball, (background_sprite->width/2)-(ball_sprite->width/2), 530-ball_sprite->height, ball_sprite);
+        initBall(&extra_ball, (background_sprite->width/2)-(ball_sprite->width/2), 530-ball_sprite->height, extra_ball_sprite);
         ballLaunched = true;
         ball_power = false;
       }

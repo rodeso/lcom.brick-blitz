@@ -8,8 +8,12 @@
 #include "xpm/lost.xpm"
 #include "xpm/won.xpm"
 #include "xpm/ball.xpm"
+#include "xpm/ball2.xpm"
 #include "xpm/brick.xpm"
 #include "xpm/paddle.xpm"
+#include "xpm/missile.xpm"
+#include "xpm/missileIcon.xpm"
+#include "xpm/life.xpm"
 
 
 typedef struct {
