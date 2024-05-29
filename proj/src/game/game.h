@@ -21,6 +21,7 @@ typedef enum {
 } State;
 
 int run();
+int draw_init();
 int draw_frame();
 int move_ball();
 int prepare_video();

@@ -31,12 +31,14 @@ typedef struct {
 typedef struct {
     int x; // X-coordinate of the paddle
     int y; // Y-coordinate of the paddle
+    int oldx; // old X-coordinate of the paddle
     Sprite *sprite;
 } Paddle;
 
 typedef struct {
     int x; // X-coordinate of the powerup
     int y; // Y-coordinate of the powerup
+    int oldy; // old Y-coordinate of the powerup
     Sprite *sprite;
 } Projectile;
 

@@ -16,4 +16,12 @@ int drawBall(Ball *ball);
 
 int drawProjectile(Projectile *projectile);
 
+int erasePaddle(Paddle *paddle);
+
+int eraseBall(Ball *ball);
+
+int eraseBrick(Brick *brick);
+
+int eraseProjectile(Projectile *projectile);
+
 #endif

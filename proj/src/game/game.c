@@ -30,6 +30,7 @@ bool projectile_power = false;
 bool ball_power = false;
 bool projectileLaunched = false;
 bool ballLaunched = false;
+bool moveBricks = false;
 //----------------video--------------------------------------------------------------------------------------------------------------------
 
 
@@ -66,12 +67,16 @@ int (disable_keyboard)() {
 void handle_keyboard() {
   switch(scancodes[0]) {
     case 30: //A
-    if (paddle.x > 0)
+    if (paddle.x > 0) {
+      paddle.oldx = paddle.x;
       paddle.x -= BIT(3);
+    }
       break;
     case 32: //D
-    if (paddle.x + paddle.sprite->width < vmi_p.XResolution)
+    if (paddle.x + paddle.sprite->width < vmi_p.XResolution) {
+      paddle.oldx = paddle.x;
       paddle.x += BIT(3);
+    }
       break;
     case 1: //ESC
     if (gameState == MENU) {
@@ -172,16 +177,14 @@ int projectileLaunch() {
 
 
 //----------------run--------------------------------------------------------------------------------------------------------------------
-int (draw_frame)() {
+int (draw_init)() {
   if (gameState == GAME) {
     if(drawBackground(&background)) {return 1;}
-    if(drawPaddle(&paddle)) {return 1;}
     for (int i=0; i<72; i++) {
       if (!bricks[i].destroyed) {
         if(drawBrick(&bricks[i])){return 1;}
       }
     }
-    if(drawBall(&ball)) {return 1;}
     
   }
   else if (gameState == MENU) {
@@ -194,6 +197,17 @@ int (draw_frame)() {
     if(drawBackground(&won)) {return 1;}
   }
     return 0;
+}
+int draw_frame() {
+  if (gameState == GAME) {
+    if(erasePaddle(&paddle)) {return 1;}
+    if(drawPaddle(&paddle)) {return 1;}
+    
+    if(eraseBall(&ball)) {return 1;}
+    if(drawBall(&ball)) {return 1;}
+    
+  }
+  return 0;
 }
 int move_ball() {
     ball.oldx = ball.x;
@@ -274,6 +288,7 @@ int move_ball() {
             if (ball.y <= bricks[i].y + brick_sprite->height && ball.y + ball.sprite->height >= bricks[i].y && ball.x + ball.sprite->width >= bricks[i].x && ball.x <= bricks[i].x + brick_sprite->width) {
               ball.dy = -ball.dy;
               bricks[i].destroyed = true;
+              if (eraseBrick(&bricks[i])) {return 1;}
               destroyed++;
               srand(time(0));  // Use current time as seed for random generator
               int random_number = rand() % 10;
@@ -311,7 +326,7 @@ int move_extraball() {
           extra_ball.dy = -extra_ball.dy;
         }
         
-        if (extra_ball.y + extra_ball.sprite->height >= vmi_p.YResolution - 10) {
+        if (extra_ball.y + extra_ball.sprite->height >= vmi_p.YResolution - BIT(4)) {
           ballLaunched = false;
         }
         if (extra_ball.y + extra_ball.sprite->height >= paddle.y+1 && extra_ball.x + extra_ball.sprite->width >= paddle.x && extra_ball.x <= paddle.x + paddle.sprite->width) {
@@ -373,6 +388,7 @@ int move_extraball() {
             if (extra_ball.y <= bricks[i].y + brick_sprite->height && extra_ball.y + extra_ball.sprite->height >= bricks[i].y && extra_ball.x + extra_ball.sprite->width >= bricks[i].x && extra_ball.x <= bricks[i].x + brick_sprite->width) {
               extra_ball.dy = -extra_ball.dy;
               bricks[i].destroyed = true;
+              if (eraseBrick(&bricks[i])) {return 1;}
               destroyed++;
               srand(time(0));  // Use current time as seed for random generator
               int random_number = rand() % 2;
@@ -406,12 +422,19 @@ int move_projectile() {
         bricks[i-12].destroyed = true;
         bricks[i-12-1].destroyed = true;
         bricks[i-12+1].destroyed = true;
+        if (eraseBrick(&bricks[i])) {return 1;}
+        if (eraseBrick(&bricks[i+1])) {return 1;}
+        if (eraseBrick(&bricks[i-1])) {return 1;}
+        if (eraseBrick(&bricks[i-12])) {return 1;}
+        if (eraseBrick(&bricks[i-12-1])) {return 1;}
+        if (eraseBrick(&bricks[i-12+1])) {return 1;}
         destroyed++;
         projectileLaunched = false;
         return 0;
       }
     }
   }
+  projectile.oldy = projectile.y;
   projectile.y -= 5;
   return 0;
 }
@@ -436,20 +459,34 @@ int (run)() {
           if (msg.m_notify.interrupts & BIT(bit_no_timer)) {
             if (gameState == GAME) {
               frames++;
+              if (frames % 60 == 1)
+                draw_init();
               if (frames % (60/fps) == 0) { //60/5 = 12 fps
                 move_ball();
                 draw_frame();
+                if (moveBricks) {
+                  if (frames % 60 == 0) {
+                    for (int i = 0; i < 72; i++) {
+                      bricks[i].y++; 
+                    }
+                  }
+                }
                 if (projectileLaunched) {
                   move_projectile();
+                  if(eraseProjectile(&projectile)) {return 1;}
                   if(drawProjectile(&projectile)) {return 1;}
                 }
                 if (ballLaunched) {
                   move_extraball();
+                  if(eraseBall(&extra_ball)) {return 1;}
                   if(drawBall(&extra_ball)) {return 1;}
                 }
               }
+              if (frames == 60*30) {
+                moveBricks = true;
+              }
             } else {
-              draw_frame();
+              draw_init();
             }
           }
           if (msg.m_notify.interrupts & BIT(bit_no_keyboard)){

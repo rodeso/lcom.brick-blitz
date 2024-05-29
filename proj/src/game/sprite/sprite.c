@@ -40,4 +40,13 @@ int drawSprite(Sprite *sprite, int xPos, int yPos) {
     }
     return 0; 
 }
-
+int eraseSprite(Sprite *sprite, int xPos, int yPos) {
+    uint32_t current_color = 0x3A0D56; //insert background colour (purple in this case :D);
+    for (int i = 0 ; i < sprite->height; i++) {
+      for (int j = 0 ; j < sprite->width; j++) {
+          if (current_color == 0x505050) {continue;}
+          if (vbe_draw_pixel(xPos + j, yPos + i, current_color)) return 1;
+      }
+    }
+    return 0; 
+}

@@ -25,3 +25,23 @@ int drawProjectile(Projectile *projectile) {
     if(drawSprite(projectile->sprite, projectile->x, projectile->y)!=0) {return 1;}
     return 0;
 }
+
+int erasePaddle(Paddle *paddle) {
+    if(eraseSprite(paddle->sprite, paddle->oldx, paddle->y)!=0) {return 1;}
+    return 0;
+}
+
+int eraseBall(Ball *ball) {
+    if(eraseSprite(ball->sprite, ball->oldx, ball->oldy)!=0) {return 1;}
+    return 0;
+}
+
+int eraseBrick(Brick *brick) {
+    if(eraseSprite(brick->sprite, brick->x, brick->y)!=0) {return 1;}
+    return 0;
+}
+
+int eraseProjectile(Projectile *projectile) {
+    if(eraseSprite(projectile->sprite, projectile->x, projectile->oldy)!=0) {return 1;}
+    return 0;
+}

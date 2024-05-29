@@ -25,5 +25,6 @@ typedef struct {
 Sprite *create_sprite(xpm_map_t pic);
 void destroy_sprite(Sprite *sp);
 int drawSprite(Sprite *sprite, int x, int y);
+int eraseSprite(Sprite *sprite, int x, int y);
 
 #endif
