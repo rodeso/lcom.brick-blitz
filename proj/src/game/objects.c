@@ -33,6 +33,7 @@ void initBrick(Brick* brick, int x, int y, Sprite *brick_sprite) {
 void initPaddle(Paddle* paddle, int x, int y, Sprite *paddle_sprite) {
     paddle->x = x;
     paddle->y = y;
+    paddle->oldx = 20;
     paddle->sprite = paddle_sprite;
 }
 

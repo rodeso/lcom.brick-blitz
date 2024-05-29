@@ -24,6 +24,8 @@ Sprite *paddle_sprite;
 Sprite *extra_ball_sprite;
 Sprite *projectile_sprite;
 Sprite *explosion_sprite;
+Sprite *life_sprite;
+Sprite *projectileIcon_sprite;
 int lives = 3;
 int destroyed = 0;
 int powerup = 0;
@@ -153,6 +155,8 @@ int (prepare_objects)() {
     extra_ball_sprite = create_sprite((xpm_map_t)ball2_xpm);
     projectile_sprite = create_sprite((xpm_map_t)missile_xpm);
     explosion_sprite = create_sprite((xpm_map_t)explosion_xpm);
+    life_sprite = create_sprite((xpm_map_t)life_xpm);
+    projectileIcon_sprite = create_sprite((xpm_map_t)missileIcon_xpm);
 
 
     initBackground(&background, 0, 0, background_sprite);
@@ -197,6 +201,13 @@ int (draw_init)() {
         if(drawBrick(&bricks[i])){return 1;}
       }
     }
+    for (int i=0; i<lives; i++) {
+      if(drawSprite(life_sprite, vmi_p.XResolution/2 + vmi_p.XResolution/4 - life_sprite->width/2 + 15*i, vmi_p.YResolution - 13 )!=0) {return 1;}
+    }
+
+    for (int i=0; i<powerup; i++) {
+      if(drawSprite(projectileIcon_sprite, vmi_p.XResolution/2 - vmi_p.XResolution/4 - projectileIcon_sprite->width/2 + 15*i, vmi_p.YResolution - 13 )!=0) {return 1;}
+    }
     
   }
   else if (gameState == MENU) {
@@ -232,14 +243,21 @@ int move_ball() {
       ball.y = paddle.y - ball.sprite->height;
       ball.dy = -BIT(2);
     } else {
-        if (ball.x + ball.sprite->width >= vmi_p.XResolution - BIT(3) || ball.x <= BIT(3)) {
+        if (ball.x + ball.sprite->width >= vmi_p.XResolution - 10) {
+          ball.x = vmi_p.XResolution - ball.sprite->width - BIT(3);
           ball.dx = -ball.dx;
         }
-        if (ball.y <= BIT(3)) {
+        if (ball.x <= 10) {
+          ball.x = BIT(3);
+          ball.dx = -ball.dx;
+        }
+        if (ball.y <= 10) {
+          ball.y = BIT(3);
           ball.dy = -ball.dy;
         }
         
-        if (ball.y + ball.sprite->height >= vmi_p.YResolution - BIT(4)) {
+        if (ball.y + ball.sprite->height >= vmi_p.YResolution - 20) {
+          ball.y = vmi_p.YResolution - ball.sprite->height - BIT(4);
           ball.base = true;
           lives--;
         }
@@ -333,14 +351,21 @@ int move_extraball() {
       extra_ball.dy = -BIT(2);
       extra_ball.base = false;
     } else {
-        if (extra_ball.x + extra_ball.sprite->width >= vmi_p.XResolution - BIT(3) || extra_ball.x <= BIT(3)) {
+        if (extra_ball.x + extra_ball.sprite->width >= vmi_p.XResolution - BIT(3)) {
+          extra_ball.x = vmi_p.XResolution - extra_ball.sprite->width - BIT(3);
+          extra_ball.dx = -extra_ball.dx;
+        }
+        if (extra_ball.x <= BIT(3)) {
+          extra_ball.x = BIT(3);
           extra_ball.dx = -extra_ball.dx;
         }
         if (extra_ball.y <= BIT(3)) {
+          extra_ball.y = BIT(3);
           extra_ball.dy = -extra_ball.dy;
         }
         
         if (extra_ball.y + extra_ball.sprite->height >= vmi_p.YResolution - BIT(4)) {
+          extra_ball.y = vmi_p.YResolution - extra_ball.sprite->height - BIT(4);
           ballLaunched = false;
         }
         if (extra_ball.y + extra_ball.sprite->height >= paddle.y+1 && extra_ball.x + extra_ball.sprite->width >= paddle.x && extra_ball.x <= paddle.x + paddle.sprite->width) {
@@ -518,7 +543,7 @@ int (run)() {
               frames++;
               if (frames % 60 == 1)
                 draw_init();
-              if (frames % (60/fps) == 0) { //60/5 = 12 fps
+              if (frames % (60/fps) == 0) { 
                 move_ball();
                 draw_frame();
                 if (moveBricks) {
@@ -551,7 +576,7 @@ int (run)() {
           } 
         }
       }
-      if (lives == 0) {
+      if (lives < 0) {
         lives = 3;
         destroyed = 0;
         gameState = LOST;     
