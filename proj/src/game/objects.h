@@ -40,6 +40,7 @@ typedef struct {
     int y; // Y-coordinate of the powerup
     int oldy; // old Y-coordinate of the powerup
     Sprite *sprite;
+    Sprite *explosion;
 } Projectile;
 
 
@@ -47,6 +48,6 @@ void initBackground(Background* background, int x, int y, Sprite *sprite);
 void initBall(Ball* ball, int x, int y, Sprite *sprite);
 void initBrick(Brick* brick, int x, int y, Sprite *sprite);
 void initPaddle(Paddle* paddle, int x, int y, Sprite *sprite);
-void initProjectile(Projectile* projectile, Paddle paddle, Sprite *sprite);
+void initProjectile(Projectile* projectile, Paddle paddle, Sprite *sprite, Sprite *explosion);
 
 #endif

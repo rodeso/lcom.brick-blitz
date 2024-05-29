@@ -26,6 +26,11 @@ int drawProjectile(Projectile *projectile) {
     return 0;
 }
 
+int drawExplosion(Projectile *projectile) {
+    if(drawSprite(projectile->explosion, projectile->x-12, projectile->y)!=0) {return 1;}
+    return 0;
+}
+
 int erasePaddle(Paddle *paddle) {
     if(eraseSprite(paddle->sprite, paddle->oldx, paddle->y)!=0) {return 1;}
     return 0;

@@ -7,6 +7,7 @@ void initBackground(Background* background, int x, int y, Sprite *background_spr
     background->y = y;
     background->sprite = background_sprite;
 }
+
 // Function to initialize a ball
 void initBall(Ball* ball, int x, int y, Sprite *ball_sprite) {
     ball->x = x;
@@ -19,6 +20,7 @@ void initBall(Ball* ball, int x, int y, Sprite *ball_sprite) {
     ball->sprite = ball_sprite;
 
 }
+
 // Function to initialize a brick
 void initBrick(Brick* brick, int x, int y, Sprite *brick_sprite) {
     brick->x = x;
@@ -26,6 +28,7 @@ void initBrick(Brick* brick, int x, int y, Sprite *brick_sprite) {
     brick->destroyed = false;
     brick->sprite = brick_sprite;
 }
+
 // Function to initialize the paddle
 void initPaddle(Paddle* paddle, int x, int y, Sprite *paddle_sprite) {
     paddle->x = x;
@@ -33,10 +36,11 @@ void initPaddle(Paddle* paddle, int x, int y, Sprite *paddle_sprite) {
     paddle->sprite = paddle_sprite;
 }
 
-void initProjectile(Projectile* projectile, Paddle paddle, Sprite *projectile_sprite) {
+void initProjectile(Projectile* projectile, Paddle paddle, Sprite *projectile_sprite, Sprite *explosion_sprite) {
     projectile->x = paddle.x + paddle.sprite->width/2;
     projectile->y = paddle.y;
     projectile->sprite = projectile_sprite;
+    projectile->explosion = explosion_sprite;
 }
 
 

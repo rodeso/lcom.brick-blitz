@@ -23,6 +23,7 @@ Sprite *brick_sprite;
 Sprite *paddle_sprite;
 Sprite *extra_ball_sprite;
 Sprite *projectile_sprite;
+Sprite *explosion_sprite;
 int lives = 3;
 int destroyed = 0;
 int powerup = 0;
@@ -31,6 +32,8 @@ bool ball_power = false;
 bool projectileLaunched = false;
 bool ballLaunched = false;
 bool moveBricks = false;
+int frames = 0;
+int fps = 15;
 //----------------video--------------------------------------------------------------------------------------------------------------------
 
 
@@ -98,8 +101,8 @@ void handle_keyboard() {
       break;
     case 28: //Enter
     if (gameState == MENU) {
-      gameState = GAME;
       prepare_objects();
+      gameState = GAME;
     }
     else if (gameState == LOST || gameState == WON) {
       gameState = MENU;
@@ -114,7 +117,6 @@ void handle_keyboard() {
 }
 
 
-
 //----------------timer--------------------------------------------------------------------------------------------------------------------
 
 
@@ -122,6 +124,7 @@ int (prepare_timer)() {
     if(timer_subscribe_int(&bit_no_timer)!=0) {return 1;}
     return 0;
 }
+
 int (disable_timer)() {
     if(timer_unsubscribe_int()) return 1;
     return 0;
@@ -129,6 +132,8 @@ int (disable_timer)() {
 
 
 //----------------objects--------------------------------------------------------------------------------------------------------------------
+
+
 int (prepare_screens)() {
     menu_sprite = create_sprite((xpm_map_t)menu_xpm);
     lost_sprite = create_sprite((xpm_map_t)lost_xpm);
@@ -147,6 +152,7 @@ int (prepare_objects)() {
     brick_sprite = create_sprite((xpm_map_t)brick_xpm);
     extra_ball_sprite = create_sprite((xpm_map_t)ball2_xpm);
     projectile_sprite = create_sprite((xpm_map_t)missile_xpm);
+    explosion_sprite = create_sprite((xpm_map_t)explosion_xpm);
 
 
     initBackground(&background, 0, 0, background_sprite);
@@ -159,8 +165,12 @@ int (prepare_objects)() {
     lives = 3;
     destroyed = 0;
     powerup = 0;
+    frames = 0;
     projectile_power = false;
     ball_power = false;
+    projectileLaunched = false;
+    ballLaunched = false;
+    moveBricks = false;
 
     return 0;
 }
@@ -168,7 +178,7 @@ int (prepare_objects)() {
 int projectileLaunch() {
   if (powerup > 0) {
     powerup--;
-    initProjectile(&projectile, paddle, projectile_sprite); 
+    initProjectile(&projectile, paddle, projectile_sprite, explosion_sprite); 
     projectileLaunched = true;  
     return 0;
   }
@@ -177,6 +187,8 @@ int projectileLaunch() {
 
 
 //----------------run--------------------------------------------------------------------------------------------------------------------
+
+
 int (draw_init)() {
   if (gameState == GAME) {
     if(drawBackground(&background)) {return 1;}
@@ -198,6 +210,7 @@ int (draw_init)() {
   }
     return 0;
 }
+
 int draw_frame() {
   if (gameState == GAME) {
     if(erasePaddle(&paddle)) {return 1;}
@@ -209,6 +222,7 @@ int draw_frame() {
   }
   return 0;
 }
+
 int move_ball() {
     ball.oldx = ball.x;
     ball.oldy = ball.y;
@@ -289,13 +303,13 @@ int move_ball() {
               ball.dy = -ball.dy;
               bricks[i].destroyed = true;
               if (eraseBrick(&bricks[i])) {return 1;}
-              destroyed++;
+              
               srand(time(0));  // Use current time as seed for random generator
               int random_number = rand() % 10;
               if (random_number == 0) {
                 projectile_power = true;
               }
-              if (random_number == 1) {
+              if (random_number == 1 && ballLaunched == false) {
                 ball_power = true;
               }
             }
@@ -389,9 +403,9 @@ int move_extraball() {
               extra_ball.dy = -extra_ball.dy;
               bricks[i].destroyed = true;
               if (eraseBrick(&bricks[i])) {return 1;}
-              destroyed++;
+              
               srand(time(0));  // Use current time as seed for random generator
-              int random_number = rand() % 2;
+              int random_number = rand() % 10;
               if (random_number == 0) {
                 projectile_power = true;
               }
@@ -410,40 +424,83 @@ int move_extraball() {
 }
 
 int move_projectile() {
-  if (projectile.y <= 0) {
-    projectileLaunched = false;
-  }
   for (int i = 0; i < 72; i++) {
     if (!bricks[i].destroyed) {
       if (projectile.y <= bricks[i].y + brick_sprite->height && projectile.y + projectile.sprite->height >= bricks[i].y && projectile.x + projectile.sprite->width >= bricks[i].x && projectile.x <= bricks[i].x + brick_sprite->width) {
-        bricks[i].destroyed = true;
-        bricks[i+1].destroyed = true;
-        bricks[i-1].destroyed = true;
-        bricks[i-12].destroyed = true;
-        bricks[i-12-1].destroyed = true;
-        bricks[i-12+1].destroyed = true;
-        if (eraseBrick(&bricks[i])) {return 1;}
-        if (eraseBrick(&bricks[i+1])) {return 1;}
-        if (eraseBrick(&bricks[i-1])) {return 1;}
-        if (eraseBrick(&bricks[i-12])) {return 1;}
-        if (eraseBrick(&bricks[i-12-1])) {return 1;}
-        if (eraseBrick(&bricks[i-12+1])) {return 1;}
-        destroyed++;
+        eraseProjectile(&projectile);
+        if (i % 12 > 0 && i % 12 < 11) {  // 0 1 2 3 4 5 6 7 8 9 10 11
+          bricks[i].destroyed = true;
+          bricks[i+1].destroyed = true;
+          bricks[i-1].destroyed = true;
+          if (eraseBrick(&bricks[i])) {return 1;}
+          if (eraseBrick(&bricks[i+1])) {return 1;}
+          if (eraseBrick(&bricks[i-1])) {return 1;}
+          if (i-13 >= 0){
+          bricks[i-12].destroyed = true;
+          bricks[i-12-1].destroyed = true;
+          bricks[i-12+1].destroyed = true;
+          if (eraseBrick(&bricks[i-12])) {return 1;}
+          if (eraseBrick(&bricks[i-12-1])) {return 1;}
+          if (eraseBrick(&bricks[i-12+1])) {return 1;}
+          }
+        }
+        if (i % 12 == 11) {
+          bricks[i].destroyed = true;
+          bricks[i-1].destroyed = true;
+          if (eraseBrick(&bricks[i])) {return 1;}
+          if (eraseBrick(&bricks[i-1])) {return 1;}
+          if (i-13 >= 0){
+          bricks[i-12].destroyed = true;
+          bricks[i-12-1].destroyed = true;
+          if (eraseBrick(&bricks[i-12])) {return 1;}
+          if (eraseBrick(&bricks[i-12-1])) {return 1;}
+          }
+        }
+        if (i % 12 == 0) {
+          bricks[i].destroyed = true;
+          bricks[i+1].destroyed = true;
+          if (eraseBrick(&bricks[i])) {return 1;}
+          if (eraseBrick(&bricks[i+1])) {return 1;}
+          if (i-13 >= 0){
+          bricks[i-12].destroyed = true;
+          bricks[i-12+1].destroyed = true;
+          if (eraseBrick(&bricks[i-12])) {return 1;}
+          if (eraseBrick(&bricks[i-12+1])) {return 1;}
+          }
+        }
+      
+
+        drawExplosion(&projectile);
         projectileLaunched = false;
         return 0;
       }
     }
+  }
+  if (projectile.y <= BIT(3)) {
+    projectileLaunched = false;
   }
   projectile.oldy = projectile.y;
   projectile.y -= 5;
   return 0;
 }
 
+int move_bricks() {
+  for (int i = 0; i < 72; i++) {
+    if (!bricks[i].destroyed) {
+      if (bricks[i].y + bricks[i].sprite->height <= paddle.y - BIT(4)) {
+        bricks[i].y+= BIT(2);
+      }
+      else {
+        gameState = LOST;
+      }
+    }
+  }
+  return 0;
+}
+
 
 int (run)() {
     int ipc_status,r=0;
-    int frames = 0;
-    int fps = 15;
     message msg;
 
     while (gameState!=EXIT) {
@@ -466,9 +523,7 @@ int (run)() {
                 draw_frame();
                 if (moveBricks) {
                   if (frames % 60 == 0) {
-                    for (int i = 0; i < 72; i++) {
-                      bricks[i].y++; 
-                    }
+                    move_bricks();
                   }
                 }
                 if (projectileLaunched) {
@@ -497,15 +552,23 @@ int (run)() {
         }
       }
       if (lives == 0) {
-        gameState = LOST;
         lives = 3;
+        destroyed = 0;
+        gameState = LOST;     
+      }
+      destroyed = 0;
+      for (int i = 0; i < 72; i++) {
+        if(bricks[i].destroyed) {
+          destroyed++;
+        }
       }
       if (destroyed == 72) {
-        gameState = WON;
+        lives = 3;
         destroyed = 0;
+        gameState = WON;
       }
       if (projectile_power) { //edit here to change how many bricks are needed to get a powerup
-        powerup = 3; //edit here to change how many powerups are given
+        powerup = 1; //edit here to change how many powerups are given
         projectile_power = false;
       }
       if (ball_power) {

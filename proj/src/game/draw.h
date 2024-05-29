@@ -16,6 +16,8 @@ int drawBall(Ball *ball);
 
 int drawProjectile(Projectile *projectile);
 
+int drawExplosion(Projectile *projectile);
+
 int erasePaddle(Paddle *paddle);
 
 int eraseBall(Ball *ball);

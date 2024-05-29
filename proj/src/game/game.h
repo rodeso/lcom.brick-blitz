@@ -35,3 +35,4 @@ int prepare_screens();
 int prepare_objects();
 int projectileLaunch();
 int move_projectile();
+int move_bricks();
