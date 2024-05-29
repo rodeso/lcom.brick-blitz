@@ -29,13 +29,14 @@ Sprite *projectileIcon_sprite;
 int lives = 3;
 int destroyed = 0;
 int powerup = 0;
-bool projectile_power = false;
 bool ball_power = false;
 bool projectileLaunched = false;
 bool ballLaunched = false;
 bool moveBricks = false;
 int frames = 0;
-int fps = 15;
+int fps = 15;  //fps
+int tspan = 1; //time to refresh the whole screen
+int tstart = 30; //time to start moving bricks
 //----------------video--------------------------------------------------------------------------------------------------------------------
 
 
@@ -170,7 +171,6 @@ int (prepare_objects)() {
     destroyed = 0;
     powerup = 0;
     frames = 0;
-    projectile_power = false;
     ball_power = false;
     projectileLaunched = false;
     ballLaunched = false;
@@ -325,7 +325,7 @@ int move_ball() {
               srand(time(0));  // Use current time as seed for random generator
               int random_number = rand() % 10;
               if (random_number == 0) {
-                projectile_power = true;
+                powerup++;
               }
               if (random_number == 1 && ballLaunched == false) {
                 ball_power = true;
@@ -432,7 +432,7 @@ int move_extraball() {
               srand(time(0));  // Use current time as seed for random generator
               int random_number = rand() % 10;
               if (random_number == 0) {
-                projectile_power = true;
+                powerup++;
               }
               if (random_number == 1 && ballLaunched == false) {
                 ball_power = true;
@@ -541,7 +541,7 @@ int (run)() {
           if (msg.m_notify.interrupts & BIT(bit_no_timer)) {
             if (gameState == GAME) {
               frames++;
-              if (frames % 60 == 1)
+              if (frames % 60*tspan == 1)
                 draw_init();
               if (frames % (60/fps) == 0) { 
                 move_ball();
@@ -562,7 +562,7 @@ int (run)() {
                   if(drawBall(&extra_ball)) {return 1;}
                 }
               }
-              if (frames == 60*30) {
+              if (frames == 60*tstart) {
                 moveBricks = true;
               }
             } else {
@@ -591,10 +591,6 @@ int (run)() {
         lives = 3;
         destroyed = 0;
         gameState = WON;
-      }
-      if (projectile_power) { //edit here to change how many bricks are needed to get a powerup
-        powerup = 1; //edit here to change how many powerups are given
-        projectile_power = false;
       }
       if (ball_power) {
         initBall(&extra_ball, (background_sprite->width/2)-(ball_sprite->width/2), 530-ball_sprite->height, extra_ball_sprite);
