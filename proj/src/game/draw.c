@@ -1,6 +1,9 @@
 #include "draw.h"
 
 
+//----------------draw--------------------------------------------------------------------------------------------------------------------
+
+
 int drawBackground(Background *background) {
     if(drawSprite(background->sprite, background->x, background->y)!=0) {return 1;}
     return 0;
@@ -31,6 +34,15 @@ int drawExplosion(Projectile *projectile) {
     return 0;
 }
 
+int drawMarker(Marker *marker) {
+    if(drawSprite(marker->sprite, marker->x, 475)!=0) {return 1;}
+    return 0;
+}
+
+
+//----------------erase--------------------------------------------------------------------------------------------------------------------
+
+
 int erasePaddle(Paddle *paddle) {
     if(eraseSprite(paddle->sprite, paddle->oldx, paddle->y)!=0) {return 1;}
     return 0;
@@ -50,3 +62,11 @@ int eraseProjectile(Projectile *projectile) {
     if(eraseSprite(projectile->sprite, projectile->x, projectile->oldy)!=0) {return 1;}
     return 0;
 }
+
+int eraseMarker(Marker *marker) {
+    for (int i = 16; i < 768 ; i++) {
+        if(eraseSprite(marker->sprite, i, 475)!=0) {return 1;}
+    }
+    return 0;
+}
+

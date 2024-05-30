@@ -3,6 +3,7 @@
 State gameState = MENU;
 uint8_t bit_no_keyboard = 0;
 uint8_t bit_no_timer = 0;
+uint8_t bit_no_mouse = 0;
 Background background;
 Background menu;
 Background lost;
@@ -12,8 +13,10 @@ Brick bricks[72];
 Ball ball;
 Ball extra_ball;
 Projectile projectile;
+Marker marker;
 extern vbe_mode_info_t vmi_p;
 extern uint8_t scancodes[2];
+extern struct packet mouse_packet;
 Sprite *background_sprite;
 Sprite *menu_sprite;
 Sprite *lost_sprite;
@@ -26,6 +29,8 @@ Sprite *projectile_sprite;
 Sprite *explosion_sprite;
 Sprite *life_sprite;
 Sprite *projectileIcon_sprite;
+Sprite *marker_sprite;
+int ball_direction = 0;
 int lives = 3;
 int destroyed = 0;
 int powerup = 0;
@@ -37,6 +42,8 @@ int frames = 0;
 int fps = 15;  //fps
 int tspan = 1; //time to refresh the whole screen
 int tstart = 30; //time to start moving bricks
+
+
 //----------------video--------------------------------------------------------------------------------------------------------------------
 
 
@@ -92,7 +99,7 @@ void handle_keyboard() {
       gameState = MENU;
     }
     else if (gameState == LOST || gameState == WON) {
-      gameState = MENU;
+      gameState = EXIT;
     }
       break;
     case 57: //Spacebar
@@ -133,6 +140,78 @@ int (disable_timer)() {
     return 0;
 }
 
+//----------------mouse--------------------------------------------------------------------------------------------------------------------
+
+
+int (prepare_mouse)() {
+    if(mouse_subscribe_int(&bit_no_mouse)!=0) {return 1;}
+    if(mouse_write_data(0xEA)!=0) {return 1;}
+    if(mouse_write_data(0xF4)!=0) {return 1;}
+    return 0;
+}
+
+int (disable_mouse)() {
+    if(mouse_unsubscribe_int()) return 1;
+    if(mouse_write_data(0xF5)!=0) {return 1;}
+    return 0;
+}
+
+void handle_mouse() {
+  if (marker.x < vmi_p.XResolution - BIT(4) && marker.x > BIT(4)) {
+    if (ball.base) {
+      ball_direction = marker.x - (paddle.x + paddle.sprite->width/2);
+      if (ball_direction > 0) {
+        ball.dx = 1;
+      }
+      if (ball_direction > 4) {
+        ball.dx = 2;
+      }
+      if (ball_direction > 8) {
+        ball.dx = 3;
+      }
+      if (ball_direction > 16) {
+        ball.dx = 4;
+      }
+      if (ball_direction > 32) {
+        ball.dx = 5;
+      }
+      if (ball_direction > 64) {
+        ball.dx = 6;
+      }
+      if (ball_direction > 128) {
+        ball.dx = 7;
+      }
+      if (ball_direction > 256) {
+        ball.dx = 8;
+      }
+      if (ball_direction < 0) {
+        ball.dx = -1;
+      }
+      if (ball_direction < -4) {
+        ball.dx = -2;
+      }
+      if (ball_direction < -8) {
+        ball.dx = -3;
+      }
+      if (ball_direction < -16) {
+        ball.dx = -4;
+      }
+      if (ball_direction < -32) {
+        ball.dx = -5;
+      }
+      if (ball_direction < -64) {
+        ball.dx = -6;
+      }
+      if (ball_direction < -128) {
+        ball.dx = -7;
+      }
+      if (ball_direction < -256) {
+        ball.dx = -8;
+      }
+    }
+  }
+}
+
 
 //----------------objects--------------------------------------------------------------------------------------------------------------------
 
@@ -158,6 +237,7 @@ int (prepare_objects)() {
     explosion_sprite = create_sprite((xpm_map_t)explosion_xpm);
     life_sprite = create_sprite((xpm_map_t)life_xpm);
     projectileIcon_sprite = create_sprite((xpm_map_t)missileIcon_xpm);
+    marker_sprite = create_sprite((xpm_map_t)marker_xpm);
 
 
     initBackground(&background, 0, 0, background_sprite);
@@ -166,6 +246,7 @@ int (prepare_objects)() {
       initBrick(&bricks[i], BIT(4)+((i%12)*BIT(6)), BIT(4)+(int)(i/12)*BIT(5), brick_sprite);
     }
     initBall(&ball, (background_sprite->width/2)-(ball_sprite->width/2), 530-ball_sprite->height, ball_sprite);
+    initMarker(&marker, (background_sprite->width/2)-(marker_sprite->width/2), marker_sprite);
 
     lives = 3;
     destroyed = 0;
@@ -523,6 +604,21 @@ int move_bricks() {
   return 0;
 }
 
+int move_marker() {
+  if (mouse_packet.delta_x > 0) {
+    if (marker.x + marker.sprite->width < vmi_p.XResolution - BIT(4)) {
+      marker.oldx = marker.x;
+      marker.x += mouse_packet.delta_x;
+    }
+  }
+  if (mouse_packet.delta_x < BIT(4)) {
+    if (marker.x > 0) {
+      marker.oldx = marker.x;
+      marker.x += mouse_packet.delta_x;
+    }
+  }
+  return 0;
+}
 
 int (run)() {
     int ipc_status,r=0;
@@ -561,6 +657,10 @@ int (run)() {
                   if(eraseBall(&extra_ball)) {return 1;}
                   if(drawBall(&extra_ball)) {return 1;}
                 }
+                if (ball.base) {
+                  eraseMarker(&marker);
+                  drawMarker(&marker);
+                }
               }
               if (frames == 60*tstart) {
                 moveBricks = true;
@@ -574,6 +674,11 @@ int (run)() {
             handle_keyboard();
             
           } 
+          if (msg.m_notify.interrupts & BIT(bit_no_mouse)){
+            (mouse_ih)();
+            move_marker();
+            handle_mouse();
+          }
         }
       }
       if (lives < 0) {

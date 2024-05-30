@@ -18,6 +18,8 @@ int drawProjectile(Projectile *projectile);
 
 int drawExplosion(Projectile *projectile);
 
+int drawMarker(Marker *marker);
+
 int erasePaddle(Paddle *paddle);
 
 int eraseBall(Ball *ball);
@@ -25,5 +27,7 @@ int eraseBall(Ball *ball);
 int eraseBrick(Brick *brick);
 
 int eraseProjectile(Projectile *projectile);
+
+int eraseMarker(Marker *marker);
 
 #endif

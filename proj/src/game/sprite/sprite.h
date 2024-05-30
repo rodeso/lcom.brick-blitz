@@ -15,6 +15,7 @@
 #include "xpm/missileIcon.xpm"
 #include "xpm/life.xpm"
 #include "xpm/explosion.xpm"
+#include "xpm/marker.xpm"
 
 
 typedef struct {

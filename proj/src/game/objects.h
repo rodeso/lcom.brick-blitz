@@ -43,11 +43,17 @@ typedef struct {
     Sprite *explosion;
 } Projectile;
 
+typedef struct {
+    int x; // X-coordinate of the marker
+    int oldx; // old X-coordinate of the marker
+    Sprite *sprite;
+} Marker;
 
 void initBackground(Background* background, int x, int y, Sprite *sprite);
 void initBall(Ball* ball, int x, int y, Sprite *sprite);
 void initBrick(Brick* brick, int x, int y, Sprite *sprite);
 void initPaddle(Paddle* paddle, int x, int y, Sprite *sprite);
 void initProjectile(Projectile* projectile, Paddle paddle, Sprite *sprite, Sprite *explosion);
+void initMarker(Marker* marker, int x, Sprite *sprite);
 
 #endif
