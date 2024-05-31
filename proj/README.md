@@ -19,6 +19,13 @@ Brick Blitz
 
 ---
 
+## Installation
+
+    git clone https://git.fe.up.pt/lcom/2324/t18/g4.git
+    cd labs/proj/src
+    make
+    lcom_run proj
+    
 ## Project Description
 
 Our game is a remake of the well-known Breakout from 1976.
