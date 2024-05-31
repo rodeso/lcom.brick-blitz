@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['kbc_2eh_0',['kbc.h',['../kbc_8h.html',1,'']]],
-  ['keyboard_5fsubscribe_5fint_1',['keyboard_subscribe_int',['../kbc_8h.html#a8eee4d0a15beada731a514481b5ad4bf',1,'keyboard.c']]],
-  ['keyboard_5funsubscribe_5fint_2',['keyboard_unsubscribe_int',['../kbc_8h.html#ac95aea27a5e91b363b876fed881f368f',1,'keyboard.c']]]
+  ['handle_5fkeyboard_0',['handle_keyboard',['../game_8c.html#a2e9489db086593755ce3a755119927a9',1,'handle_keyboard():&#160;game.c'],['../game_8h.html#a2e9489db086593755ce3a755119927a9',1,'handle_keyboard():&#160;game.c']]],
+  ['handle_5fmouse_1',['handle_mouse',['../game_8c.html#a3e8cb4eb1e1045494e57474d78d1c366',1,'game.c']]],
+  ['height_2',['height',['../struct_sprite.html#a59662333590aefc6789e3179a2b1f34f',1,'Sprite']]],
+  ['hook_5fid_3',['hook_id',['../timer_8c.html#a96f78a87d064e47d627d222f67a8d012',1,'timer.c']]],
+  ['hook_5fid2_4',['hook_id2',['../keyboard_8c.html#a423e02742b01dcfd86fc7c8ba6a432db',1,'keyboard.c']]],
+  ['hook_5fid3_5',['hook_id3',['../mouse_8c.html#ad371e58586d2ca13c2cf614955b90b12',1,'mouse.c']]]
 ];

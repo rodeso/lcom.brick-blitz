@@ -1,0 +1,25 @@
+<map id="src/dvcs/graphics/vbe.h" name="src/dvcs/graphics/vbe.h">
+<area shape="rect" id="Node000001" title="Header file for VBE functions." alt="" coords="151,5,311,31"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html" title=" " alt="" coords="5,79,193,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,39,122,81,120,76,197,35"/>
+<area shape="rect" id="Node000003" href="$game_8h.html" title="Header file for the game module." alt="" coords="197,299,319,324"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="236,44,260,298,254,299,231,44"/>
+<area shape="rect" id="Node000006" href="$sprite_8h.html" title="Header file for sprite manipulation functions." alt="" coords="284,79,443,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="266,35,343,76,340,81,263,39"/>
+<area shape="rect" id="Node000004" href="$game_8c.html" title=" " alt="" coords="135,372,258,397"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="241,336,209,374,205,370,237,333"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html" title=" " alt="" coords="283,372,359,397"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="279,333,313,370,309,374,275,336"/>
+<area shape="rect" id="Node000007" href="$objects_8h.html" title="Header file containing the declarations of various game objects." alt="" coords="297,152,430,177"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="366,118,366,152,361,152,361,118"/>
+<area shape="rect" id="Node000011" href="$sprite_8c.html" title=" " alt="" coords="455,152,613,177"/>
+<area shape="poly" id="edge12_Node000006_Node000011" title=" " alt="" coords="405,107,507,149,505,154,402,112"/>
+<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="344,189,311,227,285,266,266,300,262,297,280,264,307,224,340,186"/>
+<area shape="rect" id="Node000008" href="$draw_8h.html" title="Header file containing the declaration of the draw functions." alt="" coords="320,225,439,251"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="372,190,379,225,374,226,366,191"/>
+<area shape="rect" id="Node000010" href="$objects_8c.html" title=" " alt="" coords="463,225,597,251"/>
+<area shape="poly" id="edge11_Node000007_Node000010" title=" " alt="" coords="404,180,504,223,502,228,402,185"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="349,260,279,301,277,296,346,255"/>
+<area shape="rect" id="Node000009" href="$draw_8c.html" title=" " alt="" coords="344,299,463,324"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="390,263,402,298,397,299,385,265"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="src/dvcs/graphics/graphics.c" name="src/dvcs/graphics/graphics.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="40,5,228,31"/>
+<area shape="rect" id="Node000002" href="$vbe_8h.html" title="Header file for VBE functions." alt="" coords="107,79,161,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,31,137,65,131,65,131,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,71,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="120,106,66,146,63,141,117,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="95,152,173,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="137,104,137,138,131,138,131,104"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="198,152,259,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="151,102,204,141,201,146,148,106"/>
+</map>

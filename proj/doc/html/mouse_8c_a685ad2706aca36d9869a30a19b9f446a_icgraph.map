@@ -1,0 +1,7 @@
+<map id="mouse_unsubscribe_int" name="mouse_unsubscribe_int">
+<area shape="rect" id="Node000001" title="Unsubscribes from PS/2 mouse interrupts." alt="" coords="320,5,479,31"/>
+<area shape="rect" id="Node000002" href="$game_8c.html#a22e7aa936a38417be07fc29cf34cfd05" title="Disables the mouse for the game." alt="" coords="163,5,272,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="306,21,272,21,272,15,306,15"/>
+<area shape="rect" id="Node000003" href="$proj_8c.html#a7a72220d8366dd84709e79ce415862e5" title=" " alt="" coords="5,5,115,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="149,21,115,21,115,15,149,15"/>
+</map>

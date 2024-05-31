@@ -1,0 +1,7 @@
+<map id="drawBackground" name="drawBackground">
+<area shape="rect" id="Node000001" title="Draws the background on the screen." alt="" coords="5,5,124,31"/>
+<area shape="rect" id="Node000002" href="$sprite_8c.html#a358dde0e0e62eb0399a63639c27089e6" title="Draws a sprite at the specified position on the screen." alt="" coords="172,5,256,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,15,158,15,158,21,124,21"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#a02560e7fb638ada3ae3c3c5d0674b226" title="Draws a pixel at the specified coordinates with the specified color." alt="" coords="304,5,415,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="256,15,290,15,290,21,256,21"/>
+</map>

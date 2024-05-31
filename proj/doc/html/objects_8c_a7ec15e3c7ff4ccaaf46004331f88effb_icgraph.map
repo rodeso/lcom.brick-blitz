@@ -1,0 +1,13 @@
+<map id="initBall" name="initBall">
+<area shape="rect" id="Node000001" title="Initializes the ball object." alt="" coords="580,56,641,81"/>
+<area shape="rect" id="Node000002" href="$game_8c.html#aa4045f4e2613f25cce8c35c8cc357722" title="Prepares the objects for the game." alt="" coords="417,31,532,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="566,63,532,57,533,51,567,58"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a58e8be2db2660128e4e6456a9c981fb5" title="Runs the game." alt="" coords="163,31,203,56"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="566,76,425,84,338,82,250,71,202,55,204,50,251,66,338,76,425,79,566,71"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a2e9489db086593755ce3a755119927a9" title="Handles keyboard input during the game." alt="" coords="251,31,369,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="404,46,370,46,370,41,404,41"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html#a7a72220d8366dd84709e79ce415862e5" title=" " alt="" coords="5,5,115,31"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="417,30,369,21,301,15,232,13,115,17,115,11,232,8,301,10,370,15,418,25"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="237,46,203,46,203,41,237,41"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="149,39,115,32,116,27,150,34"/>
+</map>

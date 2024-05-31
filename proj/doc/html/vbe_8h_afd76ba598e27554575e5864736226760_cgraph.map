@@ -1,0 +1,7 @@
+<map id="vbe_draw_rectangle" name="vbe_draw_rectangle">
+<area shape="rect" id="Node000001" title="Draws a rectangle starting from the specified coordinates with the specified width,..." alt="" coords="5,5,144,31"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#a79e2f7e4a2651dd837f49f04e43793e8" title="Draws a line starting from the specified coordinates with the specified length and color." alt="" coords="192,5,297,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,15,178,15,178,21,144,21"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#a02560e7fb638ada3ae3c3c5d0674b226" title="Draws a pixel at the specified coordinates with the specified color." alt="" coords="345,5,456,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="297,15,331,15,331,21,297,21"/>
+</map>

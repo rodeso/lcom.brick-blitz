@@ -1,0 +1,7 @@
+<map id="drawBall" name="drawBall">
+<area shape="rect" id="Node000001" title="Draws the ball on the screen." alt="" coords="5,5,77,31"/>
+<area shape="rect" id="Node000002" href="$sprite_8c.html#a358dde0e0e62eb0399a63639c27089e6" title="Draws a sprite at the specified position on the screen." alt="" coords="125,5,209,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,15,112,15,112,21,78,21"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#a02560e7fb638ada3ae3c3c5d0674b226" title="Draws a pixel at the specified coordinates with the specified color." alt="" coords="257,5,368,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="210,15,244,15,244,21,210,21"/>
+</map>

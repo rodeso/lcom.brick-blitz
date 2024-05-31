@@ -1,0 +1,11 @@
+<map id="src/dvcs/timer/pit.h" name="src/dvcs/timer/pit.h">
+<area shape="rect" id="Node000001" title="Programmable Interval Timer Driver." alt="" coords="93,5,226,31"/>
+<area shape="rect" id="Node000002" href="$timer_8c.html" title=" " alt="" coords="5,79,153,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,42,94,80,91,76,135,38"/>
+<area shape="rect" id="Node000003" href="$game_8h.html" title="Header file for the game module." alt="" coords="178,79,301,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,38,228,76,224,80,180,42"/>
+<area shape="rect" id="Node000004" href="$game_8c.html" title=" " alt="" coords="115,152,238,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="222,116,189,154,185,150,218,113"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html" title=" " alt="" coords="263,152,339,177"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="260,113,293,150,289,154,256,116"/>
+</map>

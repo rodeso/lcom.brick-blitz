@@ -1,0 +1,10 @@
+<map id="kbc_ih" name="kbc_ih">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,65,56"/>
+<area shape="rect" id="Node000002" href="$keyboard_8c.html#a1a9750d2d5d06035fe04cdf7f2f5f9f6" title="Reads the scancode from the specified port." alt="" coords="113,31,224,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,41,100,41,100,46,66,46"/>
+<area shape="rect" id="Node000003" href="$keyboard_8c.html#a7a3298d751903e7896747bb6413ad4d6" title=" " alt="" coords="272,5,412,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="224,33,258,28,259,33,225,38"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title=" " alt="" coords="460,31,551,56"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="224,41,446,41,446,46,224,46"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="413,26,447,32,446,37,412,32"/>
+</map>

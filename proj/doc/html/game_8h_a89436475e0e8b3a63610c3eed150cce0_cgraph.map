@@ -1,0 +1,7 @@
+<map id="prepare_video" name="prepare_video">
+<area shape="rect" id="Node000001" title="Prepares the video mode for the game." alt="" coords="5,42,108,67"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#aff1542a91a7bca27fec72b7748952bfe" title="Maps video RAM to the address space for the specified mode." alt="" coords="156,5,323,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,44,142,38,143,44,109,49"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#a5627b6772f7807a6c36c2861fdcb9fd7" title="Sets the display mode to the specified mode." alt="" coords="162,70,317,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="109,60,149,66,148,71,108,65"/>
+</map>

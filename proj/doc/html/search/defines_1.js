@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['disable_5fdata_5freporting_0',['DISABLE_DATA_REPORTING',['../ps2_8h.html#a8e51dfaa390f8cfb4b1b286fb3b22aff',1,'ps2.h']]]
+  ['break_5fcode_0',['BREAK_CODE',['../kbc_8h.html#ac6b47609a951e77244ef2be1691c298a',1,'kbc.h']]]
 ];

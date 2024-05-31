@@ -1,0 +1,15 @@
+<map id="create_sprite" name="create_sprite">
+<area shape="rect" id="Node000001" title="Creates a sprite based on the given XPM image." alt="" coords="580,81,677,107"/>
+<area shape="rect" id="Node000002" href="$game_8c.html#aa4045f4e2613f25cce8c35c8cc357722" title="Prepares the objects for the game." alt="" coords="417,56,532,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="566,86,532,81,533,75,567,81"/>
+<area shape="rect" id="Node000006" href="$game_8c.html#aa6d7673967b7e53a4dba63c1bf7ec561" title="Prepares the screens for the game." alt="" coords="251,107,369,132"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="566,102,370,117,369,112,566,96"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a2e9489db086593755ce3a755119927a9" title="Handles keyboard input during the game." alt="" coords="251,5,369,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="418,54,351,33,353,28,420,49"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html#a7a72220d8366dd84709e79ce415862e5" title=" " alt="" coords="5,56,115,81"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="403,71,115,71,115,66,403,66"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a58e8be2db2660128e4e6456a9c981fb5" title="Runs the game." alt="" coords="163,5,203,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="237,21,203,21,203,15,237,15"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="151,34,93,58,91,53,149,29"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="236,107,114,82,115,77,237,102"/>
+</map>

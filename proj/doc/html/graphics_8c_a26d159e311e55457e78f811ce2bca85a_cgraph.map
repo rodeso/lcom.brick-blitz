@@ -1,0 +1,14 @@
+<map id="vbe_move" name="vbe_move">
+<area shape="rect" id="Node000001" title="Moves an XPM image from the initial coordinates to the final coordinates with the specified speed and..." alt="" coords="5,80,87,105"/>
+<area shape="rect" id="Node000002" href="$timer_8c.html#a6f786481e80308348d629d605ffa2d84" title=" " alt="" coords="142,5,277,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,78,134,40,150,33,152,38,136,44,68,82"/>
+<area shape="rect" id="Node000003" href="$timer_8c.html#ab9eea51549744bca5c5c923b388bb4ee" title=" " alt="" coords="135,55,284,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="87,84,120,78,121,84,87,89"/>
+<area shape="rect" id="Node000004" href="$graphics_8c.html#a708dd8dca822dd126b02204f1b0a8eb1" title=" " alt="" coords="151,104,268,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="87,96,137,103,137,109,87,101"/>
+<area shape="rect" id="Node000006" href="$graphics_8c.html#aacff11bdf51f590868d820132546c881" title="Draws an XPM image at the specified coordinates." alt="" coords="154,153,265,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="69,103,136,138,155,146,153,151,134,143,67,108"/>
+<area shape="rect" id="Node000005" href="$graphics_8c.html#a02560e7fb638ada3ae3c3c5d0674b226" title="Draws a pixel at the specified coordinates with the specified color." alt="" coords="332,129,443,155"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="268,122,318,130,318,135,268,128"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="264,156,318,149,319,154,265,161"/>
+</map>

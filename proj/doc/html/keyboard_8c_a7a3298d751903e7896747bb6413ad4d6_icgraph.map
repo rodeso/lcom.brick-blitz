@@ -1,0 +1,27 @@
+<map id="read_status_register" name="read_status_register">
+<area shape="rect" id="Node000001" title=" " alt="" coords="660,80,800,105"/>
+<area shape="rect" id="Node000002" href="$keyboard_8c.html#a1a9750d2d5d06035fe04cdf7f2f5f9f6" title="Reads the scancode from the specified port." alt="" coords="499,55,610,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="646,83,610,78,611,73,647,78"/>
+<area shape="rect" id="Node000008" href="$keyboard_8c.html#af172531c36e2addcac41378a651f252a" title="Writes a command to the specified port." alt="" coords="497,104,612,129"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="647,107,613,111,612,106,646,101"/>
+<area shape="rect" id="Node000003" href="$keyboard_8c.html#a4909d2b8687b61065a2ce1d215135c3e" title="Enables interrupts." alt="" coords="325,104,446,129"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="498,87,431,106,429,101,496,81"/>
+<area shape="rect" id="Node000004" href="$keyboard_8c.html#ab9e6ed7960d60aa4834f2038247d4536" title=" " alt="" coords="355,5,415,31"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="497,53,415,29,417,24,498,48"/>
+<area shape="rect" id="Node000007" href="$mouse_8c.html#a834b6d7efe311484d6da234db333cb97" title=" " alt="" coords="346,55,425,80"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="486,70,425,70,425,65,486,65"/>
+<area shape="rect" id="Node000005" href="$game_8c.html#a58e8be2db2660128e4e6456a9c981fb5" title="Runs the game." alt="" coords="198,55,238,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="343,33,239,64,238,59,342,28"/>
+<area shape="rect" id="Node000006" href="$proj_8c.html#a7a72220d8366dd84709e79ce415862e5" title=" " alt="" coords="5,104,115,129"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="185,80,102,106,101,101,184,75"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="332,70,238,70,238,65,332,65"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="483,119,446,119,446,114,483,114"/>
+<area shape="rect" id="Node000009" href="$mouse_8c.html#a3847e7e7414eab82d6519109042192af" title="Writes a command to the PS/2 mouse." alt="" coords="321,153,449,179"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="498,136,431,156,429,151,496,131"/>
+<area shape="rect" id="Node000010" href="$game_8c.html#a22e7aa936a38417be07fc29cf34cfd05" title="Disables the mouse for the game." alt="" coords="163,104,273,129"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="328,152,261,132,263,127,329,147"/>
+<area shape="rect" id="Node000011" href="$game_8c.html#a2231a7aae9bac557e4d96ed1690b1cf1" title="Prepares the mouse for the game." alt="" coords="163,153,273,179"/>
+<area shape="poly" id="edge13_Node000009_Node000011" title=" " alt="" coords="308,169,274,169,274,163,308,163"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="150,119,115,119,115,114,150,114"/>
+<area shape="poly" id="edge14_Node000011_Node000006" title=" " alt="" coords="163,152,101,132,103,127,165,147"/>
+</map>

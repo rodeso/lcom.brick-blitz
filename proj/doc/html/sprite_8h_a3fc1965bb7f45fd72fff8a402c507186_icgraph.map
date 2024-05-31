@@ -1,0 +1,36 @@
+<map id="drawSprite" name="drawSprite">
+<area shape="rect" id="Node000001" title="Draws a sprite at the specified position on the screen." alt="" coords="577,158,661,184"/>
+<area shape="rect" id="Node000002" href="$game_8c.html#a0fda1514af6921bbc43340ec227b4491" title="Initializes the drawing module." alt="" coords="269,81,344,106"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="609,146,598,116,581,81,558,49,528,24,498,11,472,9,445,14,412,24,385,36,360,51,322,83,319,79,357,47,382,31,410,19,443,9,472,3,499,6,531,19,562,45,586,79,603,114,614,144"/>
+<area shape="rect" id="Node000005" href="$draw_8c.html#af91d8726aeeb28906ee66e28c700e005" title="Draws the background on the screen." alt="" coords="411,34,529,60"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="600,149,569,111,528,73,508,62,511,58,531,69,573,107,604,146"/>
+<area shape="rect" id="Node000006" href="$draw_8c.html#a3256cc12c49700bd8e6d9d5e269446eb" title="Draws the ball on the screen." alt="" coords="434,133,506,158"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="563,164,506,154,506,149,564,159"/>
+<area shape="rect" id="Node000008" href="$draw_8c.html#a942df83e653e556d403a414f0293a499" title="Draws a brick on the screen." alt="" coords="430,84,510,109"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="583,154,528,124,501,112,503,107,531,119,586,149"/>
+<area shape="rect" id="Node000009" href="$draw_8c.html#a3c79add018141361b4c13cfa3cac457b" title="Draws an explosion animation on the screen." alt="" coords="417,232,523,257"/>
+<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="586,193,531,223,505,234,503,229,528,218,584,188"/>
+<area shape="rect" id="Node000011" href="$draw_8c.html#acba7cd04c35ccb4aa0ea79f1b3442d77" title="Draws a marker on the screen." alt="" coords="261,282,352,308"/>
+<area shape="poly" id="edge16_Node000001_Node000011" title=" " alt="" coords="605,197,575,237,554,256,531,272,485,289,438,299,392,302,352,302,352,296,392,297,437,293,484,284,528,267,551,252,571,233,601,194"/>
+<area shape="rect" id="Node000012" href="$draw_8c.html#a9d9badb4616ebe1e3f89ffdf8e075f4f" title="Draws the paddle on the screen." alt="" coords="425,182,515,208"/>
+<area shape="poly" id="edge18_Node000001_Node000012" title=" " alt="" coords="564,183,516,190,515,185,563,177"/>
+<area shape="rect" id="Node000013" href="$draw_8c.html#ad7cf78309e86fcef7dc305dfec64c57a" title="Draws a projectile on the screen." alt="" coords="255,332,359,357"/>
+<area shape="poly" id="edge20_Node000001_Node000013" title=" " alt="" coords="611,198,581,253,558,282,531,305,489,326,443,339,399,346,359,348,359,343,398,341,442,334,487,321,528,301,554,278,576,250,606,195"/>
+<area shape="rect" id="Node000003" href="$proj_8c.html#a7a72220d8366dd84709e79ce415862e5" title=" " alt="" coords="5,157,115,182"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="257,112,103,159,102,154,255,107"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a58e8be2db2660128e4e6456a9c981fb5" title="Runs the game." alt="" coords="163,182,203,208"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="270,116,252,128,221,157,196,184,192,180,217,153,249,124,267,111"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="149,191,115,184,116,178,150,186"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="413,66,345,86,344,81,411,61"/>
+<area shape="poly" id="edge10_Node000006_Node000004" title=" " alt="" coords="421,151,341,158,251,174,204,189,202,184,250,168,340,153,420,145"/>
+<area shape="rect" id="Node000007" href="$game_8c.html#a1265a5e2843f2b1c45ad05ae61de7000" title="Draws a frame of the game." alt="" coords="261,182,352,208"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="422,163,350,185,349,180,420,158"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="248,198,203,198,203,192,248,192"/>
+<area shape="poly" id="edge12_Node000008_Node000002" title=" " alt="" coords="416,98,344,97,344,92,416,93"/>
+<area shape="rect" id="Node000010" href="$game_8c.html#a66a221186a490ed959aec02467d46dc8" title="Moves the projectile in the game." alt="" coords="251,232,363,257"/>
+<area shape="poly" id="edge14_Node000009_Node000010" title=" " alt="" coords="403,247,363,247,363,242,403,242"/>
+<area shape="poly" id="edge15_Node000010_Node000004" title=" " alt="" coords="260,229,202,205,204,200,262,224"/>
+<area shape="poly" id="edge17_Node000011_Node000004" title=" " alt="" coords="258,278,249,272,215,240,191,210,195,206,219,237,252,268,261,273"/>
+<area shape="poly" id="edge19_Node000012_Node000007" title=" " alt="" coords="411,198,352,198,352,192,411,192"/>
+<area shape="poly" id="edge21_Node000013_Node000004" title=" " alt="" coords="254,326,249,322,225,294,207,262,185,209,190,207,211,260,229,291,253,318,257,322"/>
+</map>

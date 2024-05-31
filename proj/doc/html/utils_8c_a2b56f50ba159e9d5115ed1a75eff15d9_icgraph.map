@@ -1,0 +1,35 @@
+<map id="util_sys_inb" name="util_sys_inb">
+<area shape="rect" id="Node000001" title=" " alt="" coords="873,80,964,105"/>
+<area shape="rect" id="Node000002" href="$mouse_8c.html#a3847e7e7414eab82d6519109042192af" title="Writes a command to the PS/2 mouse." alt="" coords="321,5,449,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="887,74,857,58,825,45,724,24,621,14,527,13,450,15,449,10,526,7,621,9,724,18,826,39,860,53,889,70"/>
+<area shape="rect" id="Node000006" href="$keyboard_8c.html#a1a9750d2d5d06035fe04cdf7f2f5f9f6" title="Reads the scancode from the specified port." alt="" coords="512,104,623,129"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="860,99,623,116,623,110,860,94"/>
+<area shape="rect" id="Node000011" href="$keyboard_8c.html#a7a3298d751903e7896747bb6413ad4d6" title=" " alt="" coords="685,55,825,80"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="859,86,825,81,826,76,860,81"/>
+<area shape="rect" id="Node000013" href="$timer_8c.html#afafc1891c876602d55b894103b1841a7" title=" " alt="" coords="701,156,809,181"/>
+<area shape="poly" id="edge18_Node000001_Node000013" title=" " alt="" coords="880,114,826,139,785,158,783,154,824,134,877,109"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a22e7aa936a38417be07fc29cf34cfd05" title="Disables the mouse for the game." alt="" coords="163,5,273,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="308,21,273,21,273,15,308,15"/>
+<area shape="rect" id="Node000005" href="$game_8c.html#a2231a7aae9bac557e4d96ed1690b1cf1" title="Prepares the mouse for the game." alt="" coords="163,55,273,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="329,37,263,57,261,52,328,32"/>
+<area shape="rect" id="Node000004" href="$proj_8c.html#a7a72220d8366dd84709e79ce415862e5" title=" " alt="" coords="5,55,115,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="165,37,103,57,101,52,163,32"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="149,70,115,70,115,65,149,65"/>
+<area shape="rect" id="Node000007" href="$keyboard_8c.html#a4909d2b8687b61065a2ce1d215135c3e" title="Enables interrupts." alt="" coords="325,55,446,80"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="506,103,433,83,434,78,508,98"/>
+<area shape="rect" id="Node000008" href="$keyboard_8c.html#ab9e6ed7960d60aa4834f2038247d4536" title=" " alt="" coords="355,104,415,129"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="498,119,416,119,416,114,498,114"/>
+<area shape="rect" id="Node000010" href="$mouse_8c.html#a834b6d7efe311484d6da234db333cb97" title=" " alt="" coords="346,153,425,179"/>
+<area shape="poly" id="edge11_Node000006_Node000010" title=" " alt="" coords="508,135,426,158,424,153,506,130"/>
+<area shape="rect" id="Node000009" href="$game_8c.html#a58e8be2db2660128e4e6456a9c981fb5" title="Runs the game." alt="" coords="198,104,238,129"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="342,119,238,119,238,114,342,114"/>
+<area shape="poly" id="edge10_Node000009_Node000004" title=" " alt="" coords="184,109,101,83,102,78,185,104"/>
+<area shape="poly" id="edge12_Node000010_Node000009" title=" " alt="" coords="332,153,238,125,239,120,333,148"/>
+<area shape="poly" id="edge14_Node000011_Node000006" title=" " alt="" coords="694,86,618,106,616,101,693,81"/>
+<area shape="rect" id="Node000012" href="$keyboard_8c.html#af172531c36e2addcac41378a651f252a" title="Writes a command to the specified port." alt="" coords="510,55,625,80"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="671,70,625,70,625,65,671,65"/>
+<area shape="poly" id="edge17_Node000012_Node000002" title=" " alt="" coords="506,54,433,33,434,28,508,49"/>
+<area shape="poly" id="edge16_Node000012_Node000007" title=" " alt="" coords="496,70,446,70,446,65,496,65"/>
+<area shape="rect" id="Node000014" href="$timer_8c.html#aca1506be74dfc71c6f90772ca269c619" title=" " alt="" coords="497,156,637,181"/>
+<area shape="poly" id="edge19_Node000013_Node000014" title=" " alt="" coords="688,171,637,171,637,166,688,166"/>
+</map>

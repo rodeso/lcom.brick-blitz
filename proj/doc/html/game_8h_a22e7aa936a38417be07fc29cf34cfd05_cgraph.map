@@ -1,0 +1,14 @@
+<map id="disable_mouse" name="disable_mouse">
+<area shape="rect" id="Node000001" title="Disables the mouse for the game." alt="" coords="5,31,115,56"/>
+<area shape="rect" id="Node000002" href="$mouse_8c.html#a685ad2706aca36d9869a30a19b9f446a" title="Unsubscribes from PS/2 mouse interrupts." alt="" coords="163,5,321,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,33,148,28,149,34,116,38"/>
+<area shape="rect" id="Node000003" href="$mouse_8c.html#a3847e7e7414eab82d6519109042192af" title="Writes a command to the PS/2 mouse." alt="" coords="178,55,306,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="115,48,164,54,163,60,115,53"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title=" " alt="" coords="720,55,811,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="306,65,706,65,706,70,306,70"/>
+<area shape="rect" id="Node000005" href="$keyboard_8c.html#af172531c36e2addcac41378a651f252a" title="Writes a command to the specified port." alt="" coords="369,80,484,105"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="307,73,356,80,355,86,306,79"/>
+<area shape="rect" id="Node000006" href="$keyboard_8c.html#a7a3298d751903e7896747bb6413ad4d6" title=" " alt="" coords="532,80,672,105"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="484,90,518,90,518,95,484,95"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="672,79,706,74,707,79,673,84"/>
+</map>

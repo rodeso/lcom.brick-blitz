@@ -95,26 +95,26 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define IRQ0_VECTOR     0x50</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define IRQ1_VECTOR     0x01</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="kbc_8h.html#a596fb78a548ab0a5f6f9aafa19d09541">   19</a></span><span class="preprocessor">#define IRQ0_VECTOR     0x50</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="kbc_8h.html#ac8b7096462819e88a92005633fb9c67b">   20</a></span><span class="preprocessor">#define IRQ1_VECTOR     0x01</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define KEYBOARD_IRQ_LINE    1</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define READ_KEYBOARD_STATUS 0x64</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define INPUT_BUFFER_KEYBOARD 0x64</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define OUTPUT_BUFFER_KEYBOARD 0x60</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define ESC_SCANCODE       0x81</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#define BREAK_CODE       BIT(7)</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define TWO_BYTES       0xE0</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define ENABLE_INT      BIT(0)</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#define TIMEOUT_ERROR   BIT(6)</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#define PARITY_ERROR    BIT(7)</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#define OUTPUT_BUFFER_FULL BIT(0)</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#define INPUT_BUFFER_FULL  BIT(1)</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#define READ_COMMAND   0x20</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#define WRITE_COMMAND   0x60</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#define DELAY        20000</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="kbc_8h.html#a187c1ef5291d9038cb7d3beed1fdbf34">   22</a></span><span class="preprocessor">#define KEYBOARD_IRQ_LINE    1</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="kbc_8h.html#a9a99dcc867d8444584fb6bb814a67c2a">   23</a></span><span class="preprocessor">#define READ_KEYBOARD_STATUS 0x64</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="kbc_8h.html#a728521218dba02e7b736da4db8e2842f">   24</a></span><span class="preprocessor">#define INPUT_BUFFER_KEYBOARD 0x64</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="kbc_8h.html#a60c4751ec121dc9dd81caa2f6f55c4b0">   25</a></span><span class="preprocessor">#define OUTPUT_BUFFER_KEYBOARD 0x60</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="kbc_8h.html#a53ccdcd2790f8619f39eb37d09eab397">   26</a></span><span class="preprocessor">#define ESC_SCANCODE       0x81</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="kbc_8h.html#ac6b47609a951e77244ef2be1691c298a">   27</a></span><span class="preprocessor">#define BREAK_CODE       BIT(7)</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="kbc_8h.html#ab427e6926fcc47eb1c02c1f78162b6f6">   28</a></span><span class="preprocessor">#define TWO_BYTES       0xE0</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="kbc_8h.html#a34326f1c6bfccd8b9084c5ae2b4918a1">   29</a></span><span class="preprocessor">#define ENABLE_INT      BIT(0)</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="kbc_8h.html#aefc48d416c882f06edaf6d01779d4d74">   30</a></span><span class="preprocessor">#define TIMEOUT_ERROR   BIT(6)</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="kbc_8h.html#a81d2ca6759f3f3bf04556b7558aea6bc">   31</a></span><span class="preprocessor">#define PARITY_ERROR    BIT(7)</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="kbc_8h.html#a5f2144f5b632518bcba6ae0e0ea8c8d0">   32</a></span><span class="preprocessor">#define OUTPUT_BUFFER_FULL BIT(0)</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="kbc_8h.html#a8b6f3924789338f54449d1484a3c57cf">   33</a></span><span class="preprocessor">#define INPUT_BUFFER_FULL  BIT(1)</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="kbc_8h.html#aefa4ad5f4ff688e721810f9196df660e">   34</a></span><span class="preprocessor">#define READ_COMMAND   0x20</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="kbc_8h.html#ad1953a1338ab589f5dd289a90a904bec">   35</a></span><span class="preprocessor">#define WRITE_COMMAND   0x60</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="kbc_8h.html#a62249e384b997229a3e2ae74ade334e2">   36</a></span><span class="preprocessor">#define DELAY        20000</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>int (<a class="code hl_function" href="kbc_8h.html#a8eee4d0a15beada731a514481b5ad4bf">keyboard_subscribe_int</a>)(uint8_t *bit_no);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>int (<a class="code hl_function" href="kbc_8h.html#a8eee4d0a15beada731a514481b5ad4bf">keyboard_subscribe_int</a>)(uint8_t *<a class="code hl_variable" href="proj_8c.html#af051d2dee5da699e506b29a18330a37c">bit_no</a>);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>int (<a class="code hl_function" href="kbc_8h.html#ac95aea27a5e91b363b876fed881f368f">keyboard_unsubscribe_int</a>)();</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
@@ -130,6 +130,7 @@ $(function() { codefold.init(0); });
 <div class="ttc" id="akbc_8h_html_a8eee4d0a15beada731a514481b5ad4bf"><div class="ttname"><a href="kbc_8h.html#a8eee4d0a15beada731a514481b5ad4bf">keyboard_subscribe_int</a></div><div class="ttdeci">int keyboard_subscribe_int(uint8_t *bit_no)</div><div class="ttdoc">Subscribes and enables keyboard interrupts.</div><div class="ttdef"><b>Definition</b> keyboard.c:55</div></div>
 <div class="ttc" id="akbc_8h_html_ac95aea27a5e91b363b876fed881f368f"><div class="ttname"><a href="kbc_8h.html#ac95aea27a5e91b363b876fed881f368f">keyboard_unsubscribe_int</a></div><div class="ttdeci">int keyboard_unsubscribe_int()</div><div class="ttdoc">Unsubscribes keyboard interrupts.</div><div class="ttdef"><b>Definition</b> keyboard.c:68</div></div>
 <div class="ttc" id="akbc_8h_html_af172531c36e2addcac41378a651f252a"><div class="ttname"><a href="kbc_8h.html#af172531c36e2addcac41378a651f252a">write_command</a></div><div class="ttdeci">int write_command(uint8_t port, uint8_t the_command)</div><div class="ttdoc">Writes a command to the specified port.</div><div class="ttdef"><b>Definition</b> keyboard.c:96</div></div>
+<div class="ttc" id="aproj_8c_html_af051d2dee5da699e506b29a18330a37c"><div class="ttname"><a href="proj_8c.html#af051d2dee5da699e506b29a18330a37c">bit_no</a></div><div class="ttdeci">uint8_t bit_no</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

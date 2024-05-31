@@ -1,0 +1,33 @@
+<map id="eraseSprite" name="eraseSprite">
+<area shape="rect" id="Node000001" title="Erases a sprite from the specified position on the screen." alt="" coords="567,156,655,181"/>
+<area shape="rect" id="Node000002" href="$draw_8c.html#a536216f4909928a12d647829e5d5d5ee" title="Erases the ball from the screen." alt="" coords="427,56,503,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="578,150,483,84,486,79,581,146"/>
+<area shape="rect" id="Node000006" href="$draw_8c.html#ac65095308edecc9e3aba4cd85c1c87da" title="Erases a brick from the screen." alt="" coords="423,156,507,181"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="553,171,507,171,507,166,553,166"/>
+<area shape="rect" id="Node000010" href="$draw_8c.html#a196ac93bd975b4fcec628e056bee8b8f" title="Erases a marker from the screen." alt="" coords="259,307,354,332"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="589,193,558,220,520,246,478,267,434,285,355,310,354,305,432,280,476,262,517,241,554,216,585,189"/>
+<area shape="rect" id="Node000011" href="$draw_8c.html#af53be50b8cba9f2edc7db13d4a9f99e8" title="Erases the paddle from the screen." alt="" coords="417,7,512,32"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="594,145,563,95,541,69,517,45,500,34,502,30,520,41,545,65,567,92,599,142"/>
+<area shape="rect" id="Node000012" href="$draw_8c.html#a633ee1cf32f928e1bf2f7997f05953c5" title="Erases a projectile from the screen." alt="" coords="411,205,519,231"/>
+<area shape="poly" id="edge17_Node000001_Node000012" title=" " alt="" coords="560,188,504,208,502,203,559,183"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a1265a5e2843f2b1c45ad05ae61de7000" title="Draws a frame of the game." alt="" coords="261,5,352,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="413,55,346,33,348,28,414,50"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a58e8be2db2660128e4e6456a9c981fb5" title="Runs the game." alt="" coords="163,156,203,181"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="413,68,334,72,292,81,252,96,233,109,217,125,194,157,189,154,213,122,230,105,249,92,290,76,333,67,412,62"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="267,40,253,52,231,78,213,107,191,157,186,155,209,105,227,75,249,48,264,36"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html#a7a72220d8366dd84709e79ce415862e5" title=" " alt="" coords="5,156,115,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="149,171,115,171,115,166,149,166"/>
+<area shape="rect" id="Node000007" href="$game_8c.html#a1a1c209116cd1043f17ba8736890ce83" title="Moves the ball in the game." alt="" coords="267,156,347,181"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="409,171,347,171,347,166,409,166"/>
+<area shape="rect" id="Node000008" href="$game_8c.html#ac265868a39e8058dde81a5412f5b89eb" title=" " alt="" coords="252,107,361,132"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="410,154,348,135,349,130,411,149"/>
+<area shape="rect" id="Node000009" href="$game_8c.html#a66a221186a490ed959aec02467d46dc8" title="Moves the projectile in the game." alt="" coords="251,205,363,231"/>
+<area shape="poly" id="edge11_Node000006_Node000009" title=" " alt="" coords="411,188,349,208,348,203,410,183"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="253,171,203,171,203,166,253,166"/>
+<area shape="poly" id="edge10_Node000008_Node000004" title=" " alt="" coords="262,140,204,164,202,159,260,135"/>
+<area shape="poly" id="edge12_Node000009_Node000004" title=" " alt="" coords="260,203,202,179,204,174,262,198"/>
+<area shape="poly" id="edge14_Node000010_Node000004" title=" " alt="" coords="264,301,249,289,227,262,209,232,186,183,191,180,213,230,231,259,253,285,267,297"/>
+<area shape="poly" id="edge16_Node000011_Node000003" title=" " alt="" coords="404,21,352,21,352,16,404,16"/>
+<area shape="poly" id="edge19_Node000012_Node000004" title=" " alt="" coords="422,238,384,249,340,257,294,257,250,246,229,233,212,216,189,183,193,180,216,213,233,229,252,241,295,252,340,252,383,244,420,233"/>
+<area shape="poly" id="edge18_Node000012_Node000009" title=" " alt="" coords="397,221,363,221,363,215,397,215"/>
+</map>

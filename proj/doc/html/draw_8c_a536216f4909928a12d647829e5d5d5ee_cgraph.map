@@ -1,0 +1,7 @@
+<map id="eraseBall" name="eraseBall">
+<area shape="rect" id="Node000001" title="Erases the ball from the screen." alt="" coords="5,5,81,31"/>
+<area shape="rect" id="Node000002" href="$sprite_8c.html#a072315df13282549a4e778340d9aee06" title="Erases a sprite from the specified position on the screen." alt="" coords="129,5,217,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,15,116,15,116,21,81,21"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#a02560e7fb638ada3ae3c3c5d0674b226" title="Draws a pixel at the specified coordinates with the specified color." alt="" coords="265,5,376,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="218,15,252,15,252,21,218,21"/>
+</map>

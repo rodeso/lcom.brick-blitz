@@ -1,0 +1,13 @@
+<map id="draw_init" name="draw_init">
+<area shape="rect" id="Node000001" title="Initializes the drawing module." alt="" coords="5,56,80,81"/>
+<area shape="rect" id="Node000002" href="$draw_8c.html#af91d8726aeeb28906ee66e28c700e005" title="Draws the background on the screen." alt="" coords="128,5,247,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,53,137,33,138,38,81,58"/>
+<area shape="rect" id="Node000003" href="$sprite_8c.html#a358dde0e0e62eb0399a63639c27089e6" title="Draws a sprite at the specified position on the screen." alt="" coords="295,56,379,81"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="80,66,281,66,281,71,80,71"/>
+<area shape="rect" id="Node000005" href="$draw_8c.html#a942df83e653e556d403a414f0293a499" title="Draws a brick on the screen." alt="" coords="147,107,227,132"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="81,79,138,100,137,105,79,84"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="227,28,286,49,284,54,225,33"/>
+<area shape="rect" id="Node000004" href="$graphics_8c.html#a02560e7fb638ada3ae3c3c5d0674b226" title="Draws a pixel at the specified coordinates with the specified color." alt="" coords="427,56,537,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="379,66,413,66,413,71,379,71"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="225,104,284,83,286,88,227,109"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="src/game/objects.h" name="src/game/objects.h">
+<area shape="rect" id="Node000001" title="Header file containing the declarations of various game objects." alt="" coords="143,5,277,31"/>
+<area shape="rect" id="Node000002" href="$draw_8h.html" title="Header file containing the declaration of the draw functions." alt="" coords="53,79,172,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,41,130,81,127,76,182,37"/>
+<area shape="rect" id="Node000004" href="$game_8h.html" title="Header file for the game module." alt="" coords="149,152,271,177"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="213,45,213,152,207,152,207,45"/>
+<area shape="rect" id="Node000007" href="$objects_8c.html" title=" " alt="" coords="247,79,381,104"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="240,36,298,76,295,81,237,41"/>
+<area shape="rect" id="Node000003" href="$draw_8c.html" title=" " alt="" coords="5,152,124,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="99,117,75,153,70,150,95,114"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="141,110,196,150,193,154,138,114"/>
+<area shape="rect" id="Node000005" href="$game_8c.html" title=" " alt="" coords="87,225,210,251"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="193,190,161,227,157,223,189,186"/>
+<area shape="rect" id="Node000006" href="$proj_8c.html" title=" " alt="" coords="235,225,311,251"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="231,186,265,223,261,227,227,189"/>
+</map>

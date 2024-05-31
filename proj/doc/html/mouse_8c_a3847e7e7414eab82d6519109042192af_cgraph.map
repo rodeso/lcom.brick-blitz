@@ -1,0 +1,10 @@
+<map id="mouse_write_data" name="mouse_write_data">
+<area shape="rect" id="Node000001" title="Writes a command to the PS/2 mouse." alt="" coords="5,5,133,31"/>
+<area shape="rect" id="Node000002" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title=" " alt="" coords="532,5,623,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,15,519,15,519,21,134,21"/>
+<area shape="rect" id="Node000003" href="$keyboard_8c.html#af172531c36e2addcac41378a651f252a" title="Writes a command to the specified port." alt="" coords="181,31,296,56"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="134,25,168,30,167,35,133,30"/>
+<area shape="rect" id="Node000004" href="$keyboard_8c.html#a7a3298d751903e7896747bb6413ad4d6" title=" " alt="" coords="344,31,484,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="296,41,330,41,330,46,296,46"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="484,30,518,24,519,30,485,35"/>
+</map>

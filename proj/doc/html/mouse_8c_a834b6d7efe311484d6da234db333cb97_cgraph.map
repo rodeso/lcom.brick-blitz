@@ -1,0 +1,14 @@
+<map id="mouse_ih" name="mouse_ih">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,84,80"/>
+<area shape="rect" id="Node000002" href="$mouse_8c.html#a763e29f4a4e0f5682458012740c6450b" title="Converts the received bytes into a mouse packet." alt="" coords="132,5,295,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,53,155,32,156,37,85,59"/>
+<area shape="rect" id="Node000003" href="$mouse_8c.html#a8d6ee7592c47e8f3830a140c1c36587d" title="Synchronizes the bytes received from the mouse." alt="" coords="146,55,281,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="84,65,132,65,132,70,84,70"/>
+<area shape="rect" id="Node000004" href="$keyboard_8c.html#a1a9750d2d5d06035fe04cdf7f2f5f9f6" title="Reads the scancode from the specified port." alt="" coords="158,104,269,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="85,76,156,97,155,102,83,81"/>
+<area shape="rect" id="Node000005" href="$keyboard_8c.html#a7a3298d751903e7896747bb6413ad4d6" title=" " alt="" coords="343,79,483,104"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="269,107,328,99,329,105,269,112"/>
+<area shape="rect" id="Node000006" href="$utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title=" " alt="" coords="531,104,621,129"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="269,114,517,114,517,119,269,119"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="483,100,517,105,516,110,483,105"/>
+</map>

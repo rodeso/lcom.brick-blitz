@@ -1,0 +1,9 @@
+<map id="move_ball" name="move_ball">
+<area shape="rect" id="Node000001" title="Moves the ball in the game." alt="" coords="5,5,85,31"/>
+<area shape="rect" id="Node000002" href="$draw_8c.html#ac65095308edecc9e3aba4cd85c1c87da" title="Erases a brick from the screen." alt="" coords="133,5,217,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,15,120,15,120,21,86,21"/>
+<area shape="rect" id="Node000003" href="$sprite_8c.html#a072315df13282549a4e778340d9aee06" title="Erases a sprite from the specified position on the screen." alt="" coords="265,5,353,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="218,15,251,15,251,21,218,21"/>
+<area shape="rect" id="Node000004" href="$graphics_8c.html#a02560e7fb638ada3ae3c3c5d0674b226" title="Draws a pixel at the specified coordinates with the specified color." alt="" coords="401,5,512,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="354,15,388,15,388,21,354,21"/>
+</map>

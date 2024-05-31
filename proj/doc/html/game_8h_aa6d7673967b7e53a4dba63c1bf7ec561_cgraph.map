@@ -1,0 +1,7 @@
+<map id="prepare_screens" name="prepare_screens">
+<area shape="rect" id="Node000001" title="Prepares the screens for the game." alt="" coords="5,31,124,56"/>
+<area shape="rect" id="Node000002" href="$sprite_8c.html#ab8b348464d3c150e1d472db1a1897ed5" title="Creates a sprite based on the given XPM image." alt="" coords="177,5,274,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,31,162,25,163,30,125,37"/>
+<area shape="rect" id="Node000003" href="$objects_8c.html#a12feaca907b1a76718c29f296b5d25ca" title="Initializes the background object." alt="" coords="172,55,279,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,50,159,55,158,60,124,55"/>
+</map>

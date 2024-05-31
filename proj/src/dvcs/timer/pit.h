@@ -1,3 +1,8 @@
+/**
+ * @file pit.h
+ * @brief Programmable Interval Timer Driver
+ */
+
 #ifndef _LCOM_PIT_H_
 #define _LCOM_PIT_H_
 

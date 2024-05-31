@@ -1,0 +1,7 @@
+<map id="vbe_draw_line" name="vbe_draw_line">
+<area shape="rect" id="Node000001" title="Draws a line starting from the specified coordinates with the specified length and color." alt="" coords="365,5,471,31"/>
+<area shape="rect" id="Node000002" href="$graphics_8c.html#afd76ba598e27554575e5864736226760" title="Draws a rectangle starting from the specified coordinates with the specified width,..." alt="" coords="179,5,317,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="352,21,318,21,318,15,352,15"/>
+<area shape="rect" id="Node000003" href="$graphics_8c.html#a9486d712097eff51da5d591992ed555c" title="Draws a pattern of rectangles with the specified mode, number of rectangles, first color,..." alt="" coords="5,5,131,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="165,21,131,21,131,15,165,15"/>
+</map>

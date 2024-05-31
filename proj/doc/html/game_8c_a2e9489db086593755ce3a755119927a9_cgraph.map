@@ -1,0 +1,21 @@
+<map id="handle_keyboard" name="handle_keyboard">
+<area shape="rect" id="Node000001" title="Handles keyboard input during the game." alt="" coords="5,228,124,253"/>
+<area shape="rect" id="Node000002" href="$game_8c.html#aa4045f4e2613f25cce8c35c8cc357722" title="Prepares the objects for the game." alt="" coords="173,153,287,179"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,225,188,182,190,187,95,230"/>
+<area shape="rect" id="Node000009" href="$game_8c.html#a906682326e4859909fda24e9dd252350" title="Launches a projectile in the game." alt="" coords="172,252,288,277"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="125,247,159,252,158,257,124,252"/>
+<area shape="rect" id="Node000003" href="$sprite_8c.html#ab8b348464d3c150e1d472db1a1897ed5" title="Creates a sprite based on the given XPM image." alt="" coords="341,5,438,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,152,275,99,303,68,334,40,341,35,344,40,338,44,307,72,279,102,242,155"/>
+<area shape="rect" id="Node000004" href="$objects_8c.html#a12feaca907b1a76718c29f296b5d25ca" title="Initializes the background object." alt="" coords="336,55,443,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="246,151,285,121,335,89,344,84,347,88,337,94,288,126,249,155"/>
+<area shape="rect" id="Node000005" href="$objects_8c.html#a7ec15e3c7ff4ccaaf46004331f88effb" title="Initializes the ball object." alt="" coords="359,104,420,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="271,151,345,128,346,133,272,156"/>
+<area shape="rect" id="Node000006" href="$objects_8c.html#af2b91774ada190a2381c6470ddbca587" title="Initializes the brick object." alt="" coords="355,153,424,179"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="287,163,341,163,341,169,287,169"/>
+<area shape="rect" id="Node000007" href="$objects_8c.html#ad5bf8c403420e1cb42a45f6b50106552" title="Initializes the marker object." alt="" coords="350,203,429,228"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="272,176,338,197,336,202,271,181"/>
+<area shape="rect" id="Node000008" href="$objects_8c.html#a89545fc883c2da80da690a9ea0416e91" title="Initializes the paddle object." alt="" coords="350,252,429,277"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="249,177,337,237,349,243,346,248,335,242,246,181"/>
+<area shape="rect" id="Node000010" href="$objects_8c.html#a9a2876c569ef7d4b936b5b289f75e486" title="Initializes the projectile object." alt="" coords="343,301,436,327"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="272,275,335,295,333,300,271,280"/>
+</map>

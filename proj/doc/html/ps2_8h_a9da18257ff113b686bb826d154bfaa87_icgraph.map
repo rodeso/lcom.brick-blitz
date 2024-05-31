@@ -1,0 +1,7 @@
+<map id="mouse_subscribe_int" name="mouse_subscribe_int">
+<area shape="rect" id="Node000001" title="Subscribes to PS/2 mouse interrupts." alt="" coords="321,5,467,31"/>
+<area shape="rect" id="Node000002" href="$game_8c.html#a2231a7aae9bac557e4d96ed1690b1cf1" title="Prepares the mouse for the game." alt="" coords="163,5,273,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="308,21,274,21,274,15,308,15"/>
+<area shape="rect" id="Node000003" href="$proj_8c.html#a7a72220d8366dd84709e79ce415862e5" title=" " alt="" coords="5,5,115,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="149,21,115,21,115,15,149,15"/>
+</map>

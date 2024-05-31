@@ -1,0 +1,11 @@
+<map id="src/dvcs/mouse/ps2.h" name="src/dvcs/mouse/ps2.h">
+<area shape="rect" id="Node000001" title="PS/2 Mouse Driver." alt="" coords="98,5,249,31"/>
+<area shape="rect" id="Node000002" href="$mouse_8c.html" title=" " alt="" coords="5,79,173,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,42,105,80,101,76,148,38"/>
+<area shape="rect" id="Node000003" href="$game_8h.html" title="Header file for the game module." alt="" coords="197,79,320,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,37,246,76,243,80,196,41"/>
+<area shape="rect" id="Node000004" href="$game_8c.html" title=" " alt="" coords="135,152,257,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="241,116,208,154,204,150,237,113"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html" title=" " alt="" coords="282,152,358,177"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="280,113,312,150,308,154,276,116"/>
+</map>

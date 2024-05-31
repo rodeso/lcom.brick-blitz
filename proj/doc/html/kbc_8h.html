@@ -89,66 +89,86 @@ $(function() {
 <code>#include &lt;lcom/lcf.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for kbc.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbc_8h__incl.png" border="0" usemap="#asrc_2dvcs_2keyboard_2kbc_8h" alt=""/></div>
+<map name="asrc_2dvcs_2keyboard_2kbc_8h" id="asrc_2dvcs_2keyboard_2kbc_8h">
+<area shape="rect" title="Header file for keyboard controller (KBC) functions and constants." alt="" coords="145,5,308,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,112,104"/>
+<area shape="poly" title=" " alt="" coords="201,33,100,76,98,71,199,28"/>
+<area shape="rect" title=" " alt="" coords="137,79,215,104"/>
+<area shape="poly" title=" " alt="" coords="220,33,194,69,190,66,216,29"/>
+<area shape="rect" title=" " alt="" coords="240,79,315,104"/>
+<area shape="poly" title=" " alt="" coords="237,29,263,66,259,69,233,33"/>
+<area shape="rect" title=" " alt="" coords="339,79,405,104"/>
+<area shape="poly" title=" " alt="" coords="251,28,337,70,335,75,249,33"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbc_8h__dep__incl.png" border="0" usemap="#asrc_2dvcs_2keyboard_2kbc_8hdep" alt=""/></div>
+<map name="asrc_2dvcs_2keyboard_2kbc_8hdep" id="asrc_2dvcs_2keyboard_2kbc_8hdep">
+<area shape="rect" title="Header file for keyboard controller (KBC) functions and constants." alt="" coords="219,5,381,31"/>
+<area shape="rect" href="keyboard_8c.html" title=" " alt="" coords="5,79,200,104"/>
+<area shape="poly" title=" " alt="" coords="256,38,136,81,134,76,255,33"/>
+<area shape="rect" href="ps2_8h.html" title="PS/2 Mouse Driver." alt="" coords="225,79,375,104"/>
+<area shape="poly" title=" " alt="" coords="303,44,303,79,297,79,297,44"/>
+<area shape="rect" href="game_8h.html" title="Header file for the game module." alt="" coords="352,152,475,177"/>
+<area shape="poly" title=" " alt="" coords="339,35,365,53,389,77,400,96,407,116,415,151,410,152,402,118,395,98,385,80,362,57,336,40"/>
+<area shape="rect" href="mouse_8c.html" title=" " alt="" coords="160,152,328,177"/>
+<area shape="poly" title=" " alt="" coords="284,117,255,154,251,150,280,113"/>
+<area shape="poly" title=" " alt="" coords="332,109,396,150,393,154,329,114"/>
+<area shape="rect" href="game_8c.html" title=" " alt="" coords="291,225,413,251"/>
+<area shape="poly" title=" " alt="" coords="396,190,364,227,360,223,392,186"/>
+<area shape="rect" href="proj_8c.html" title=" " alt="" coords="438,225,514,251"/>
+<area shape="poly" title=" " alt="" coords="435,186,468,223,464,227,431,189"/>
+</map>
+</div>
 </div>
 <p><a href="kbc_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a596fb78a548ab0a5f6f9aafa19d09541" id="r_a596fb78a548ab0a5f6f9aafa19d09541"><td class="memItemLeft" align="right" valign="top"><a id="a596fb78a548ab0a5f6f9aafa19d09541" name="a596fb78a548ab0a5f6f9aafa19d09541"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IRQ0_VECTOR</b>&#160;&#160;&#160;0x50</td></tr>
+<tr class="memitem:a596fb78a548ab0a5f6f9aafa19d09541" id="r_a596fb78a548ab0a5f6f9aafa19d09541"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a596fb78a548ab0a5f6f9aafa19d09541">IRQ0_VECTOR</a>&#160;&#160;&#160;0x50</td></tr>
 <tr class="separator:a596fb78a548ab0a5f6f9aafa19d09541"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8b7096462819e88a92005633fb9c67b" id="r_ac8b7096462819e88a92005633fb9c67b"><td class="memItemLeft" align="right" valign="top"><a id="ac8b7096462819e88a92005633fb9c67b" name="ac8b7096462819e88a92005633fb9c67b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IRQ1_VECTOR</b>&#160;&#160;&#160;0x01</td></tr>
+<tr class="memitem:ac8b7096462819e88a92005633fb9c67b" id="r_ac8b7096462819e88a92005633fb9c67b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8b7096462819e88a92005633fb9c67b">IRQ1_VECTOR</a>&#160;&#160;&#160;0x01</td></tr>
 <tr class="separator:ac8b7096462819e88a92005633fb9c67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a187c1ef5291d9038cb7d3beed1fdbf34" id="r_a187c1ef5291d9038cb7d3beed1fdbf34"><td class="memItemLeft" align="right" valign="top"><a id="a187c1ef5291d9038cb7d3beed1fdbf34" name="a187c1ef5291d9038cb7d3beed1fdbf34"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>KEYBOARD_IRQ_LINE</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:a187c1ef5291d9038cb7d3beed1fdbf34" id="r_a187c1ef5291d9038cb7d3beed1fdbf34"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a187c1ef5291d9038cb7d3beed1fdbf34">KEYBOARD_IRQ_LINE</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a187c1ef5291d9038cb7d3beed1fdbf34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a99dcc867d8444584fb6bb814a67c2a" id="r_a9a99dcc867d8444584fb6bb814a67c2a"><td class="memItemLeft" align="right" valign="top"><a id="a9a99dcc867d8444584fb6bb814a67c2a" name="a9a99dcc867d8444584fb6bb814a67c2a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>READ_KEYBOARD_STATUS</b>&#160;&#160;&#160;0x64</td></tr>
+<tr class="memitem:a9a99dcc867d8444584fb6bb814a67c2a" id="r_a9a99dcc867d8444584fb6bb814a67c2a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a99dcc867d8444584fb6bb814a67c2a">READ_KEYBOARD_STATUS</a>&#160;&#160;&#160;0x64</td></tr>
 <tr class="separator:a9a99dcc867d8444584fb6bb814a67c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a728521218dba02e7b736da4db8e2842f" id="r_a728521218dba02e7b736da4db8e2842f"><td class="memItemLeft" align="right" valign="top"><a id="a728521218dba02e7b736da4db8e2842f" name="a728521218dba02e7b736da4db8e2842f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>INPUT_BUFFER_KEYBOARD</b>&#160;&#160;&#160;0x64</td></tr>
+<tr class="memitem:a728521218dba02e7b736da4db8e2842f" id="r_a728521218dba02e7b736da4db8e2842f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a728521218dba02e7b736da4db8e2842f">INPUT_BUFFER_KEYBOARD</a>&#160;&#160;&#160;0x64</td></tr>
 <tr class="separator:a728521218dba02e7b736da4db8e2842f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60c4751ec121dc9dd81caa2f6f55c4b0" id="r_a60c4751ec121dc9dd81caa2f6f55c4b0"><td class="memItemLeft" align="right" valign="top"><a id="a60c4751ec121dc9dd81caa2f6f55c4b0" name="a60c4751ec121dc9dd81caa2f6f55c4b0"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>OUTPUT_BUFFER_KEYBOARD</b>&#160;&#160;&#160;0x60</td></tr>
+<tr class="memitem:a60c4751ec121dc9dd81caa2f6f55c4b0" id="r_a60c4751ec121dc9dd81caa2f6f55c4b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60c4751ec121dc9dd81caa2f6f55c4b0">OUTPUT_BUFFER_KEYBOARD</a>&#160;&#160;&#160;0x60</td></tr>
 <tr class="separator:a60c4751ec121dc9dd81caa2f6f55c4b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53ccdcd2790f8619f39eb37d09eab397" id="r_a53ccdcd2790f8619f39eb37d09eab397"><td class="memItemLeft" align="right" valign="top"><a id="a53ccdcd2790f8619f39eb37d09eab397" name="a53ccdcd2790f8619f39eb37d09eab397"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ESC_SCANCODE</b>&#160;&#160;&#160;0x81</td></tr>
+<tr class="memitem:a53ccdcd2790f8619f39eb37d09eab397" id="r_a53ccdcd2790f8619f39eb37d09eab397"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53ccdcd2790f8619f39eb37d09eab397">ESC_SCANCODE</a>&#160;&#160;&#160;0x81</td></tr>
 <tr class="separator:a53ccdcd2790f8619f39eb37d09eab397"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6b47609a951e77244ef2be1691c298a" id="r_ac6b47609a951e77244ef2be1691c298a"><td class="memItemLeft" align="right" valign="top"><a id="ac6b47609a951e77244ef2be1691c298a" name="ac6b47609a951e77244ef2be1691c298a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>BREAK_CODE</b>&#160;&#160;&#160;BIT(7)</td></tr>
+<tr class="memitem:ac6b47609a951e77244ef2be1691c298a" id="r_ac6b47609a951e77244ef2be1691c298a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6b47609a951e77244ef2be1691c298a">BREAK_CODE</a>&#160;&#160;&#160;BIT(7)</td></tr>
 <tr class="separator:ac6b47609a951e77244ef2be1691c298a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab427e6926fcc47eb1c02c1f78162b6f6" id="r_ab427e6926fcc47eb1c02c1f78162b6f6"><td class="memItemLeft" align="right" valign="top"><a id="ab427e6926fcc47eb1c02c1f78162b6f6" name="ab427e6926fcc47eb1c02c1f78162b6f6"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TWO_BYTES</b>&#160;&#160;&#160;0xE0</td></tr>
+<tr class="memitem:ab427e6926fcc47eb1c02c1f78162b6f6" id="r_ab427e6926fcc47eb1c02c1f78162b6f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab427e6926fcc47eb1c02c1f78162b6f6">TWO_BYTES</a>&#160;&#160;&#160;0xE0</td></tr>
 <tr class="separator:ab427e6926fcc47eb1c02c1f78162b6f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34326f1c6bfccd8b9084c5ae2b4918a1" id="r_a34326f1c6bfccd8b9084c5ae2b4918a1"><td class="memItemLeft" align="right" valign="top"><a id="a34326f1c6bfccd8b9084c5ae2b4918a1" name="a34326f1c6bfccd8b9084c5ae2b4918a1"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ENABLE_INT</b>&#160;&#160;&#160;BIT(0)</td></tr>
+<tr class="memitem:a34326f1c6bfccd8b9084c5ae2b4918a1" id="r_a34326f1c6bfccd8b9084c5ae2b4918a1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34326f1c6bfccd8b9084c5ae2b4918a1">ENABLE_INT</a>&#160;&#160;&#160;BIT(0)</td></tr>
 <tr class="separator:a34326f1c6bfccd8b9084c5ae2b4918a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefc48d416c882f06edaf6d01779d4d74" id="r_aefc48d416c882f06edaf6d01779d4d74"><td class="memItemLeft" align="right" valign="top"><a id="aefc48d416c882f06edaf6d01779d4d74" name="aefc48d416c882f06edaf6d01779d4d74"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TIMEOUT_ERROR</b>&#160;&#160;&#160;BIT(6)</td></tr>
+<tr class="memitem:aefc48d416c882f06edaf6d01779d4d74" id="r_aefc48d416c882f06edaf6d01779d4d74"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefc48d416c882f06edaf6d01779d4d74">TIMEOUT_ERROR</a>&#160;&#160;&#160;BIT(6)</td></tr>
 <tr class="separator:aefc48d416c882f06edaf6d01779d4d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81d2ca6759f3f3bf04556b7558aea6bc" id="r_a81d2ca6759f3f3bf04556b7558aea6bc"><td class="memItemLeft" align="right" valign="top"><a id="a81d2ca6759f3f3bf04556b7558aea6bc" name="a81d2ca6759f3f3bf04556b7558aea6bc"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PARITY_ERROR</b>&#160;&#160;&#160;BIT(7)</td></tr>
+<tr class="memitem:a81d2ca6759f3f3bf04556b7558aea6bc" id="r_a81d2ca6759f3f3bf04556b7558aea6bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81d2ca6759f3f3bf04556b7558aea6bc">PARITY_ERROR</a>&#160;&#160;&#160;BIT(7)</td></tr>
 <tr class="separator:a81d2ca6759f3f3bf04556b7558aea6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f2144f5b632518bcba6ae0e0ea8c8d0" id="r_a5f2144f5b632518bcba6ae0e0ea8c8d0"><td class="memItemLeft" align="right" valign="top"><a id="a5f2144f5b632518bcba6ae0e0ea8c8d0" name="a5f2144f5b632518bcba6ae0e0ea8c8d0"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>OUTPUT_BUFFER_FULL</b>&#160;&#160;&#160;BIT(0)</td></tr>
+<tr class="memitem:a5f2144f5b632518bcba6ae0e0ea8c8d0" id="r_a5f2144f5b632518bcba6ae0e0ea8c8d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f2144f5b632518bcba6ae0e0ea8c8d0">OUTPUT_BUFFER_FULL</a>&#160;&#160;&#160;BIT(0)</td></tr>
 <tr class="separator:a5f2144f5b632518bcba6ae0e0ea8c8d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b6f3924789338f54449d1484a3c57cf" id="r_a8b6f3924789338f54449d1484a3c57cf"><td class="memItemLeft" align="right" valign="top"><a id="a8b6f3924789338f54449d1484a3c57cf" name="a8b6f3924789338f54449d1484a3c57cf"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>INPUT_BUFFER_FULL</b>&#160;&#160;&#160;BIT(1)</td></tr>
+<tr class="memitem:a8b6f3924789338f54449d1484a3c57cf" id="r_a8b6f3924789338f54449d1484a3c57cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b6f3924789338f54449d1484a3c57cf">INPUT_BUFFER_FULL</a>&#160;&#160;&#160;BIT(1)</td></tr>
 <tr class="separator:a8b6f3924789338f54449d1484a3c57cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefa4ad5f4ff688e721810f9196df660e" id="r_aefa4ad5f4ff688e721810f9196df660e"><td class="memItemLeft" align="right" valign="top"><a id="aefa4ad5f4ff688e721810f9196df660e" name="aefa4ad5f4ff688e721810f9196df660e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>READ_COMMAND</b>&#160;&#160;&#160;0x20</td></tr>
+<tr class="memitem:aefa4ad5f4ff688e721810f9196df660e" id="r_aefa4ad5f4ff688e721810f9196df660e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefa4ad5f4ff688e721810f9196df660e">READ_COMMAND</a>&#160;&#160;&#160;0x20</td></tr>
 <tr class="separator:aefa4ad5f4ff688e721810f9196df660e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1953a1338ab589f5dd289a90a904bec" id="r_ad1953a1338ab589f5dd289a90a904bec"><td class="memItemLeft" align="right" valign="top"><a id="ad1953a1338ab589f5dd289a90a904bec" name="ad1953a1338ab589f5dd289a90a904bec"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>WRITE_COMMAND</b>&#160;&#160;&#160;0x60</td></tr>
+<tr class="memitem:ad1953a1338ab589f5dd289a90a904bec" id="r_ad1953a1338ab589f5dd289a90a904bec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1953a1338ab589f5dd289a90a904bec">WRITE_COMMAND</a>&#160;&#160;&#160;0x60</td></tr>
 <tr class="separator:ad1953a1338ab589f5dd289a90a904bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62249e384b997229a3e2ae74ade334e2" id="r_a62249e384b997229a3e2ae74ade334e2"><td class="memItemLeft" align="right" valign="top"><a id="a62249e384b997229a3e2ae74ade334e2" name="a62249e384b997229a3e2ae74ade334e2"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DELAY</b>&#160;&#160;&#160;20000</td></tr>
+<tr class="memitem:a62249e384b997229a3e2ae74ade334e2" id="r_a62249e384b997229a3e2ae74ade334e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62249e384b997229a3e2ae74ade334e2">DELAY</a>&#160;&#160;&#160;20000</td></tr>
 <tr class="separator:a62249e384b997229a3e2ae74ade334e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8eee4d0a15beada731a514481b5ad4bf" id="r_a8eee4d0a15beada731a514481b5ad4bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8eee4d0a15beada731a514481b5ad4bf">keyboard_subscribe_int</a> (uint8_t *bit_no)</td></tr>
+<tr class="memitem:a8eee4d0a15beada731a514481b5ad4bf" id="r_a8eee4d0a15beada731a514481b5ad4bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8eee4d0a15beada731a514481b5ad4bf">keyboard_subscribe_int</a> (uint8_t *<a class="el" href="proj_8c.html#af051d2dee5da699e506b29a18330a37c">bit_no</a>)</td></tr>
 <tr class="memdesc:a8eee4d0a15beada731a514481b5ad4bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribes and enables keyboard interrupts.  <br /></td></tr>
 <tr class="separator:a8eee4d0a15beada731a514481b5ad4bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac95aea27a5e91b363b876fed881f368f" id="r_ac95aea27a5e91b363b876fed881f368f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac95aea27a5e91b363b876fed881f368f">keyboard_unsubscribe_int</a> ()</td></tr>
@@ -167,7 +187,246 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header file for keyboard controller (KBC) functions and constants. </p>
 <p>This file contains the declarations of functions and constants related to the keyboard controller (KBC). It provides functionality to handle keyboard interrupts, read scancodes, and send commands to the keyboard. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ac6b47609a951e77244ef2be1691c298a" name="ac6b47609a951e77244ef2be1691c298a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6b47609a951e77244ef2be1691c298a">&#9670;&#160;</a></span>BREAK_CODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BREAK_CODE&#160;&#160;&#160;BIT(7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62249e384b997229a3e2ae74ade334e2" name="a62249e384b997229a3e2ae74ade334e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62249e384b997229a3e2ae74ade334e2">&#9670;&#160;</a></span>DELAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DELAY&#160;&#160;&#160;20000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a34326f1c6bfccd8b9084c5ae2b4918a1" name="a34326f1c6bfccd8b9084c5ae2b4918a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34326f1c6bfccd8b9084c5ae2b4918a1">&#9670;&#160;</a></span>ENABLE_INT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENABLE_INT&#160;&#160;&#160;BIT(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a53ccdcd2790f8619f39eb37d09eab397" name="a53ccdcd2790f8619f39eb37d09eab397"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53ccdcd2790f8619f39eb37d09eab397">&#9670;&#160;</a></span>ESC_SCANCODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ESC_SCANCODE&#160;&#160;&#160;0x81</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8b6f3924789338f54449d1484a3c57cf" name="a8b6f3924789338f54449d1484a3c57cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b6f3924789338f54449d1484a3c57cf">&#9670;&#160;</a></span>INPUT_BUFFER_FULL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INPUT_BUFFER_FULL&#160;&#160;&#160;BIT(1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a728521218dba02e7b736da4db8e2842f" name="a728521218dba02e7b736da4db8e2842f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a728521218dba02e7b736da4db8e2842f">&#9670;&#160;</a></span>INPUT_BUFFER_KEYBOARD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INPUT_BUFFER_KEYBOARD&#160;&#160;&#160;0x64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a596fb78a548ab0a5f6f9aafa19d09541" name="a596fb78a548ab0a5f6f9aafa19d09541"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a596fb78a548ab0a5f6f9aafa19d09541">&#9670;&#160;</a></span>IRQ0_VECTOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IRQ0_VECTOR&#160;&#160;&#160;0x50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac8b7096462819e88a92005633fb9c67b" name="ac8b7096462819e88a92005633fb9c67b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8b7096462819e88a92005633fb9c67b">&#9670;&#160;</a></span>IRQ1_VECTOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IRQ1_VECTOR&#160;&#160;&#160;0x01</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a187c1ef5291d9038cb7d3beed1fdbf34" name="a187c1ef5291d9038cb7d3beed1fdbf34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a187c1ef5291d9038cb7d3beed1fdbf34">&#9670;&#160;</a></span>KEYBOARD_IRQ_LINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEYBOARD_IRQ_LINE&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5f2144f5b632518bcba6ae0e0ea8c8d0" name="a5f2144f5b632518bcba6ae0e0ea8c8d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f2144f5b632518bcba6ae0e0ea8c8d0">&#9670;&#160;</a></span>OUTPUT_BUFFER_FULL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OUTPUT_BUFFER_FULL&#160;&#160;&#160;BIT(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60c4751ec121dc9dd81caa2f6f55c4b0" name="a60c4751ec121dc9dd81caa2f6f55c4b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60c4751ec121dc9dd81caa2f6f55c4b0">&#9670;&#160;</a></span>OUTPUT_BUFFER_KEYBOARD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OUTPUT_BUFFER_KEYBOARD&#160;&#160;&#160;0x60</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81d2ca6759f3f3bf04556b7558aea6bc" name="a81d2ca6759f3f3bf04556b7558aea6bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81d2ca6759f3f3bf04556b7558aea6bc">&#9670;&#160;</a></span>PARITY_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PARITY_ERROR&#160;&#160;&#160;BIT(7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aefa4ad5f4ff688e721810f9196df660e" name="aefa4ad5f4ff688e721810f9196df660e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefa4ad5f4ff688e721810f9196df660e">&#9670;&#160;</a></span>READ_COMMAND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define READ_COMMAND&#160;&#160;&#160;0x20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9a99dcc867d8444584fb6bb814a67c2a" name="a9a99dcc867d8444584fb6bb814a67c2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a99dcc867d8444584fb6bb814a67c2a">&#9670;&#160;</a></span>READ_KEYBOARD_STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define READ_KEYBOARD_STATUS&#160;&#160;&#160;0x64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aefc48d416c882f06edaf6d01779d4d74" name="aefc48d416c882f06edaf6d01779d4d74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefc48d416c882f06edaf6d01779d4d74">&#9670;&#160;</a></span>TIMEOUT_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIMEOUT_ERROR&#160;&#160;&#160;BIT(6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab427e6926fcc47eb1c02c1f78162b6f6" name="ab427e6926fcc47eb1c02c1f78162b6f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab427e6926fcc47eb1c02c1f78162b6f6">&#9670;&#160;</a></span>TWO_BYTES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TWO_BYTES&#160;&#160;&#160;0xE0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1953a1338ab589f5dd289a90a904bec" name="ad1953a1338ab589f5dd289a90a904bec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1953a1338ab589f5dd289a90a904bec">&#9670;&#160;</a></span>WRITE_COMMAND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WRITE_COMMAND&#160;&#160;&#160;0x60</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a4909d2b8687b61065a2ce1d215135c3e" name="a4909d2b8687b61065a2ce1d215135c3e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4909d2b8687b61065a2ce1d215135c3e">&#9670;&#160;</a></span>enable_interrupts()</h2>
 
@@ -185,6 +444,24 @@ Functions</h2></td></tr>
 
 <p>Enables interrupts. </p>
 <dl class="section return"><dt>Returns</dt><dd>Return 0 upon success, non-zero otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbc_8h_a4909d2b8687b61065a2ce1d215135c3e_cgraph.png" border="0" usemap="#akbc_8h_a4909d2b8687b61065a2ce1d215135c3e_cgraph" alt=""/></div>
+<map name="akbc_8h_a4909d2b8687b61065a2ce1d215135c3e_cgraph" id="akbc_8h_a4909d2b8687b61065a2ce1d215135c3e_cgraph">
+<area shape="rect" title="Enables interrupts." alt="" coords="5,31,127,56"/>
+<area shape="rect" href="keyboard_8c.html#a1a9750d2d5d06035fe04cdf7f2f5f9f6" title="Reads the scancode from the specified port." alt="" coords="177,55,287,80"/>
+<area shape="poly" title=" " alt="" coords="127,49,163,55,163,60,126,55"/>
+<area shape="rect" href="keyboard_8c.html#af172531c36e2addcac41378a651f252a" title="Writes a command to the specified port." alt="" coords="175,5,289,31"/>
+<area shape="poly" title=" " alt="" coords="126,31,161,26,161,31,127,37"/>
+<area shape="rect" href="keyboard_8c.html#a7a3298d751903e7896747bb6413ad4d6" title=" " alt="" coords="337,5,477,31"/>
+<area shape="poly" title=" " alt="" coords="277,52,347,32,349,37,279,57"/>
+<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title=" " alt="" coords="525,31,616,56"/>
+<area shape="poly" title=" " alt="" coords="288,61,511,45,512,50,288,66"/>
+<area shape="poly" title=" " alt="" coords="478,26,512,32,511,37,477,32"/>
+<area shape="poly" title=" " alt="" coords="289,15,323,15,323,21,289,21"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -211,6 +488,18 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Return 0 upon success, non-zero otherwise. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbc_8h_a8eee4d0a15beada731a514481b5ad4bf_icgraph.png" border="0" usemap="#akbc_8h_a8eee4d0a15beada731a514481b5ad4bf_icgraph" alt=""/></div>
+<map name="akbc_8h_a8eee4d0a15beada731a514481b5ad4bf_icgraph" id="akbc_8h_a8eee4d0a15beada731a514481b5ad4bf_icgraph">
+<area shape="rect" title="Subscribes and enables keyboard interrupts." alt="" coords="335,5,493,31"/>
+<area shape="rect" href="game_8c.html#ae7e75a4f2aa52c2aeb5cd35d94f71834" title="Prepares the keyboard for the game." alt="" coords="163,5,287,31"/>
+<area shape="poly" title=" " alt="" coords="321,21,287,21,287,15,321,15"/>
+<area shape="rect" href="proj_8c.html#a7a72220d8366dd84709e79ce415862e5" title=" " alt="" coords="5,5,115,31"/>
+<area shape="poly" title=" " alt="" coords="149,21,115,21,115,15,149,15"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -231,6 +520,18 @@ Functions</h2></td></tr>
 
 <p>Unsubscribes keyboard interrupts. </p>
 <dl class="section return"><dt>Returns</dt><dd>Return 0 upon success, non-zero otherwise. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbc_8h_ac95aea27a5e91b363b876fed881f368f_icgraph.png" border="0" usemap="#akbc_8h_ac95aea27a5e91b363b876fed881f368f_icgraph" alt=""/></div>
+<map name="akbc_8h_ac95aea27a5e91b363b876fed881f368f_icgraph" id="akbc_8h_ac95aea27a5e91b363b876fed881f368f_icgraph">
+<area shape="rect" title="Unsubscribes keyboard interrupts." alt="" coords="333,5,505,31"/>
+<area shape="rect" href="game_8c.html#a44b11b486a74994c8d622f4b77d8e978" title="Disables the keyboard for the game." alt="" coords="163,5,285,31"/>
+<area shape="poly" title=" " alt="" coords="319,21,286,21,286,15,319,15"/>
+<area shape="rect" href="proj_8c.html#a7a72220d8366dd84709e79ce415862e5" title=" " alt="" coords="5,5,115,31"/>
+<area shape="poly" title=" " alt="" coords="149,21,115,21,115,15,149,15"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -262,6 +563,38 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Return 0 upon success, non-zero otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbc_8h_a1a9750d2d5d06035fe04cdf7f2f5f9f6_cgraph.png" border="0" usemap="#akbc_8h_a1a9750d2d5d06035fe04cdf7f2f5f9f6_cgraph" alt=""/></div>
+<map name="akbc_8h_a1a9750d2d5d06035fe04cdf7f2f5f9f6_cgraph" id="akbc_8h_a1a9750d2d5d06035fe04cdf7f2f5f9f6_cgraph">
+<area shape="rect" title="Reads the scancode from the specified port." alt="" coords="5,31,116,56"/>
+<area shape="rect" href="keyboard_8c.html#a7a3298d751903e7896747bb6413ad4d6" title=" " alt="" coords="164,5,304,31"/>
+<area shape="poly" title=" " alt="" coords="116,33,150,28,151,33,117,38"/>
+<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title=" " alt="" coords="352,31,443,56"/>
+<area shape="poly" title=" " alt="" coords="116,41,338,41,338,46,116,46"/>
+<area shape="poly" title=" " alt="" coords="305,26,339,32,338,37,304,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbc_8h_a1a9750d2d5d06035fe04cdf7f2f5f9f6_icgraph.png" border="0" usemap="#akbc_8h_a1a9750d2d5d06035fe04cdf7f2f5f9f6_icgraph" alt=""/></div>
+<map name="akbc_8h_a1a9750d2d5d06035fe04cdf7f2f5f9f6_icgraph" id="akbc_8h_a1a9750d2d5d06035fe04cdf7f2f5f9f6_icgraph">
+<area shape="rect" title="Reads the scancode from the specified port." alt="" coords="420,55,531,80"/>
+<area shape="rect" href="keyboard_8c.html#a4909d2b8687b61065a2ce1d215135c3e" title="Enables interrupts." alt="" coords="251,5,372,31"/>
+<area shape="poly" title=" " alt="" coords="419,53,354,33,355,28,420,48"/>
+<area shape="rect" href="keyboard_8c.html#ab9e6ed7960d60aa4834f2038247d4536" title=" " alt="" coords="281,55,341,80"/>
+<area shape="poly" title=" " alt="" coords="406,70,342,70,342,65,406,65"/>
+<area shape="rect" href="mouse_8c.html#a834b6d7efe311484d6da234db333cb97" title=" " alt="" coords="272,104,351,129"/>
+<area shape="poly" title=" " alt="" coords="420,87,352,108,350,102,419,81"/>
+<area shape="rect" href="game_8c.html#a58e8be2db2660128e4e6456a9c981fb5" title="Runs the game." alt="" coords="163,80,203,105"/>
+<area shape="poly" title=" " alt="" coords="268,78,203,91,202,86,267,73"/>
+<area shape="rect" href="proj_8c.html#a7a72220d8366dd84709e79ce415862e5" title=" " alt="" coords="5,80,115,105"/>
+<area shape="poly" title=" " alt="" coords="149,95,115,95,115,90,149,90"/>
+<area shape="poly" title=" " alt="" coords="258,109,202,99,203,94,259,104"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -293,6 +626,37 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Return 0 upon success, non-zero otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbc_8h_af172531c36e2addcac41378a651f252a_cgraph.png" border="0" usemap="#akbc_8h_af172531c36e2addcac41378a651f252a_cgraph" alt=""/></div>
+<map name="akbc_8h_af172531c36e2addcac41378a651f252a_cgraph" id="akbc_8h_af172531c36e2addcac41378a651f252a_cgraph">
+<area shape="rect" title="Writes a command to the specified port." alt="" coords="5,5,120,31"/>
+<area shape="rect" href="keyboard_8c.html#a7a3298d751903e7896747bb6413ad4d6" title=" " alt="" coords="168,5,308,31"/>
+<area shape="poly" title=" " alt="" coords="120,15,154,15,154,21,120,21"/>
+<area shape="rect" href="utils_8c.html#a2b56f50ba159e9d5115ed1a75eff15d9" title=" " alt="" coords="356,5,447,31"/>
+<area shape="poly" title=" " alt="" coords="308,15,342,15,342,21,308,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbc_8h_af172531c36e2addcac41378a651f252a_icgraph.png" border="0" usemap="#akbc_8h_af172531c36e2addcac41378a651f252a_icgraph" alt=""/></div>
+<map name="akbc_8h_af172531c36e2addcac41378a651f252a_icgraph" id="akbc_8h_af172531c36e2addcac41378a651f252a_icgraph">
+<area shape="rect" title="Writes a command to the specified port." alt="" coords="497,31,612,56"/>
+<area shape="rect" href="keyboard_8c.html#a4909d2b8687b61065a2ce1d215135c3e" title="Enables interrupts." alt="" coords="325,5,446,31"/>
+<area shape="poly" title=" " alt="" coords="483,35,446,30,447,24,484,30"/>
+<area shape="rect" href="mouse_8c.html#a3847e7e7414eab82d6519109042192af" title="Writes a command to the PS/2 mouse." alt="" coords="321,55,449,80"/>
+<area shape="poly" title=" " alt="" coords="484,56,450,61,449,56,483,51"/>
+<area shape="rect" href="game_8c.html#a22e7aa936a38417be07fc29cf34cfd05" title="Disables the mouse for the game." alt="" coords="163,29,273,55"/>
+<area shape="poly" title=" " alt="" coords="308,58,272,53,273,48,308,53"/>
+<area shape="rect" href="game_8c.html#a2231a7aae9bac557e4d96ed1690b1cf1" title="Prepares the mouse for the game." alt="" coords="163,79,273,104"/>
+<area shape="poly" title=" " alt="" coords="308,81,274,86,273,81,308,76"/>
+<area shape="rect" href="proj_8c.html#a7a72220d8366dd84709e79ce415862e5" title=" " alt="" coords="5,55,115,80"/>
+<area shape="poly" title=" " alt="" coords="150,56,115,61,114,56,149,50"/>
+<area shape="poly" title=" " alt="" coords="149,84,114,78,115,73,149,78"/>
+</map>
+</div>
 
 </div>
 </div>

@@ -1,0 +1,76 @@
+<map id="vbe_draw_pixel" name="vbe_draw_pixel">
+<area shape="rect" id="Node000001" title="Draws a pixel at the specified coordinates with the specified color." alt="" coords="776,586,887,612"/>
+<area shape="rect" id="Node000002" href="$sprite_8c.html#a358dde0e0e62eb0399a63639c27089e6" title="Draws a sprite at the specified position on the screen." alt="" coords="627,188,711,213"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="817,575,673,214,678,212,822,573"/>
+<area shape="rect" id="Node000015" href="$sprite_8c.html#a072315df13282549a4e778340d9aee06" title="Erases a sprite from the specified position on the screen." alt="" coords="625,512,713,537"/>
+<area shape="poly" id="edge23_Node000001_Node000015" title=" " alt="" coords="789,583,697,539,699,535,792,578"/>
+<area shape="rect" id="Node000023" href="$graphics_8c.html#a708dd8dca822dd126b02204f1b0a8eb1" title=" " alt="" coords="611,636,728,661"/>
+<area shape="poly" id="edge40_Node000001_Node000023" title=" " alt="" coords="777,618,713,638,711,633,775,613"/>
+<area shape="rect" id="Node000025" href="$graphics_8c.html#a79e2f7e4a2651dd837f49f04e43793e8" title="Draws a line starting from the specified coordinates with the specified length and color." alt="" coords="617,685,722,710"/>
+<area shape="poly" id="edge42_Node000001_Node000025" title=" " alt="" coords="806,623,770,649,729,676,706,687,703,683,727,671,767,645,803,618"/>
+<area shape="rect" id="Node000028" href="$graphics_8c.html#aacff11bdf51f590868d820132546c881" title="Draws an XPM image at the specified coordinates." alt="" coords="614,586,725,612"/>
+<area shape="poly" id="edge45_Node000001_Node000028" title=" " alt="" coords="762,602,725,602,725,596,762,596"/>
+<area shape="rect" id="Node000003" href="$game_8c.html#a0fda1514af6921bbc43340ec227b4491" title="Initializes the drawing module." alt="" coords="276,86,351,112"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="659,175,646,139,627,98,598,57,581,40,561,27,526,12,495,9,464,15,425,27,396,39,370,55,330,88,326,84,367,51,394,34,423,22,462,10,495,3,527,6,564,22,585,36,603,54,631,95,651,137,664,173"/>
+<area shape="rect" id="Node000006" href="$draw_8c.html#af91d8726aeeb28906ee66e28c700e005" title="Draws the background on the screen." alt="" coords="434,37,553,62"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="651,178,614,126,589,99,561,76,540,65,543,60,564,71,593,95,618,123,656,174"/>
+<area shape="rect" id="Node000007" href="$draw_8c.html#a3256cc12c49700bd8e6d9d5e269446eb" title="Draws the ball on the screen." alt="" coords="457,238,529,264"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="615,219,530,243,529,238,613,214"/>
+<area shape="rect" id="Node000009" href="$draw_8c.html#a942df83e653e556d403a414f0293a499" title="Draws a brick on the screen." alt="" coords="453,86,533,112"/>
+<area shape="poly" id="edge12_Node000002_Node000009" title=" " alt="" coords="638,182,561,133,523,114,525,109,564,129,640,177"/>
+<area shape="rect" id="Node000010" href="$draw_8c.html#a3c79add018141361b4c13cfa3cac457b" title="Draws an explosion animation on the screen." alt="" coords="440,436,547,461"/>
+<area shape="poly" id="edge14_Node000002_Node000010" title=" " alt="" coords="665,227,653,270,633,323,604,377,586,402,564,425,545,438,542,433,561,421,582,399,600,374,628,320,648,268,660,226"/>
+<area shape="rect" id="Node000012" href="$draw_8c.html#acba7cd04c35ccb4aa0ea79f1b3442d77" title="Draws a marker on the screen." alt="" coords="268,137,359,162"/>
+<area shape="poly" id="edge17_Node000002_Node000012" title=" " alt="" coords="613,193,562,184,359,157,359,152,563,179,614,188"/>
+<area shape="rect" id="Node000013" href="$draw_8c.html#a9d9badb4616ebe1e3f89ffdf8e075f4f" title="Draws the paddle on the screen." alt="" coords="448,288,539,313"/>
+<area shape="poly" id="edge19_Node000002_Node000013" title=" " alt="" coords="643,224,607,251,564,277,535,290,533,285,561,273,604,247,640,220"/>
+<area shape="rect" id="Node000014" href="$draw_8c.html#ad7cf78309e86fcef7dc305dfec64c57a" title="Draws a projectile on the screen." alt="" coords="261,188,365,213"/>
+<area shape="poly" id="edge21_Node000002_Node000014" title=" " alt="" coords="613,203,365,203,365,198,613,198"/>
+<area shape="rect" id="Node000004" href="$proj_8c.html#a7a72220d8366dd84709e79ce415862e5" title=" " alt="" coords="5,289,115,314"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="265,119,252,127,196,169,144,215,74,291,70,287,141,211,192,164,249,122,262,115"/>
+<area shape="rect" id="Node000005" href="$game_8c.html#a58e8be2db2660128e4e6456a9c981fb5" title="Runs the game." alt="" coords="163,314,203,340"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="265,116,253,126,235,149,221,174,201,228,191,278,187,315,182,314,186,277,196,227,216,172,231,146,249,122,262,112"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="149,323,115,316,116,310,150,318"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="434,69,351,92,350,86,433,63"/>
+<area shape="poly" id="edge11_Node000007_Node000005" title=" " alt="" coords="443,251,352,255,301,264,252,279,222,296,198,316,195,312,219,292,250,274,300,259,351,250,443,246"/>
+<area shape="rect" id="Node000008" href="$game_8c.html#a1265a5e2843f2b1c45ad05ae61de7000" title="Draws a frame of the game." alt="" coords="268,289,359,314"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="445,267,360,292,358,286,443,262"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="255,316,203,326,202,321,254,310"/>
+<area shape="poly" id="edge13_Node000009_Node000003" title=" " alt="" coords="440,102,351,102,351,96,440,96"/>
+<area shape="rect" id="Node000011" href="$game_8c.html#a66a221186a490ed959aec02467d46dc8" title="Moves the projectile in the game." alt="" coords="257,492,369,517"/>
+<area shape="poly" id="edge15_Node000010_Node000011" title=" " alt="" coords="440,468,356,494,355,489,438,463"/>
+<area shape="poly" id="edge16_Node000011_Node000005" title=" " alt="" coords="265,487,249,474,223,440,205,402,184,341,189,339,210,400,228,437,253,470,268,483"/>
+<area shape="poly" id="edge18_Node000012_Node000005" title=" " alt="" coords="259,171,253,177,226,211,208,250,189,315,184,313,203,248,222,208,249,173,256,167"/>
+<area shape="poly" id="edge20_Node000013_Node000008" title=" " alt="" coords="434,303,359,304,359,299,434,298"/>
+<area shape="poly" id="edge22_Node000014_Node000005" title=" " alt="" coords="270,222,252,234,216,276,193,315,188,312,212,273,249,230,267,218"/>
+<area shape="rect" id="Node000016" href="$draw_8c.html#a536216f4909928a12d647829e5d5d5ee" title="Erases the ball from the screen." alt="" coords="455,386,531,412"/>
+<area shape="poly" id="edge24_Node000015_Node000016" title=" " alt="" coords="647,503,610,463,561,425,531,411,533,406,564,421,613,459,651,499"/>
+<area shape="rect" id="Node000017" href="$draw_8c.html#ac65095308edecc9e3aba4cd85c1c87da" title="Erases a brick from the screen." alt="" coords="451,586,535,612"/>
+<area shape="poly" id="edge27_Node000015_Node000017" title=" " alt="" coords="631,545,564,576,531,589,530,584,562,571,629,541"/>
+<area shape="rect" id="Node000020" href="$draw_8c.html#a196ac93bd975b4fcec628e056bee8b8f" title="Erases a marker from the screen." alt="" coords="266,390,361,416"/>
+<area shape="poly" id="edge33_Node000015_Node000020" title=" " alt="" coords="611,522,521,507,471,493,423,475,398,457,374,437,340,418,343,413,378,433,401,453,425,470,472,488,522,502,612,517"/>
+<area shape="rect" id="Node000021" href="$draw_8c.html#af53be50b8cba9f2edc7db13d4a9f99e8" title="Erases the paddle from the screen." alt="" coords="446,337,541,362"/>
+<area shape="poly" id="edge35_Node000015_Node000021" title=" " alt="" coords="654,501,618,438,592,405,561,376,540,364,542,359,564,371,596,401,622,435,659,498"/>
+<area shape="rect" id="Node000022" href="$draw_8c.html#a633ee1cf32f928e1bf2f7997f05953c5" title="Erases a projectile from the screen." alt="" coords="439,537,547,562"/>
+<area shape="poly" id="edge37_Node000015_Node000022" title=" " alt="" coords="612,535,548,545,547,539,611,530"/>
+<area shape="poly" id="edge26_Node000016_Node000005" title=" " alt="" coords="441,390,202,334,203,329,442,385"/>
+<area shape="poly" id="edge25_Node000016_Node000008" title=" " alt="" coords="442,385,423,376,398,356,374,336,341,317,344,312,378,331,401,352,425,371,444,381"/>
+<area shape="poly" id="edge32_Node000017_Node000011" title=" " alt="" coords="437,584,423,576,408,564,398,553,389,542,375,531,353,520,355,515,377,526,392,538,402,549,411,560,425,571,440,579"/>
+<area shape="rect" id="Node000018" href="$game_8c.html#a1a1c209116cd1043f17ba8736890ce83" title="Moves the ball in the game." alt="" coords="273,541,353,566"/>
+<area shape="poly" id="edge28_Node000017_Node000018" title=" " alt="" coords="438,588,353,566,354,561,439,583"/>
+<area shape="rect" id="Node000019" href="$game_8c.html#ac265868a39e8058dde81a5412f5b89eb" title=" " alt="" coords="259,590,368,616"/>
+<area shape="poly" id="edge30_Node000017_Node000019" title=" " alt="" coords="438,603,369,604,369,599,437,598"/>
+<area shape="poly" id="edge29_Node000018_Node000005" title=" " alt="" coords="259,539,249,530,231,507,216,481,196,427,186,376,182,340,187,339,191,375,202,425,221,479,235,504,253,526,263,535"/>
+<area shape="poly" id="edge31_Node000019_Node000005" title=" " alt="" coords="254,585,249,579,227,550,211,517,191,447,182,384,181,340,186,340,188,383,196,446,216,515,232,547,253,576,258,581"/>
+<area shape="poly" id="edge34_Node000020_Node000005" title=" " alt="" coords="273,386,249,373,201,342,204,338,252,369,275,382"/>
+<area shape="poly" id="edge36_Node000021_Node000008" title=" " alt="" coords="432,336,358,316,359,311,434,331"/>
+<area shape="poly" id="edge39_Node000022_Node000005" title=" " alt="" coords="448,534,423,520,398,500,375,481,340,466,311,458,282,449,249,429,228,408,210,383,187,341,192,339,215,381,232,404,252,425,284,445,312,453,342,461,377,477,402,496,425,515,450,529"/>
+<area shape="poly" id="edge38_Node000022_Node000011" title=" " alt="" coords="428,536,364,520,365,515,429,531"/>
+<area shape="rect" id="Node000024" href="$graphics_8c.html#a26d159e311e55457e78f811ce2bca85a" title="Moves an XPM image from the initial coordinates to the final coordinates with the specified speed and..." alt="" coords="453,636,534,661"/>
+<area shape="poly" id="edge41_Node000023_Node000024" title=" " alt="" coords="597,651,534,651,534,646,597,646"/>
+<area shape="rect" id="Node000026" href="$graphics_8c.html#afd76ba598e27554575e5864736226760" title="Draws a rectangle starting from the specified coordinates with the specified width,..." alt="" coords="424,685,563,710"/>
+<area shape="poly" id="edge43_Node000025_Node000026" title=" " alt="" coords="603,700,563,700,563,695,603,695"/>
+<area shape="rect" id="Node000027" href="$graphics_8c.html#a9486d712097eff51da5d591992ed555c" title="Draws a pattern of rectangles with the specified mode, number of rectangles, first color,..." alt="" coords="251,685,376,710"/>
+<area shape="poly" id="edge44_Node000026_Node000027" title=" " alt="" coords="411,700,376,700,376,695,411,695"/>
+<area shape="poly" id="edge46_Node000028_Node000024" title=" " alt="" coords="611,618,535,640,534,634,610,613"/>
+</map>

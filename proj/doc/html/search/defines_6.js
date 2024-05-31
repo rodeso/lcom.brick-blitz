@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['set_5fstream_5fmode_0',['SET_STREAM_MODE',['../ps2_8h.html#aabf49b4a4d8ad72d202c8a7197058e35',1,'ps2.h']]]
+  ['mouse_5fcommand_5fheads_5fup_0',['MOUSE_COMMAND_HEADS_UP',['../ps2_8h.html#a40fb4e49323574523c897b25506b50db',1,'ps2.h']]]
 ];

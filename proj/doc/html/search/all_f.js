@@ -1,13 +1,14 @@
 var searchData=
 [
-  ['vbe_2eh_0',['vbe.h',['../vbe_8h.html',1,'']]],
-  ['vbe_5fdraw_5fline_1',['vbe_draw_line',['../vbe_8h.html#a79e2f7e4a2651dd837f49f04e43793e8',1,'graphics.c']]],
-  ['vbe_5fdraw_5fpattern_2',['vbe_draw_pattern',['../vbe_8h.html#a9486d712097eff51da5d591992ed555c',1,'graphics.c']]],
-  ['vbe_5fdraw_5fpixel_3',['vbe_draw_pixel',['../vbe_8h.html#a02560e7fb638ada3ae3c3c5d0674b226',1,'graphics.c']]],
-  ['vbe_5fdraw_5frectangle_4',['vbe_draw_rectangle',['../vbe_8h.html#afd76ba598e27554575e5864736226760',1,'graphics.c']]],
-  ['vbe_5fdraw_5fxpm_5',['vbe_draw_xpm',['../vbe_8h.html#aacff11bdf51f590868d820132546c881',1,'graphics.c']]],
-  ['vbe_5fmapping_5fvideoram_5fto_5faddress_5fspace_6',['vbe_mapping_videoRAM_to_address_space',['../vbe_8h.html#aff1542a91a7bca27fec72b7748952bfe',1,'graphics.c']]],
-  ['vbe_5fmove_7',['vbe_move',['../vbe_8h.html#a26d159e311e55457e78f811ce2bca85a',1,'graphics.c']]],
-  ['vbe_5fset_5fdisplay_5fmode_8',['vbe_set_display_mode',['../vbe_8h.html#a5627b6772f7807a6c36c2861fdcb9fd7',1,'graphics.c']]],
-  ['vmi_5fp_9',['vmi_p',['../vbe_8h.html#a26081be7a771e5c611b33f15caaf831e',1,'vbe.h']]]
+  ['scancode_5fcurr_5fbyte_0',['scancode_curr_byte',['../keyboard_8c.html#acecced3fe8d3e9a9a4892db50a4fdac7',1,'keyboard.c']]],
+  ['scancodes_1',['scancodes',['../keyboard_8c.html#a4cbc2430b3efdd26ec74f5d43d4fd9a3',1,'scancodes:&#160;keyboard.c'],['../game_8c.html#a4cbc2430b3efdd26ec74f5d43d4fd9a3',1,'scancodes:&#160;keyboard.c']]],
+  ['set_5fstream_5fmode_2',['SET_STREAM_MODE',['../ps2_8h.html#aabf49b4a4d8ad72d202c8a7197058e35',1,'ps2.h']]],
+  ['size_3',['size',['../keyboard_8c.html#a439227feff9d7f55384e8780cfc2eb82',1,'keyboard.c']]],
+  ['space_5fkey_4',['SPACE_KEY',['../game_8h.html#abdcd784aab1ab72e5b041fef85328927',1,'game.h']]],
+  ['speaker_5fctrl_5',['SPEAKER_CTRL',['../group__i8254.html#ga51b3a5e3d4811ca063fe25e35560ab40',1,'pit.h']]],
+  ['sprite_6',['Sprite',['../struct_sprite.html',1,'']]],
+  ['sprite_7',['sprite',['../struct_background.html#ae574ba8e34a12a43869cf9f366e3fe8d',1,'Background::sprite'],['../struct_ball.html#a36eb901356035f1ccb849bee9b5ef37d',1,'Ball::sprite'],['../struct_brick.html#afa66997ec9d927b130a623228147e7b7',1,'Brick::sprite'],['../struct_paddle.html#a98254bb0931a04cddc90033fa197efaa',1,'Paddle::sprite'],['../struct_projectile.html#ab14de760255630ca3bb5e39802e9fa68',1,'Projectile::sprite'],['../struct_marker.html#a75fa7fcdf03850bf52a8dd5034095a3c',1,'Marker::sprite']]],
+  ['sprite_2ec_8',['sprite.c',['../sprite_8c.html',1,'']]],
+  ['sprite_2eh_9',['sprite.h',['../sprite_8h.html',1,'']]],
+  ['state_10',['State',['../game_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8',1,'game.h']]]
 ];

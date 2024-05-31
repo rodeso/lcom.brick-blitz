@@ -1,0 +1,14 @@
+<map id="read_scancode" name="read_scancode">
+<area shape="rect" id="Node000001" title="Reads the scancode from the specified port." alt="" coords="420,55,531,80"/>
+<area shape="rect" id="Node000002" href="$keyboard_8c.html#a4909d2b8687b61065a2ce1d215135c3e" title="Enables interrupts." alt="" coords="251,5,372,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="419,53,354,33,355,28,420,48"/>
+<area shape="rect" id="Node000003" href="$keyboard_8c.html#ab9e6ed7960d60aa4834f2038247d4536" title=" " alt="" coords="281,55,341,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="406,70,342,70,342,65,406,65"/>
+<area shape="rect" id="Node000006" href="$mouse_8c.html#a834b6d7efe311484d6da234db333cb97" title=" " alt="" coords="272,104,351,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="420,87,352,108,350,102,419,81"/>
+<area shape="rect" id="Node000004" href="$game_8c.html#a58e8be2db2660128e4e6456a9c981fb5" title="Runs the game." alt="" coords="163,80,203,105"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="268,78,203,91,202,86,267,73"/>
+<area shape="rect" id="Node000005" href="$proj_8c.html#a7a72220d8366dd84709e79ce415862e5" title=" " alt="" coords="5,80,115,105"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="149,95,115,95,115,90,149,90"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="258,109,202,99,203,94,259,104"/>
+</map>

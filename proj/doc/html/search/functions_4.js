@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['keyboard_5fsubscribe_5fint_0',['keyboard_subscribe_int',['../kbc_8h.html#a8eee4d0a15beada731a514481b5ad4bf',1,'keyboard.c']]],
-  ['keyboard_5funsubscribe_5fint_1',['keyboard_unsubscribe_int',['../kbc_8h.html#ac95aea27a5e91b363b876fed881f368f',1,'keyboard.c']]]
+  ['initbackground_0',['initBackground',['../objects_8c.html#a12feaca907b1a76718c29f296b5d25ca',1,'initBackground(Background *background, int x, int y, Sprite *background_sprite):&#160;objects.c'],['../objects_8h.html#a28b9004b037e7518b6178392c427fad6',1,'initBackground(Background *background, int x, int y, Sprite *sprite):&#160;objects.c']]],
+  ['initball_1',['initBall',['../objects_8c.html#a7ec15e3c7ff4ccaaf46004331f88effb',1,'initBall(Ball *ball, int x, int y, Sprite *ball_sprite):&#160;objects.c'],['../objects_8h.html#a574aa847cca2f126daad7c9b47b47cfb',1,'initBall(Ball *ball, int x, int y, Sprite *sprite):&#160;objects.c']]],
+  ['initbrick_2',['initBrick',['../objects_8c.html#af2b91774ada190a2381c6470ddbca587',1,'initBrick(Brick *brick, int x, int y, Sprite *brick_sprite):&#160;objects.c'],['../objects_8h.html#ac38a713eba6a3e479afb1b6817bf9ebb',1,'initBrick(Brick *brick, int x, int y, Sprite *sprite):&#160;objects.c']]],
+  ['initmarker_3',['initMarker',['../objects_8c.html#ad5bf8c403420e1cb42a45f6b50106552',1,'initMarker(Marker *marker, int x, Sprite *marker_sprite):&#160;objects.c'],['../objects_8h.html#a6900cae1ca3a4d3a9cbec4e2ea69b672',1,'initMarker(Marker *marker, int x, Sprite *sprite):&#160;objects.c']]],
+  ['initpaddle_4',['initPaddle',['../objects_8c.html#a89545fc883c2da80da690a9ea0416e91',1,'initPaddle(Paddle *paddle, int x, int y, Sprite *paddle_sprite):&#160;objects.c'],['../objects_8h.html#a32ecfd5cb0c80dea1b54e4814ebec35d',1,'initPaddle(Paddle *paddle, int x, int y, Sprite *sprite):&#160;objects.c']]],
+  ['initprojectile_5',['initProjectile',['../objects_8c.html#a9a2876c569ef7d4b936b5b289f75e486',1,'initProjectile(Projectile *projectile, Paddle paddle, Sprite *projectile_sprite, Sprite *explosion_sprite):&#160;objects.c'],['../objects_8h.html#ac6220cf8579b9bbf2dcea1abaae5ceca',1,'initProjectile(Projectile *projectile, Paddle paddle, Sprite *sprite, Sprite *explosion):&#160;objects.c']]]
 ];

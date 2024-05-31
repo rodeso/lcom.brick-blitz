@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['objects_2eh_0',['objects.h',['../objects_8h.html',1,'']]],
-  ['oldx_1',['oldx',['../struct_ball.html#a670957ddb30fa19addb7267bd0750b01',1,'Ball::oldx'],['../struct_paddle.html#a6afff140c78be674db24c4bcde4d0bf5',1,'Paddle::oldx'],['../struct_marker.html#a582b6922254f299d5b63bead25ab6b32',1,'Marker::oldx']]],
-  ['oldy_2',['oldy',['../struct_ball.html#a0d3b89f71b0ff56e4b4c3e2c4191c784',1,'Ball::oldy'],['../struct_projectile.html#a01176e8f8a243daf8c3007f1f4921ff4',1,'Projectile::oldy']]],
-  ['output_5fbuffer_3',['OUTPUT_BUFFER',['../ps2_8h.html#a85dd25ad45d47136734196ec996419cd',1,'ps2.h']]]
+  ['lcom_20project_0',['T18G4 - LCOM Project',['../md__r_e_a_d_m_e.html',1,'']]],
+  ['life_5fsprite_1',['life_sprite',['../game_8c.html#a329a5549499d5289f87ea15d3df905ac',1,'game.c']]],
+  ['lives_2',['lives',['../game_8c.html#ac1d68ef9a5dd304c5015e07af7f2bb19',1,'game.c']]],
+  ['lost_3',['LOST',['../game_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8a339435bd0d4a842c6107333c908a5317',1,'game.h']]],
+  ['lost_4',['lost',['../game_8c.html#a7186b2e5ae0933d3f06feb09348c694b',1,'game.c']]],
+  ['lost_5fsprite_5',['lost_sprite',['../game_8c.html#a6cf77bb8056ee3ec42e557227790eb83',1,'game.c']]]
 ];

@@ -1,0 +1,22 @@
+<map id="src/dvcs/mouse/mouse.c" name="src/dvcs/mouse/mouse.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="301,5,469,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="404,225,483,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="394,30,420,81,434,115,445,151,448,182,448,211,443,211,443,183,439,153,429,117,415,83,389,32"/>
+<area shape="rect" id="Node000003" href="$ps2_8h.html" title="PS/2 Mouse Driver." alt="" coords="299,79,353,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="377,33,346,70,342,67,373,29"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="355,102,389,121,420,150,436,181,443,211,438,212,431,183,416,154,386,126,352,106"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,225,71,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="299,98,176,118,114,134,90,144,73,154,62,166,54,181,44,212,39,210,49,179,58,163,70,150,87,139,112,129,175,113,298,93"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="231,152,320,177"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="320,106,294,142,289,139,315,103"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="345,152,406,177"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="336,103,362,139,357,142,332,106"/>
+<area shape="rect" id="Node000007" href="$kbc_8h.html" title="Header file for keyboard controller (KBC) functions and constants." alt="" coords="83,152,206,177"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="299,106,188,149,186,144,297,101"/>
+<area shape="poly" id="edge9_Node000007_Node000002" title=" " alt="" coords="193,175,391,222,390,227,192,180"/>
+<area shape="poly" id="edge11_Node000007_Node000004" title=" " alt="" coords="129,180,68,220,65,215,126,175"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="95,225,202,251"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="148,178,150,212,145,212,143,178"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="226,225,301,251"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="165,175,233,216,231,220,162,180"/>
+</map>

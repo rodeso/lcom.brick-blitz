@@ -1,0 +1,16 @@
+<map id="src/dvcs/keyboard/kbc.h" name="src/dvcs/keyboard/kbc.h">
+<area shape="rect" id="Node000001" title="Header file for keyboard controller (KBC) functions and constants." alt="" coords="219,5,381,31"/>
+<area shape="rect" id="Node000002" href="$keyboard_8c.html" title=" " alt="" coords="5,79,200,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="256,38,136,81,134,76,255,33"/>
+<area shape="rect" id="Node000003" href="$ps2_8h.html" title="PS/2 Mouse Driver." alt="" coords="225,79,375,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="303,44,303,79,297,79,297,44"/>
+<area shape="rect" id="Node000005" href="$game_8h.html" title="Header file for the game module." alt="" coords="352,152,475,177"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="339,35,365,53,389,77,400,96,407,116,415,151,410,152,402,118,395,98,385,80,362,57,336,40"/>
+<area shape="rect" id="Node000004" href="$mouse_8c.html" title=" " alt="" coords="160,152,328,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="284,117,255,154,251,150,280,113"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="332,109,396,150,393,154,329,114"/>
+<area shape="rect" id="Node000006" href="$game_8c.html" title=" " alt="" coords="291,225,413,251"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="396,190,364,227,360,223,392,186"/>
+<area shape="rect" id="Node000007" href="$proj_8c.html" title=" " alt="" coords="438,225,514,251"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="435,186,468,223,464,227,431,189"/>
+</map>

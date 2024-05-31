@@ -1,0 +1,14 @@
+<map id="src/dvcs/keyboard/keyboard.c" name="src/dvcs/keyboard/keyboard.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="6,5,201,31"/>
+<area shape="rect" id="Node000002" href="$kbc_8h.html" title="Header file for keyboard controller (KBC) functions and constants." alt="" coords="135,79,189,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,29,146,67,142,70,111,33"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,152,84,177"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="101,32,57,140,52,138,96,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="109,152,215,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="165,104,165,138,159,138,159,104"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="145,106,77,147,74,142,142,102"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="239,152,314,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="182,102,248,142,245,147,179,106"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="339,152,404,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="190,99,326,145,325,150,189,104"/>
+</map>

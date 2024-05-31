@@ -1,4 +1,19 @@
 var searchData=
 [
-  ['base_0',['base',['../struct_ball.html#ab5e84d4ea7180ad108dfc9f8002a87f0',1,'Ball']]]
+  ['background_0',['background',['../game_8c.html#a7f2c93bc5c439544b80985e2be1696e2',1,'game.c']]],
+  ['background_5fsprite_1',['background_sprite',['../game_8c.html#a34c7dcab2d53b592f02a4d12f36eeb0c',1,'game.c']]],
+  ['ball_2',['ball',['../game_8c.html#a15de41d45a60a7649d561f53ca88352c',1,'ball:&#160;game.c'],['../proj_8c.html#a15de41d45a60a7649d561f53ca88352c',1,'ball:&#160;game.c']]],
+  ['ball_5fdirection_3',['ball_direction',['../game_8c.html#aedd7c3f9e2cb23e2b907915cd9894912',1,'game.c']]],
+  ['ball_5fpower_4',['ball_power',['../game_8c.html#a4edb4669f89f67a9a4ca37aa4cceb1a6',1,'game.c']]],
+  ['ball_5fsprite_5',['ball_sprite',['../game_8c.html#aec2809fff5bbcd809d6c213958992f61',1,'game.c']]],
+  ['balllaunched_6',['ballLaunched',['../game_8c.html#ab26659fde7c4811fbad01eabd2bfc16c',1,'game.c']]],
+  ['base_7',['base',['../struct_ball.html#ab5e84d4ea7180ad108dfc9f8002a87f0',1,'Ball']]],
+  ['big_5fscancode_8',['big_scancode',['../keyboard_8c.html#a5bd8e774989b5bf5b1c1905972129f83',1,'keyboard.c']]],
+  ['bit_5fno_9',['bit_no',['../proj_8c.html#af051d2dee5da699e506b29a18330a37c',1,'proj.c']]],
+  ['bit_5fno_5fkeyboard_10',['bit_no_keyboard',['../game_8c.html#a540aa119ad18a2587f9c073929dba186',1,'game.c']]],
+  ['bit_5fno_5fmouse_11',['bit_no_mouse',['../game_8c.html#a3553354293e11c5cd620f549a9b0125d',1,'game.c']]],
+  ['bit_5fno_5ftimer_12',['bit_no_timer',['../game_8c.html#a4594ebb7bd04d177d6cd263c79326508',1,'game.c']]],
+  ['brick_5fsprite_13',['brick_sprite',['../game_8c.html#a13235e9cd03f777717bb4b0aa7ed64cc',1,'game.c']]],
+  ['bricks_14',['bricks',['../game_8c.html#a1a595e4413d800034a85d07c1d7c7326',1,'bricks:&#160;game.c'],['../proj_8c.html#a19bbe5234153ef6cae01751e010ce108',1,'bricks:&#160;game.c']]],
+  ['byte_5findex_15',['byte_index',['../mouse_8c.html#a8884dab9d88cd6c24f21afc6c7144a7b',1,'mouse.c']]]
 ];
