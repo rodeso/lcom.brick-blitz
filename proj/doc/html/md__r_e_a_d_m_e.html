@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LCOM2324T18G4: T18G4 - LCOM Project</title>
+<title>LCOM2324T18G4: LCOM18G4</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,19 +72,35 @@ $(function() {
 
 </div><!-- top -->
 <div><div class="header">
-  <div class="headertitle"><div class="title">T18G4 - LCOM Project</div></div>
+  <div class="headertitle"><div class="title">LCOM18G4</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>LCOM Project for group T-18_4 Group members:</p>
-<ol type="1">
+<div class="textblock"><p><a class="el" href="struct_brick.html" title="Structure representing the brick object.">Brick</a> Blitz</p>
+<p><a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3" style="pointer-events: none;" class="inline"/></a></p>
+<ul>
+<li><b>Project name:</b> LCOM18G4 - <a class="el" href="struct_brick.html" title="Structure representing the brick object.">Brick</a> Blitz</li>
+<li><b>Short description:</b> Breakout Clone</li>
+<li><b>Environment:</b> Minix console</li>
+<li><b>Tools:</b> C</li>
+<li><b>Institution:</b> <a href="https://sigarra.up.pt/feup/en/web_page.Inicial">FEUP</a></li>
+<li><b>Course:</b> <a href="https://sigarra.up.pt/feup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=520323">LC</a> (Computer Laboratory)</li>
+<li><b>Project grade:</b> TBA</li>
+<li><b>Group members:</b><ol type="1">
 <li>Afonso Castro (<a href="#" onclick="location.href='mai'+'lto:'+'up2'+'02'+'208'+'02'+'6@f'+'e.'+'up.'+'pt'; return false;">up202<span class="obfuscator">.nosp@m.</span>2080<span class="obfuscator">.nosp@m.</span>26@fe<span class="obfuscator">.nosp@m.</span>.up.<span class="obfuscator">.nosp@m.</span>pt</a>)</li>
 <li>José Martins (<a href="#" onclick="location.href='mai'+'lto:'+'up2'+'02'+'204'+'85'+'7@f'+'e.'+'up.'+'pt'; return false;">up202<span class="obfuscator">.nosp@m.</span>2048<span class="obfuscator">.nosp@m.</span>57@fe<span class="obfuscator">.nosp@m.</span>.up.<span class="obfuscator">.nosp@m.</span>pt</a>)</li>
 <li>Pedro Santos (<a href="#" onclick="location.href='mai'+'lto:'+'up2'+'02'+'205'+'90'+'0@f'+'e.'+'up.'+'pt'; return false;">up202<span class="obfuscator">.nosp@m.</span>2059<span class="obfuscator">.nosp@m.</span>00@fe<span class="obfuscator">.nosp@m.</span>.up.<span class="obfuscator">.nosp@m.</span>pt</a>)</li>
 <li>Rodrigo de Sousa (<a href="#" onclick="location.href='mai'+'lto:'+'up2'+'02'+'205'+'75'+'1@f'+'e.'+'up.'+'pt'; return false;">up202<span class="obfuscator">.nosp@m.</span>2057<span class="obfuscator">.nosp@m.</span>51@fe<span class="obfuscator">.nosp@m.</span>.up.<span class="obfuscator">.nosp@m.</span>pt</a>)</li>
 </ol>
+</li>
+</ul>
+<hr  />
 <h1>Project Description</h1>
-<p>Our Project is based on the old Breakout game. The game has the user control a paddle using the keyboard keys, to bounce off a ball, that is supposed to hit bricks placed in the screen. When those bricks are hit they get destroyed. The goal is to destroy all bricks. After a certain amount of time, the bricks that have not been destroyed start approaching the paddle. The game ends when the user fails to hit the ball with the paddle 3 times, thus running out of the 3 lives, or the bricks reach the paddle level. After clearing out a level, the user moves on to a different level, and keeps going until game over.</p>
-<p>The game uses the timer to count down the time to get the bricks coming down, the keyboard to control the paddle and the video card to display the game The Mouse will be used to control the menu. </p>
+<p>Our game is a remake of the well-known Breakout from 1976.</p>
+<p>The context consists of several layers of blocks positioned in rows at the top of the screen that need to be destroyed by the player before they descend and reach the lower section of the screen.</p>
+<p>The player is given control of a board located in the lower section with the ability to move horizontally, which they must use to initially launch (ENTER key) and then reflect the movements of a ball that will be used to eliminate the blocks when in contact with them.</p>
+<p>The initial launch angle is chosen by the player using the mouse, and the movement of the board is controlled using the A and D keys. If the player fails to receive and reflect the main ball and lets it pass the lower limits of the screen, they will lose one of the 3 lives they are given.</p>
+<p>To make the game more dynamic, by destroying each block there is a chance of winning a powerup which can be an extra ball which comes into play immediately (and if lost, does not affect the player's lives), or a missile which, when fired (SPACE key), flies vertically and can have a destructive trail of up to 6 blocks (missiles can be accumulated).</p>
+<p>The game ends with victory, when all the blocks have been destroyed, or with defeat, when all 3 lives have been lost or the blocks have successfully reached the bottom section of the screen. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

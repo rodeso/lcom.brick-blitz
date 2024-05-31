@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['lcom_20project_0',['T18G4 - LCOM Project',['../md__r_e_a_d_m_e.html',1,'']]],
+  ['lcom18g4_0',['LCOM18G4',['../md__r_e_a_d_m_e.html',1,'']]],
   ['life_5fsprite_1',['life_sprite',['../game_8c.html#a329a5549499d5289f87ea15d3df905ac',1,'game.c']]],
   ['lives_2',['lives',['../game_8c.html#ac1d68ef9a5dd304c5015e07af7f2bb19',1,'game.c']]],
   ['lost_3',['LOST',['../game_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8a339435bd0d4a842c6107333c908a5317',1,'game.h']]],

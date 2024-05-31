@@ -1,3 +1,18 @@
+/*! \mainpage Main Page
+- **Project name:** LCOM18G4 - Brick Blitz
+- **Short description:** Breakout Clone
+- **Environment:** Minix console
+- **Tools:** C
+- **Institution:** [FEUP](https://sigarra.up.pt/feup/en/web_page.Inicial)
+- **Course:** [LC](https://sigarra.up.pt/feup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=520323) (Computer Laboratory)
+- **Project grade:** TBA
+- **Group members:**
+    1. Afonso Castro (up202208026@fe.up.pt)
+    2. José Martins (up202204857@fe.up.pt)
+    3. Pedro Santos (up202205900@fe.up.pt)
+    4. Rodrigo de Sousa (up202205751@fe.up.pt)
+ */
+
 // IMPORTANT: you must include the following line in all your C files
 #include <lcom/lcf.h>
 

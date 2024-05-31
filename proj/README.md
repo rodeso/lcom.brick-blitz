@@ -1,17 +1,35 @@
-# T18G4 - LCOM Project
+# LCOM18G4
+Brick Blitz
 
-LCOM Project for group T-18_4
-Group members:
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-1. Afonso Castro (up202208026@fe.up.pt)
-2. José Martins (up202204857@fe.up.pt)
-3. Pedro Santos (up202205900@fe.up.pt)
-4. Rodrigo de Sousa (up202205751@fe.up.pt)
+
+- **Project name:** LCOM18G4 - Brick Blitz
+- **Short description:** Breakout Clone
+- **Environment:** Minix console
+- **Tools:** C
+- **Institution:** [FEUP](https://sigarra.up.pt/feup/en/web_page.Inicial)
+- **Course:** [LC](https://sigarra.up.pt/feup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=520323) (Computer Laboratory)
+- **Project grade:** TBA
+- **Group members:**
+    1. Afonso Castro (up202208026@fe.up.pt)
+    2. José Martins (up202204857@fe.up.pt)
+    3. Pedro Santos (up202205900@fe.up.pt)
+    4. Rodrigo de Sousa (up202205751@fe.up.pt)
+
+---
 
 ## Project Description
 
-Our Project is based on the old Breakout game. The game has the user control a paddle using the keyboard keys, to bounce off a ball, that is supposed to hit bricks placed in the screen. When those bricks are hit they get destroyed. The goal is to destroy all bricks. After a certain amount of time, the bricks that have not been destroyed start approaching the paddle. The game ends when the user fails to hit the ball with the paddle 3 times, thus running out of the 3 lives, or the bricks reach the paddle level.
-After clearing out a level, the user moves on to a different level, and keeps going until game over.
+Our game is a remake of the well-known Breakout from 1976.
 
-The game uses the timer to count down the time to get the bricks coming down, the keyboard to control the paddle and the video card to display the game
-The Mouse will be used to control the menu.
+The context consists of several layers of blocks positioned in rows at the top of the screen that need to be destroyed by the player before they descend and reach the lower section of the screen. 
+
+The player is given control of a board located in the lower section with the ability to move horizontally, which they must use to initially launch (ENTER key) and then reflect the movements of a ball that will be used to eliminate the blocks when in contact with them.
+
+The initial launch angle is chosen by the player using the mouse, and the movement of the board is controlled using the A and D keys.
+If the player fails to receive and reflect the main ball and lets it pass the lower limits of the screen, they will lose one of the 3 lives they are given.
+
+To make the game more dynamic, by destroying each block there is a chance of winning a powerup which can be an extra ball which comes into play immediately (and if lost, does not affect the player's lives), or a missile which, when fired (SPACE key), flies vertically and can have a destructive trail of up to 6 blocks (missiles can be accumulated).
+
+The game ends with victory, when all the blocks have been destroyed, or with defeat, when all 3 lives have been lost or the blocks have successfully reached the bottom section of the screen. 
