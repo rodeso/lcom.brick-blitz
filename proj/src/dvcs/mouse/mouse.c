@@ -15,12 +15,12 @@ int (mouse_write_data)(uint8_t command){
   uint8_t mouse_response;
   do {
     attempts--;
-    if (write_command(0x64, 0xD4)) return 1;              // Ativar do modo D4 do i8042
-    if (write_command(0x60, command)) return 1;           // O comando para o rato é escrito na porta 0x60
+    if (write_command(INPUT_BUFFER, MOUSE_COMMAND_HEADS_UP)) return 1;              // Ativar do modo D4 do i8042
+    if (write_command(OUTPUT_BUFFER, command)) return 1;           // O comando para o rato é escrito na porta 0x60
     tickdelay(micros_to_ticks(20000));                        // Esperar alguns milissegundos
-    if (util_sys_inb(0x60, &mouse_response)) return 1;        // Ler a resposta da porta do output buffer
-    if (mouse_response == 0xFA) return 0;                      // Se a resposta for ACK, interromper o ciclo
-  } while (mouse_response != 0xFA && attempts);       
+    if (util_sys_inb(OUTPUT_BUFFER, &mouse_response)) return 1;        // Ler a resposta da porta do output buffer
+    if (mouse_response == ACK) return 0;                      // Se a resposta for ACK, interromper o ciclo
+  } while (mouse_response != ACK && attempts);       
 
  return 1;
 }

@@ -10,12 +10,10 @@ int size;
 
 
 int (read_status_register)(uint8_t* status) {
-  //printf("%s is running!\n", __func__);
   if (util_sys_inb(INPUT_BUFFER_KEYBOARD, status)) {return 1;} //reading the KBC state
   return 0;
 }
 int (read_scancode)(uint8_t port,uint8_t* result) {
-  //printf("%s is running!\n", __func__);
   int trying=0;
   while (trying < 20) {
       uint8_t status;
@@ -55,11 +53,9 @@ void (kbc_ih)() {
 
 
 int (keyboard_subscribe_int)(uint8_t *bit_no) {
-    printf("%s is running!\n", __func__);
-
     if(bit_no==NULL) {return 1;}
     
-    hook_id2=KEYBOARD_IRQ;
+    hook_id2=KEYBOARD_IRQ_LINE;
     *bit_no=hook_id2;
 
     int pol = sys_irqsetpolicy(IRQ1_VECTOR,IRQ_REENABLE|IRQ_EXCLUSIVE,&hook_id2);
@@ -70,12 +66,8 @@ int (keyboard_subscribe_int)(uint8_t *bit_no) {
 }
 
 int (keyboard_unsubscribe_int)() {
-
-    printf("%s is running!\n", __func__);
-
     int pol = sys_irqrmpolicy(&hook_id2);
     if (pol==1) {return 1;}
-
     return 0;
 }
 

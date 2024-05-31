@@ -79,19 +79,19 @@ int (disable_keyboard)() {
 
 void handle_keyboard() {
   switch(scancodes[0]) {
-    case 30: //A
+    case A_KEY:
     if (paddle.x > 0) {
       paddle.oldx = paddle.x;
       paddle.x -= BIT(3);
     }
       break;
-    case 32: //D
+    case D_KEY:
     if (paddle.x + paddle.sprite->width < vmi_p.XResolution) {
       paddle.oldx = paddle.x;
       paddle.x += BIT(3);
     }
       break;
-    case 1: //ESC
+    case ESC_KEY:
     if (gameState == MENU) {
       gameState=EXIT;
     }
@@ -102,14 +102,14 @@ void handle_keyboard() {
       gameState = EXIT;
     }
       break;
-    case 57: //Spacebar
+    case SPACE_KEY:
     if (gameState == GAME) {
       if (!projectileLaunched) {
       if(projectileLaunch()) {break;}
       }
     }
       break;
-    case 28: //Enter
+    case ENTER_KEY:
     if (gameState == MENU) {
       prepare_objects();
       gameState = GAME;
@@ -145,14 +145,14 @@ int (disable_timer)() {
 
 int (prepare_mouse)() {
     if(mouse_subscribe_int(&bit_no_mouse)!=0) {return 1;}
-    if(mouse_write_data(0xEA)!=0) {return 1;}
-    if(mouse_write_data(0xF4)!=0) {return 1;}
+    if(mouse_write_data(SET_STREAM_MODE)!=0) {return 1;}
+    if(mouse_write_data(ENABLE_DATA_REPORTING)!=0) {return 1;}
     return 0;
 }
 
 int (disable_mouse)() {
     if(mouse_unsubscribe_int()) return 1;
-    if(mouse_write_data(0xF5)!=0) {return 1;}
+    if(mouse_write_data(DISABLE_DATA_REPORTING)!=0) {return 1;}
     return 0;
 }
 
@@ -403,7 +403,7 @@ int move_ball() {
               bricks[i].destroyed = true;
               if (eraseBrick(&bricks[i])) {return 1;}
               
-              srand(time(0));  // Use current time as seed for random generator
+              srand(time(0));
               int random_number = rand() % 10;
               if (random_number == 0) {
                 powerup++;
@@ -510,7 +510,7 @@ int move_extraball() {
               bricks[i].destroyed = true;
               if (eraseBrick(&bricks[i])) {return 1;}
               
-              srand(time(0));  // Use current time as seed for random generator
+              srand(time(0));
               int random_number = rand() % 10;
               if (random_number == 0) {
                 powerup++;
