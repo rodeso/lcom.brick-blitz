@@ -20,7 +20,7 @@ Brick Blitz
 ---
 ## Demo
 
-https://youtu.be/ETXBJ4NJsDg
+[YouTube](https://youtu.be/ETXBJ4NJsDg)
 
 
 ## Installation
