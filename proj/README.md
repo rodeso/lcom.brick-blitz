@@ -18,6 +18,10 @@ Brick Blitz
     4. Rodrigo de Sousa (up202205751@fe.up.pt)
 
 ---
+## Demo
+
+https://youtu.be/ETXBJ4NJsDg
+
 
 ## Installation
 
