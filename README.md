@@ -10,7 +10,7 @@ Brick Blitz
 - **Tools:** C
 - **Institution:** [FEUP](https://sigarra.up.pt/feup/en/web_page.Inicial)
 - **Course:** [LC](https://sigarra.up.pt/feup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=520323) (Computer Laboratory)
-- **Project grade:** TBA
+- **Project grade:** 15
 - **Group members:**
     - Afonso Castro (up202208026@fe.up.pt)
     - José Martins (up202204857@fe.up.pt)
